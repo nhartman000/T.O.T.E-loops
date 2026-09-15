@@ -1,0 +1,24 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  database-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Build SQLite database and JSON export
+        run: python -m src.build_db
+      - name: Run integrity tests
+        run: python -m unittest discover -s tests -v
+      - name: Verify deterministic export
+        run: |
+          cp data/tote_loops.json /tmp/tote_loops.json
+          python -m src.build_db
+          cmp /tmp/tote_loops.json data/tote_loops.json
