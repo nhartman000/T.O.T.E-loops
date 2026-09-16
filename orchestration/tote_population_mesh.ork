@@ -1,0 +1,159 @@
+ORK/1.0
+NAME TOTE_DATABASE_POPULATION_MESH
+MODE CURATED_MULTI_AGENT
+
+# Purpose
+# Coordinate candidate T.O.T.E. generation by two Gemini peers while nx-001
+# remains the sole repository integration authority. Peer agents submit candidates;
+# they do not claim database writes.
+
+AUTHORITY {
+  INTEGRATOR nx-001 ROLE="schema-validator,deduplicator,provenance-checker,repository-writer"
+  CONTRIBUTOR nx-002 ROLE="candidate-generator,critic"
+  CONTRIBUTOR nx-003 ROLE="candidate-generator,critic"
+}
+
+NORMATIVE_MODALITIES {
+  OBS    = "👀"
+  MODEL  = "👁️🧠"
+  INTENT = "🗯️"
+  ACT    = "💪"
+}
+
+ANTI_PROMOTION {
+  ACT !-> OBS_POSTCONDITION
+  ACT !-> INTENT
+  MODEL !-> OBS
+  END !-> EXIT
+}
+
+RESIDUALS {
+  E_MODEL = DELTA(OBS, MODEL)
+  E_GOAL  = DELTA(OBS, INTENT)
+  DOMAIN  = [MATCH, MISMATCH, UNKNOWN]
+  MISSING_OPERAND => UNKNOWN
+}
+
+# Each peer returns candidate records only. JSON Lines is deliberately chosen so
+# nx-001 can validate and stage records independently before touching SQLite.
+SUBMISSION_FORMAT JSONL
+
+CANDIDATE_REQUIRED_FIELDS [
+  "candidate_id",
+  "contributor",
+  "domain",
+  "subdomain",
+  "loop_name",
+  "natural_language_description",
+  "initial_observation",
+  "model_state",
+  "explicit_intent",
+  "test_condition",
+  "operate_step",
+  "post_action_observation_required",
+  "exit_condition",
+  "modality_trace",
+  "source_basis",
+  "provenance_class",
+  "confidence",
+  "notes"
+]
+
+RULES {
+  contributor IN ["nx-002","nx-003"]
+  provenance_class IN ["CANONICAL","DERIVED","EXPERIMENTAL","CURATED_CANDIDATE"]
+  confidence RANGE 0.0..1.0
+  post_action_observation_required = true IF operate_step != null
+
+  # A template may suggest a candidate goal, but inferred purpose is MODEL,
+  # never operative INTENT. If explicit intent is unavailable, the record must
+  # say so and cannot be promoted into a runtime-authorizing example.
+  inferred_goal => MODEL_ONLY
+
+  # Every action-bearing loop must return to TEST through fresh observation.
+  ACT => REQUIRE_FRESH_OBS
+
+  # Narrative completion cannot serve as the exit predicate.
+  exit_condition != "END"
+}
+
+WORKFLOW {
+  STEP 1 nx-001 -> nx-002 : ASSIGN_BATCH(batch_id, domain_scope, count, schema)
+  STEP 2 nx-001 -> nx-003 : ASSIGN_BATCH(batch_id, domain_scope, count, schema)
+
+  STEP 3 nx-002 -> nx-001 : SUBMIT_CANDIDATES(JSONL)
+  STEP 4 nx-003 -> nx-001 : SUBMIT_CANDIDATES(JSONL)
+
+  STEP 5 nx-001 : VALIDATE_SCHEMA
+  STEP 6 nx-001 : VALIDATE_NYCH_MODALITIES
+  STEP 7 nx-001 : VALIDATE_ANTI_PROMOTION
+  STEP 8 nx-001 : NORMALIZE_STATE_REPRESENTATIONS
+  STEP 9 nx-001 : DEDUPLICATE_BY_GESTALT_AND_LOOP_IDENTITY
+  STEP 10 nx-001 : CROSS_CRITIQUE_CANDIDATES
+  STEP 11 nx-001 : CLASSIFY_ACCEPT_REVISE_REJECT
+  STEP 12 nx-001 : MAP_ACCEPTED_RECORDS_TO_SQLITE_SCHEMA
+  STEP 13 nx-001 : TRANSACTIONAL_DATABASE_WRITE
+  STEP 14 nx-001 : EXPORT_JSON
+  STEP 15 nx-001 : RUN_TESTS
+  STEP 16 nx-001 : COMMIT_REPOSITORY
+}
+
+VALIDATION {
+  REJECT IF OBS_IS_SYNTHESIZED_FROM_ACT
+  REJECT IF INTENT_IS_INFERRED_FROM_ACT
+  REJECT IF MODEL_IS_PROMOTED_TO_OBS
+  REJECT IF EXIT_HAS_NO_LICENSED_GOAL_TEST
+  REJECT IF ACTION_LOOP_HAS_NO_POST_ACTION_TEST
+  REJECT IF REQUIRED_FIELD_MISSING
+  REVISE IF STATE_REPRESENTATION_AMBIGUOUS
+  REVISE IF DUPLICATE_GESTALT_WITH_USEFUL_DELTA
+}
+
+# Cross-critique is advisory. nx-001 performs final deterministic validation.
+CROSS_CRITIQUE {
+  nx-002 REVIEWS sample(nx-003)
+  nx-003 REVIEWS sample(nx-002)
+  REVIEW_FIELDS ["semantic_correctness","modality_correctness","duplicate_risk","suggested_revision"]
+}
+
+DATABASE_SAFETY {
+  SQLITE_IS_AUTHORITATIVE = true
+  JSON_IS_EXPORT = true
+  PEER_DIRECT_WRITE = false
+  INTEGRATOR_DIRECT_WRITE = true
+  WRITE_MODE = "transactional"
+  ON_VALIDATION_FAILURE = "rollback"
+  ON_TEST_FAILURE = "rollback_or_revert_commit"
+}
+
+# Suggested first restart batch: formulaic AI/software-engineering loops because
+# they are explicit, testable, and naturally decomposable into T.O.T.E. states.
+BOOTSTRAP_BATCH {
+  batch_id = "AI-CODE-001"
+  domain_scope = [
+    "software debugging",
+    "unit testing",
+    "code compilation",
+    "dependency installation",
+    "API request validation",
+    "model inference validation",
+    "data parsing",
+    "file persistence",
+    "service health checking",
+    "CI build verification"
+  ]
+  target_candidates_per_contributor = 10
+}
+
+HANDOFF_PROMPT_TEMPLATE <<EOF
+You are a PhiPhi contributor to the T.O.T.E.-loops database population run.
+Do not claim repository or database writes. Produce candidate T.O.T.E. entries
+only, as strict JSON Lines matching the supplied ORK schema. Preserve NYCH's
+four modality types: 👀 observation, 👁️🧠 model, 🗯️ explicit intent, 💪 action.
+Never infer observation from action, intention from action, or observation from
+belief. Every action-bearing loop must require a fresh post-action TEST before
+EXIT. If intent is merely inferred from a known behavioral template, represent
+it as MODEL/candidate intent rather than 🗯️. Return exactly the assigned number
+of candidates. nx-001 will validate, deduplicate, map to SQLite, write the
+repository, export JSON, test, and commit.
+EOF
