@@ -31,11 +31,12 @@ composed, while their scope must remain recoverable.
 ### AI process-channel binding
 
 For an AI transcript, surfaced working commentary or subtext between delivered
-responses is treated as `👂` internal auditory/inner monologue. A delivered
-user-facing response is treated as `👂👂` external auditory even when the
-interface renders it as printed text rather than sound. This binding concerns
-the observable transcript only: hidden model computation is neither exposed nor
-claimed to be a recoverable inner monologue.
+responses is treated as `👂` internal auditory/inner monologue. Hidden
+computation is not excluded: it may also receive `👂` notation at the abstract
+channel level when useful, without claiming access to its exact content.
+Notation is optional; an unmarked process is `UNSPECIFIED`, not absent. A
+delivered user-facing response is treated as `👂👂` external auditory even when
+the interface renders it as printed text rather than sound.
 
 An action is never recorded as an observation. A predicted postcondition is not
 promoted to an observed state. A loop exits only after external evidence matches
