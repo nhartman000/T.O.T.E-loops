@@ -49,7 +49,8 @@ class DatabaseTests(unittest.TestCase):
         for operator_id, symbol in expected.items():
             self.assertEqual(rows.get(operator_id), symbol)
         definitions = dict(self.query("SELECT operator_id, definition FROM modality_operators"))
-        self.assertIn("surfaced working commentary", definitions["internal_auditory"])
+        self.assertIn("Hidden computation is not excluded", definitions["internal_auditory"])
+        self.assertIn("unmarked process is unspecified, not absent", definitions["internal_auditory"])
         self.assertIn("every user-facing response", definitions["external_auditory"])
 
     def test_original_seed_loops_unchanged(self):
