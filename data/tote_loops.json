@@ -1,6 +1,6 @@
 {
   "schema_version": "0.2.0",
-  "seed_sha256": "b82ac4ade8b8dbb6d232669a67d4359eff98279bcd3d99b2a875c9e13e9c2926",
+  "seed_sha256": "766e2b8e6f116d2ddf7ef72818453545c93a119af3d65d4195775801996cc18c",
   "operators": [
     {
       "operator_id": "execute",
@@ -46,7 +46,7 @@
       "operator_id": "internal_auditory",
       "symbol": "👂",
       "canonical_name": "internal auditory (inner monologue)",
-      "definition": "Mark internally heard speech, sound, or inner monologue without external acoustic evidence. For AI transcripts, surfaced working commentary between final responses is treated as inner monologue; hidden computation is not exposed or claimed.",
+      "definition": "Mark internally heard speech, sound, inner monologue, or internal computation represented at an abstract channel level. For AI transcripts, surfaced working commentary between final responses is treated as inner monologue. Hidden computation is not excluded and may be notated when useful, but notation does not claim access to its exact content; an unmarked process is unspecified, not absent.",
       "evidence_channel": "internal-auditory",
       "may_assert_action": 0
     },
