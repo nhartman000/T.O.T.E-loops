@@ -1,6 +1,6 @@
 {
   "schema_version": "0.2.0",
-  "seed_sha256": "8ddc69f3f9b378c61e651a1bb6f1776e53efcb9c2c47c8db874b6e57a99264ac",
+  "seed_sha256": "b82ac4ade8b8dbb6d232669a67d4359eff98279bcd3d99b2a875c9e13e9c2926",
   "operators": [
     {
       "operator_id": "execute",
@@ -11,11 +11,43 @@
       "may_assert_action": 1
     },
     {
+      "operator_id": "external_auditory",
+      "symbol": "👂👂",
+      "canonical_name": "external auditory",
+      "definition": "Mark sound received as external acoustic evidence. For AI transcripts, every user-facing response is treated as external speech even when rendered as print.",
+      "evidence_channel": "external-auditory",
+      "may_assert_action": 0
+    },
+    {
       "operator_id": "external_observe",
       "symbol": "👀",
       "canonical_name": "external observation",
       "definition": "Inspect externally available evidence without inventing a result.",
       "evidence_channel": "external",
+      "may_assert_action": 0
+    },
+    {
+      "operator_id": "first_person",
+      "symbol": "👤",
+      "canonical_name": "first person",
+      "definition": "Mark the speaker or narrator as referring to self.",
+      "evidence_channel": "perspective",
+      "may_assert_action": 0
+    },
+    {
+      "operator_id": "future_tense",
+      "symbol": "⏩️",
+      "canonical_name": "future tense",
+      "definition": "Mark an event or state as occurring after the present reference time.",
+      "evidence_channel": "temporal",
+      "may_assert_action": 0
+    },
+    {
+      "operator_id": "internal_auditory",
+      "symbol": "👂",
+      "canonical_name": "internal auditory (inner monologue)",
+      "definition": "Mark internally heard speech, sound, or inner monologue without external acoustic evidence. For AI transcripts, surfaced working commentary between final responses is treated as inner monologue; hidden computation is not exposed or claimed.",
+      "evidence_channel": "internal-auditory",
       "may_assert_action": 0
     },
     {
@@ -27,11 +59,51 @@
       "may_assert_action": 0
     },
     {
+      "operator_id": "internal_sensation",
+      "symbol": "🫀",
+      "canonical_name": "internal feeling (sensation)",
+      "definition": "Mark a sensation or feeling experienced internally by the subject.",
+      "evidence_channel": "internal-somatic",
+      "may_assert_action": 0
+    },
+    {
       "operator_id": "operative_intent",
       "symbol": "🗯️",
       "canonical_name": "operative intention",
       "definition": "Represent a licensed intention, plan, or operative thought.",
       "evidence_channel": "internal",
+      "may_assert_action": 0
+    },
+    {
+      "operator_id": "past_tense",
+      "symbol": "⏪️",
+      "canonical_name": "past tense",
+      "definition": "Mark an event or state as occurring before the present reference time.",
+      "evidence_channel": "temporal",
+      "may_assert_action": 0
+    },
+    {
+      "operator_id": "present_tense",
+      "symbol": "🎁",
+      "canonical_name": "present tense",
+      "definition": "Mark an event or state as occurring at the present reference time.",
+      "evidence_channel": "temporal",
+      "may_assert_action": 0
+    },
+    {
+      "operator_id": "second_person",
+      "symbol": "👥️",
+      "canonical_name": "second person",
+      "definition": "Mark direct address to another person or audience.",
+      "evidence_channel": "perspective",
+      "may_assert_action": 0
+    },
+    {
+      "operator_id": "third_person_narrative",
+      "symbol": "🗣",
+      "canonical_name": "third person (narrative)",
+      "definition": "Mark third-person narration about an actor other than speaker or addressee.",
+      "evidence_channel": "perspective",
       "may_assert_action": 0
     }
   ],
