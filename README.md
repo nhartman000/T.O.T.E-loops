@@ -8,12 +8,34 @@ not replacements for every word.
 
 ## Canonical operators
 
-| Symbol | Meaning |
-| --- | --- |
-| `👀` | externally observe or inspect evidence |
-| `👁️🧠` | internally model, imagine, recall, or compare |
-| `🗯️` | operative thought or intention |
-| `💪` | execute an operation |
+| Symbol | Canonical meaning | Class |
+| --- | --- | --- |
+| `👀` | externally observe or inspect evidence | modality |
+| `👁️🧠` | internally model, imagine, recall, or compare | modality |
+| `🗯️` | operative thought or intention | modality |
+| `💪` | execute an operation | modality |
+| `🫀` | internal feeling or sensation | sensation |
+| `👤` | first-person perspective | perspective |
+| `👥️` | second-person perspective or direct address | perspective |
+| `🗣` | third-person narrative | perspective |
+| `⏪️` | past | tense |
+| `🎁` | present | tense |
+| `⏩️` | future | tense |
+| `👂` | internal auditory or inner monologue | auditory channel |
+| `👂👂` | external auditory | auditory channel |
+
+Perspective, tense, sensation, and auditory operators annotate a proposition;
+they do not replace the four TOTE modality operators. They may therefore be
+composed, while their scope must remain recoverable.
+
+### AI process-channel binding
+
+For an AI transcript, surfaced working commentary or subtext between delivered
+responses is treated as `👂` internal auditory/inner monologue. A delivered
+user-facing response is treated as `👂👂` external auditory even when the
+interface renders it as printed text rather than sound. This binding concerns
+the observable transcript only: hidden model computation is neither exposed nor
+claimed to be a recoverable inner monologue.
 
 An action is never recorded as an observation. A predicted postcondition is not
 promoted to an observed state. A loop exits only after external evidence matches
