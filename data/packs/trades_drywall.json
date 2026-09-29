@@ -1,0 +1,827 @@
+{
+  "pack_id": "trades_drywall",
+  "gestalts": [
+    {
+      "gestalt_id": "measure",
+      "glyph": "📏",
+      "lexical_form": "measure",
+      "sense": "linear measurement with tape or rule",
+      "route": "G",
+      "recoverability_note": "Obvious in trade context."
+    },
+    {
+      "gestalt_id": "level_plumb",
+      "glyph": null,
+      "lexical_form": "level / plumb",
+      "sense": "horizontal or vertical within tolerance per a level",
+      "route": "P",
+      "recoverability_note": "Protected acceptance term."
+    },
+    {
+      "gestalt_id": "flush",
+      "glyph": null,
+      "lexical_form": "flush",
+      "sense": "surface of fastener or part even with the surrounding surface",
+      "route": "P",
+      "recoverability_note": "Protected acceptance term."
+    },
+    {
+      "gestalt_id": "joint_compound",
+      "glyph": null,
+      "lexical_form": "joint compound (mud)",
+      "sense": "drywall finishing compound",
+      "route": "L",
+      "recoverability_note": "Trade slang 'mud' kept lexical."
+    }
+  ],
+  "loops": [
+    {
+      "loop_id": "trade.drywall.score_snap_sheet.v1",
+      "behavior_id": "trade.drywall.score_snap_sheet",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Score and snap a drywall sheet",
+      "domain": "trade-drywall",
+      "objective": "Cut a drywall sheet to a measured size with a clean edge.",
+      "initial_test": "Read the needed dimension on the wall with a tape.",
+      "exit_predicate": "The cut piece matches the measured dimension within 1/8 inch and the edge is clean.",
+      "max_iterations": 3,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2081.00 Drywall and Ceiling Tile Installers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "measure"
+      ],
+      "steps": [
+        {
+          "id": "measure",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Read the needed dimension on the wall with a tape."
+        },
+        {
+          "id": "mark",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Mark the dimension on the sheet at both ends."
+        },
+        {
+          "id": "see_mark",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Re-read the marks against the tape.",
+          "on_mismatch": "mark"
+        },
+        {
+          "id": "score",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Hold a T-square on the marks and score the face paper in one steady pass."
+        },
+        {
+          "id": "see_score",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: one continuous score through the paper.",
+          "on_mismatch": "score"
+        },
+        {
+          "id": "snap",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Snap the sheet back along the score, then cut the back paper."
+        },
+        {
+          "id": "hear_snap",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "auditory",
+          "text": "Listen for a clean crack along the whole line.",
+          "on_mismatch": "snap"
+        },
+        {
+          "id": "check_size",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Measure the piece and look at the edge.",
+          "on_match": "exit",
+          "on_mismatch": "rasp"
+        },
+        {
+          "id": "rasp",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Rasp the edge to size or clean it up."
+        },
+        {
+          "id": "see_rasp",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Measure again.",
+          "on_match": "exit",
+          "on_mismatch": "rasp"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The cut piece matches the measured dimension within 1/8 inch and the edge is clean.",
+          "on_mismatch": "measure"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.drywall.screw_sheet.v1",
+      "behavior_id": "trade.drywall.screw_sheet",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Screw off a drywall sheet",
+      "domain": "trade-drywall",
+      "objective": "Fasten a sheet with screws set just below the surface.",
+      "initial_test": "Look at the sheet against the framing: tight and aligned?",
+      "exit_predicate": "Screws are on spacing, each dimpled just below the face without breaking the paper, and the sheet is tight to framing.",
+      "max_iterations": 40,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2081.00 Drywall and Ceiling Tile Installers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "flush"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the sheet: tight to framing, edges on studs?"
+        },
+        {
+          "id": "imagine",
+          "phase": "OPERATE",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Picture stud centerlines and screw spacing (about 12 in on ceilings, 16 in on walls)."
+        },
+        {
+          "id": "drive",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Drive a screw square to the surface with a dimpler bit or clutch."
+        },
+        {
+          "id": "hear",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "auditory",
+          "text": "Listen for the clutch click or the bit disengaging.",
+          "on_mismatch": "feel_miss"
+        },
+        {
+          "id": "feel_miss",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Feel: did the screw bite framing or spin free?",
+          "on_mismatch": "remove"
+        },
+        {
+          "id": "see_depth",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: head just below the face, paper not broken?",
+          "on_mismatch": "reset"
+        },
+        {
+          "id": "see_spacing",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: all screws placed?",
+          "on_match": "exit",
+          "on_mismatch": "drive"
+        },
+        {
+          "id": "reset",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Tap proud screws in further; add a new screw 2 in away from any that broke the paper."
+        },
+        {
+          "id": "see_reset",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the reset screw depth.",
+          "on_match": "see_spacing",
+          "on_mismatch": "reset"
+        },
+        {
+          "id": "remove",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Back out the missed screw and relocate to the stud."
+        },
+        {
+          "id": "see_remove",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: missed screw out.",
+          "on_match": "imagine",
+          "on_mismatch": "remove"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Screws are on spacing, each dimpled just below the face without breaking the paper, and the sheet is tight to framing.",
+          "on_mismatch": "drive"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.drywall.embed_tape.v1",
+      "behavior_id": "trade.drywall.embed_tape",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Embed joint tape",
+      "domain": "trade-drywall",
+      "objective": "Bed paper tape in joint compound without bubbles.",
+      "initial_test": "Look at the joint: gap, screws set, dust off?",
+      "exit_predicate": "The tape is fully bedded, centered on the joint, with no bubbles, blisters, or dry spots under it.",
+      "max_iterations": 8,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2082.00 Tapers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "joint_compound"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the joint: screws set, dust off?"
+        },
+        {
+          "id": "butter",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Spread a full bed of compound over the joint with a 6 in knife."
+        },
+        {
+          "id": "see_bed",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: continuous bed with no bare spots.",
+          "on_mismatch": "butter"
+        },
+        {
+          "id": "lay",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Center the tape on the joint and press it in."
+        },
+        {
+          "id": "see_center",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: tape centered on the joint along its length?",
+          "on_mismatch": "lay"
+        },
+        {
+          "id": "wipe",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Wipe along the tape with the knife, squeezing compound out from under it."
+        },
+        {
+          "id": "see_squeeze",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: compound squeezed out along both edges?",
+          "on_mismatch": "butter"
+        },
+        {
+          "id": "check_bubbles",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look along the tape for bubbles or dry-looking areas.",
+          "on_match": "exit",
+          "on_mismatch": "lift"
+        },
+        {
+          "id": "lift",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Lift the section, add compound under it, and re-wipe."
+        },
+        {
+          "id": "see_lift",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look again.",
+          "on_match": "exit",
+          "on_mismatch": "lift"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The tape is fully bedded, centered on the joint, with no bubbles, blisters, or dry spots under it.",
+          "on_mismatch": "butter"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.drywall.feather_coat.v1",
+      "behavior_id": "trade.drywall.feather_coat",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Apply a feathered coat",
+      "domain": "trade-drywall",
+      "objective": "Apply a fill or finish coat that tapers to nothing at its edges.",
+      "initial_test": "Look at the previous coat under raking light.",
+      "exit_predicate": "The coat is wider than the last, edges feathered to zero, and no ridges show under raking light.",
+      "max_iterations": 6,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2082.00 Tapers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "joint_compound"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the previous coat under raking light: dry and scraped of ridges?"
+        },
+        {
+          "id": "scrape",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Knock off ridges and lumps with the knife."
+        },
+        {
+          "id": "feel",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Run a hand across: ridges gone?",
+          "on_mismatch": "scrape"
+        },
+        {
+          "id": "apply",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Apply compound with a wider knife than the last coat."
+        },
+        {
+          "id": "see_apply",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: the coat covers past the last coat's edges with no bare spots?",
+          "on_mismatch": "apply"
+        },
+        {
+          "id": "feather",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Wipe with more pressure on the outer edge of the knife to feather."
+        },
+        {
+          "id": "see_edge",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look along the edges under raking light: any lines?",
+          "on_match": "exit",
+          "on_mismatch": "feather"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The coat is wider than the last, edges feathered to zero, and no ridges show under raking light.",
+          "on_mismatch": "scrape"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.drywall.sand_joint.v1",
+      "behavior_id": "trade.drywall.sand_joint",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Sand a finished joint",
+      "domain": "trade-drywall",
+      "objective": "Sand joint compound smooth without scuffing the face paper.",
+      "initial_test": "Look at the dry joint under raking light.",
+      "exit_predicate": "The joint feels smooth and flat to a flat hand, shows no scuffed paper, and shows no shadow under raking light.",
+      "max_iterations": 5,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2082.00 Tapers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "joint_compound"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the dry joint under raking light."
+        },
+        {
+          "id": "dry",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Check the compound is dry: uniform light color, no dark damp spots.",
+          "on_mismatch": "wait"
+        },
+        {
+          "id": "sand",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Sand with a pole or block sander using light pressure, staying on the compound."
+        },
+        {
+          "id": "see_paper",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for fuzzed face paper.",
+          "on_mismatch": "seal"
+        },
+        {
+          "id": "feel",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Run a flat hand across: smooth?",
+          "on_mismatch": "sand"
+        },
+        {
+          "id": "rake",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look under raking light for shadows.",
+          "on_match": "exit",
+          "on_mismatch": "sand"
+        },
+        {
+          "id": "wait",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Wait for the compound to dry."
+        },
+        {
+          "id": "see_wait",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Check color again.",
+          "on_match": "sand",
+          "on_mismatch": "wait"
+        },
+        {
+          "id": "seal",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Stop sanding there; seal the fuzzed paper with primer and skim."
+        },
+        {
+          "id": "see_seal",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: sealed.",
+          "on_match": "feel",
+          "on_mismatch": "seal"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The joint feels smooth and flat to a flat hand, shows no scuffed paper, and shows no shadow under raking light.",
+          "on_mismatch": "sand"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.drywall.patch_small_hole.v1",
+      "behavior_id": "trade.drywall.patch_small_hole",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Patch a small hole",
+      "domain": "trade-drywall",
+      "objective": "Repair a hole up to about 4 in so it disappears after paint.",
+      "initial_test": "Measure and look at the hole: size and loose edges.",
+      "exit_predicate": "The patch is flat and invisible under raking light once primed.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2081.00 Drywall and Ceiling Tile Installers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "joint_compound",
+        "flush"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the hole: size and loose paper."
+        },
+        {
+          "id": "trim",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Cut away loose paper and gypsum."
+        },
+        {
+          "id": "see_trim",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: edges firm.",
+          "on_mismatch": "trim"
+        },
+        {
+          "id": "patch",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Apply a self-adhesive mesh patch centered over the hole."
+        },
+        {
+          "id": "see_patch",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: patch covers the hole with margin.",
+          "on_mismatch": "patch"
+        },
+        {
+          "id": "coat",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Coat with compound, feathering past the patch edges."
+        },
+        {
+          "id": "see_coat",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: mesh hidden?",
+          "on_mismatch": "coat"
+        },
+        {
+          "id": "sand",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "When dry, sand smooth."
+        },
+        {
+          "id": "rake",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look under raking light: flat and invisible?",
+          "on_match": "exit",
+          "on_mismatch": "coat"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The patch is flat and invisible under raking light once primed.",
+          "on_mismatch": "coat"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.drywall.corner_bead.v1",
+      "behavior_id": "trade.drywall.corner_bead",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Install outside corner bead",
+      "domain": "trade-drywall",
+      "objective": "Fasten metal corner bead straight and tight to an outside corner.",
+      "initial_test": "Look at the corner: sheets meet without protruding?",
+      "exit_predicate": "The bead is tight to the corner along its length, plumb, and fastened every 8-10 inches without distortion.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2081.00 Drywall and Ceiling Tile Installers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "level_plumb"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the corner: sheet edges flush and not proud of the bead line?"
+        },
+        {
+          "id": "cut",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Cut the bead to length with snips."
+        },
+        {
+          "id": "see_len",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Hold it up: length right?",
+          "on_mismatch": "cut"
+        },
+        {
+          "id": "set",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Press the bead onto the corner and fasten the top."
+        },
+        {
+          "id": "plumb",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Hold a level on the bead nose: plumb?",
+          "on_mismatch": "adjust"
+        },
+        {
+          "id": "fasten",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Fasten both flanges every 8-10 in, alternating sides."
+        },
+        {
+          "id": "see_tight",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Press along the bead: any flex or gap?",
+          "on_match": "exit",
+          "on_mismatch": "fasten"
+        },
+        {
+          "id": "adjust",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Pull the bottom into plumb."
+        },
+        {
+          "id": "see_adjust",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Check the level again.",
+          "on_match": "fasten",
+          "on_mismatch": "adjust"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The bead is tight to the corner along its length, plumb, and fastened every 8-10 inches without distortion.",
+          "on_mismatch": "set"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.drywall.mix_compound.v1",
+      "behavior_id": "trade.drywall.mix_compound",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Mix joint compound",
+      "domain": "trade-drywall",
+      "objective": "Bring compound to a smooth, workable consistency.",
+      "initial_test": "Look at the compound in the bucket.",
+      "exit_predicate": "Compound is lump-free and holds peaks that slump slightly on the knife.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2082.00 Tapers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "joint_compound"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the compound: stiff, lumpy, or separated?"
+        },
+        {
+          "id": "model",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "kinesthetic",
+          "text": "Recall the right consistency for the task: thinner for taping, stiffer for fill.",
+          "on_match": "exit"
+        },
+        {
+          "id": "water",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Add a small amount of clean water."
+        },
+        {
+          "id": "see_water",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: only a little added?",
+          "on_mismatch": "mix"
+        },
+        {
+          "id": "mix",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Mix with a paddle mixer on low speed."
+        },
+        {
+          "id": "feel",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Load a knife: lumps, and does it slide or stick?",
+          "on_match": "exit",
+          "on_mismatch": "water"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Compound is lump-free and holds peaks that slump slightly on the knife.",
+          "on_mismatch": "water"
+        }
+      ]
+    }
+  ]
+}

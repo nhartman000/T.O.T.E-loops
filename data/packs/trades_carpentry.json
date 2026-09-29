@@ -1,0 +1,1145 @@
+{
+  "pack_id": "trades_carpentry",
+  "gestalts": [
+    {
+      "gestalt_id": "hammer",
+      "glyph": "🔨",
+      "lexical_form": "hammer",
+      "sense": "striking hand tool",
+      "route": "G",
+      "recoverability_note": "Obvious in carpentry context."
+    },
+    {
+      "gestalt_id": "saw",
+      "glyph": "🪚",
+      "lexical_form": "saw",
+      "sense": "cutting tool for wood or sheet goods",
+      "route": "G",
+      "recoverability_note": "Obvious in carpentry context."
+    },
+    {
+      "gestalt_id": "measure",
+      "glyph": "📏",
+      "lexical_form": "measure",
+      "sense": "linear measurement with tape or rule",
+      "route": "G",
+      "recoverability_note": "Obvious in trade context."
+    },
+    {
+      "gestalt_id": "level_plumb",
+      "glyph": null,
+      "lexical_form": "level / plumb",
+      "sense": "horizontal or vertical within tolerance per a level",
+      "route": "P",
+      "recoverability_note": "Protected acceptance term."
+    },
+    {
+      "gestalt_id": "flush",
+      "glyph": null,
+      "lexical_form": "flush",
+      "sense": "surface of fastener or part even with the surrounding surface",
+      "route": "P",
+      "recoverability_note": "Protected acceptance term."
+    },
+    {
+      "gestalt_id": "safety",
+      "glyph": "⚠️",
+      "lexical_form": "safety check",
+      "sense": "condition that must hold before work proceeds",
+      "route": "G",
+      "recoverability_note": "Must name the hazard checked."
+    }
+  ],
+  "loops": [
+    {
+      "loop_id": "trade.carpentry.drive_nail_flush.v1",
+      "behavior_id": "trade.carpentry.drive_nail_flush",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Drive a nail flush",
+      "domain": "trade-carpentry",
+      "objective": "Drive a nail straight until its head is flush with the surface.",
+      "initial_test": "Look at the nail: head height above the surface.",
+      "exit_predicate": "The head is flush with the surface, the nail is straight, and the wood around it is not marred.",
+      "max_iterations": 12,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "hammer",
+        "flush"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the nail head: how far above the surface?"
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Compare with a flush head.",
+          "on_match": "exit"
+        },
+        {
+          "id": "strike",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Strike square to the head, swinging from the elbow."
+        },
+        {
+          "id": "hear",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "auditory",
+          "text": "Listen: solid strike or glancing?",
+          "on_mismatch": "check_bend"
+        },
+        {
+          "id": "see",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the head height.",
+          "on_match": "exit",
+          "on_mismatch": "check_bend"
+        },
+        {
+          "id": "check_bend",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: is the nail bent or leaning?",
+          "on_match": "look",
+          "on_mismatch": "straighten"
+        },
+        {
+          "id": "straighten",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Tap the shank back upright from the side, or pull the nail if badly bent."
+        },
+        {
+          "id": "see_straight",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: nail upright.",
+          "on_match": "look",
+          "on_mismatch": "straighten"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The head is flush with the surface, the nail is straight, and the wood around it is not marred.",
+          "on_mismatch": "strike"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.carpentry.measure_mark.v1",
+      "behavior_id": "trade.carpentry.measure_mark",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Measure and mark a cut",
+      "domain": "trade-carpentry",
+      "objective": "Transfer a measurement to stock accurately.",
+      "initial_test": "Read the needed length at the installation point with a tape.",
+      "exit_predicate": "The mark on the stock reads the needed length when re-measured, with the waste side marked.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "measure"
+      ],
+      "steps": [
+        {
+          "id": "measure",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Read the needed length at the installation point."
+        },
+        {
+          "id": "hold",
+          "phase": "OPERATE",
+          "op": "internal_model",
+          "sense": "internal",
+          "text": "Hold the number and its fraction in mind (say it aloud if helpful)."
+        },
+        {
+          "id": "hook",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Hook the tape on the stock end and pull it straight."
+        },
+        {
+          "id": "see_hook",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: hook seated on the end, tape flat?",
+          "on_mismatch": "hook"
+        },
+        {
+          "id": "mark",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Make a crow's-foot (V) mark at the length and square a line across."
+        },
+        {
+          "id": "remeasure",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Re-measure to the mark: same number?",
+          "on_mismatch": "mark"
+        },
+        {
+          "id": "waste",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Mark an X on the waste side."
+        },
+        {
+          "id": "see_x",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: X on the correct side.",
+          "on_match": "exit",
+          "on_mismatch": "waste"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The mark on the stock reads the needed length when re-measured, with the waste side marked.",
+          "on_mismatch": "measure"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.carpentry.crosscut_circular.v1",
+      "behavior_id": "trade.carpentry.crosscut_circular",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Crosscut with a circular saw",
+      "domain": "trade-carpentry",
+      "objective": "Cut a board square on the mark with the kerf on the waste side.",
+      "initial_test": "Look at the marked stock: supported and clamped?",
+      "exit_predicate": "The board is cut through on the waste side of the line, square, and the cut length reads correct.",
+      "max_iterations": 3,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "saw",
+        "safety",
+        "measure"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: stock supported so the offcut can fall free, not pinch?",
+          "on_mismatch": "support"
+        },
+        {
+          "id": "depth",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Check blade depth about 1/4 in below the stock and guard working.",
+          "on_mismatch": "adjust"
+        },
+        {
+          "id": "imagine",
+          "phase": "OPERATE",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Picture the blade kerf on the waste side of the line."
+        },
+        {
+          "id": "align",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Align the blade to the line using a speed square as a guide."
+        },
+        {
+          "id": "see_align",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Sight the blade: on the waste side?",
+          "on_mismatch": "align"
+        },
+        {
+          "id": "cut",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Let the blade reach full speed, then push steadily through."
+        },
+        {
+          "id": "hear",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "auditory",
+          "text": "Listen for bogging or binding.",
+          "on_mismatch": "stop"
+        },
+        {
+          "id": "check",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Check the cut with a square and measure the length.",
+          "on_match": "exit",
+          "on_mismatch": "imagine"
+        },
+        {
+          "id": "stop",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Release the trigger, let the blade stop, back out, and fix the support."
+        },
+        {
+          "id": "see_stop",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: kerf open, stock supported.",
+          "on_match": "cut",
+          "on_mismatch": "stop"
+        },
+        {
+          "id": "support",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Reposition supports and clamp the stock."
+        },
+        {
+          "id": "see_support",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: supported.",
+          "on_match": "depth",
+          "on_mismatch": "support"
+        },
+        {
+          "id": "adjust",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Unplug the saw and set depth; check the guard springs back."
+        },
+        {
+          "id": "see_adjust",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: depth right, guard working.",
+          "on_match": "imagine",
+          "on_mismatch": "adjust"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The board is cut through on the waste side of the line, square, and the cut length reads correct.",
+          "on_mismatch": "imagine"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.carpentry.plumb_post.v1",
+      "behavior_id": "trade.carpentry.plumb_post",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Plumb a post or stud",
+      "domain": "trade-carpentry",
+      "objective": "Set a vertical member plumb on two faces.",
+      "initial_test": "Hold a level on one face and read the bubble.",
+      "exit_predicate": "The bubble is centered on two adjacent faces and the member is fastened.",
+      "max_iterations": 8,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "level_plumb"
+      ],
+      "steps": [
+        {
+          "id": "read",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Hold a level on one face and read the bubble."
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Compare the bubble to center.",
+          "on_match": "read2"
+        },
+        {
+          "id": "nudge",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Tap the member toward plumb."
+        },
+        {
+          "id": "see",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Read the bubble again.",
+          "on_match": "read2",
+          "on_mismatch": "nudge"
+        },
+        {
+          "id": "read2",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Read the level on the adjacent face.",
+          "on_mismatch": "nudge2"
+        },
+        {
+          "id": "fasten",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Fasten or brace while holding plumb."
+        },
+        {
+          "id": "final",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Read both faces after fastening.",
+          "on_match": "exit",
+          "on_mismatch": "nudge"
+        },
+        {
+          "id": "nudge2",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Tap toward plumb on this face."
+        },
+        {
+          "id": "see2",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Read again.",
+          "on_match": "fasten",
+          "on_mismatch": "nudge2"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The bubble is centered on two adjacent faces and the member is fastened.",
+          "on_mismatch": "nudge"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.carpentry.check_square.v1",
+      "behavior_id": "trade.carpentry.check_square",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Square a frame by diagonals",
+      "domain": "trade-carpentry",
+      "objective": "Make a rectangular frame square.",
+      "initial_test": "Measure both diagonals with a tape.",
+      "exit_predicate": "The two diagonal measurements match within 1/8 inch and the frame is braced.",
+      "max_iterations": 6,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "measure"
+      ],
+      "steps": [
+        {
+          "id": "measure",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Measure both diagonals."
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "internal",
+          "text": "Compare the two numbers.",
+          "on_match": "brace"
+        },
+        {
+          "id": "rack",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Push the long-diagonal corners toward each other by half the difference."
+        },
+        {
+          "id": "remeasure",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Measure both diagonals again.",
+          "on_mismatch": "rack"
+        },
+        {
+          "id": "brace",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Tack a temporary diagonal brace."
+        },
+        {
+          "id": "final",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Measure again after bracing.",
+          "on_match": "exit",
+          "on_mismatch": "rack"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The two diagonal measurements match within 1/8 inch and the frame is braced.",
+          "on_mismatch": "rack"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.carpentry.countersink_screw.v1",
+      "behavior_id": "trade.carpentry.countersink_screw",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Drive a countersunk screw",
+      "domain": "trade-carpentry",
+      "objective": "Drive a screw so its head sits just below the surface without splitting.",
+      "initial_test": "Look at the stock: near an end or in hardwood?",
+      "exit_predicate": "The screw holds tight, the head sits just below the surface, and the wood is not split.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "flush"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: near an end, or hardwood?",
+          "on_match": "pilot"
+        },
+        {
+          "id": "drive",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Drive the screw with steady pressure, slowing at the end."
+        },
+        {
+          "id": "feel",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Feel the resistance rise as the head seats.",
+          "on_mismatch": "drive"
+        },
+        {
+          "id": "see",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: head just below the surface, no split?",
+          "on_match": "exit",
+          "on_mismatch": "fix"
+        },
+        {
+          "id": "pilot",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Drill a pilot hole and countersink first."
+        },
+        {
+          "id": "see_pilot",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: pilot and countersink cut.",
+          "on_match": "drive",
+          "on_mismatch": "pilot"
+        },
+        {
+          "id": "fix",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Back out; relocate or drill a pilot if split, or drive further if proud."
+        },
+        {
+          "id": "see_fix",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look again.",
+          "on_match": "exit",
+          "on_mismatch": "fix"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The screw holds tight, the head sits just below the surface, and the wood is not split.",
+          "on_mismatch": "drive"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.carpentry.fit_miter.v1",
+      "behavior_id": "trade.carpentry.fit_miter",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Fit a casing miter",
+      "domain": "trade-carpentry",
+      "objective": "Fit two mitered casing pieces to a tight joint.",
+      "initial_test": "Hold the two pieces at the corner and look at the joint.",
+      "exit_predicate": "The miter shows no visible gap from normal viewing distance, and both pieces sit on their reveal lines.",
+      "max_iterations": 6,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "saw",
+        "measure"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Hold the pieces in place; look at the joint."
+        },
+        {
+          "id": "where",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Decide: gap at the heel (outside), at the toe (inside), or even.",
+          "on_match": "nail"
+        },
+        {
+          "id": "trim",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Shave one piece at a slightly adjusted angle, or back-cut the heel."
+        },
+        {
+          "id": "refit",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Hold again and look.",
+          "on_match": "nail",
+          "on_mismatch": "trim"
+        },
+        {
+          "id": "nail",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Glue the miter and nail both pieces on the reveal lines; pin across the joint."
+        },
+        {
+          "id": "final",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look from normal distance: gap visible?",
+          "on_match": "exit",
+          "on_mismatch": "trim"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The miter shows no visible gap from normal viewing distance, and both pieces sit on their reveal lines.",
+          "on_mismatch": "trim"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.carpentry.shim_jamb.v1",
+      "behavior_id": "trade.carpentry.shim_jamb",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Shim a door jamb plumb",
+      "domain": "trade-carpentry",
+      "objective": "Shim a prehung door jamb plumb and straight with an even reveal.",
+      "initial_test": "Hold a level on the hinge-side jamb.",
+      "exit_predicate": "The hinge jamb is plumb and straight, the reveal is even around the door, and the door closes without binding.",
+      "max_iterations": 8,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "level_plumb"
+      ],
+      "steps": [
+        {
+          "id": "read",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Read the level on the hinge jamb."
+        },
+        {
+          "id": "shim",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Slide paired shims behind hinge locations to adjust."
+        },
+        {
+          "id": "see",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Read the level again.",
+          "on_mismatch": "shim"
+        },
+        {
+          "id": "nail",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Nail through the jamb and shims at each hinge."
+        },
+        {
+          "id": "reveal",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the reveal gap around the door: even?",
+          "on_mismatch": "adjust"
+        },
+        {
+          "id": "swing",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Swing and close the door: any rub?",
+          "on_match": "exit",
+          "on_mismatch": "adjust"
+        },
+        {
+          "id": "adjust",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Adjust latch-side shims to even the reveal."
+        },
+        {
+          "id": "see_adj",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the reveal again.",
+          "on_match": "swing",
+          "on_mismatch": "adjust"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The hinge jamb is plumb and straight, the reveal is even around the door, and the door closes without binding.",
+          "on_mismatch": "shim"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.carpentry.layout_studs.v1",
+      "behavior_id": "trade.carpentry.layout_studs",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Lay out studs on center",
+      "domain": "trade-carpentry",
+      "objective": "Mark stud positions at 16 inches on center on the plates.",
+      "initial_test": "Look at the plates: tacked together and aligned?",
+      "exit_predicate": "Every layout mark falls on a 16 in multiple from the start end, with the X side marked, on both plates.",
+      "max_iterations": 3,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "measure"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: top and bottom plates clamped together, ends aligned?",
+          "on_mismatch": "align"
+        },
+        {
+          "id": "hook",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Hook the tape at the start end."
+        },
+        {
+          "id": "see_hook",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: hook seated.",
+          "on_mismatch": "hook"
+        },
+        {
+          "id": "mark",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Mark at 15-1/4 in, then every 16 in marker on the tape, squaring across both plates."
+        },
+        {
+          "id": "check",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Read the tape at several marks: on the 16 in multiples minus 3/4?",
+          "on_mismatch": "mark"
+        },
+        {
+          "id": "xs",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Mark an X on the stud side of each line."
+        },
+        {
+          "id": "see_x",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: every X on the same side of its line.",
+          "on_match": "exit",
+          "on_mismatch": "xs"
+        },
+        {
+          "id": "align",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Align plate ends and clamp."
+        },
+        {
+          "id": "see_align",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: aligned.",
+          "on_match": "hook",
+          "on_mismatch": "align"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Every layout mark falls on a 16 in multiple from the start end, with the X side marked, on both plates.",
+          "on_mismatch": "mark"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.carpentry.pull_bent_nail.v1",
+      "behavior_id": "trade.carpentry.pull_bent_nail",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Pull a bent nail",
+      "domain": "trade-carpentry",
+      "objective": "Remove a bent nail without damaging the surface.",
+      "initial_test": "Look at the bent nail and surrounding surface.",
+      "exit_predicate": "The nail is out and the surface is unmarked (or protected by a scrap block).",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "hammer"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the nail and surface."
+        },
+        {
+          "id": "block",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Place a scrap block under the hammer head to protect the surface."
+        },
+        {
+          "id": "see_block",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: block in place.",
+          "on_mismatch": "block"
+        },
+        {
+          "id": "hook",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Slide the claw under the nail head."
+        },
+        {
+          "id": "feel_grip",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Feel: claw gripping the shank?",
+          "on_mismatch": "hook"
+        },
+        {
+          "id": "lever",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Lever back steadily; add a thicker block as the nail rises."
+        },
+        {
+          "id": "see_out",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: nail out, surface unmarked?",
+          "on_match": "exit",
+          "on_mismatch": "hook"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The nail is out and the surface is unmarked (or protected by a scrap block).",
+          "on_mismatch": "hook"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.carpentry.predrill_hardwood.v1",
+      "behavior_id": "trade.carpentry.predrill_hardwood",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Predrill hardwood",
+      "domain": "trade-carpentry",
+      "objective": "Drill a pilot hole sized so a screw holds without splitting hardwood.",
+      "initial_test": "Look at the screw and pick the pilot bit.",
+      "exit_predicate": "The pilot hole is at depth and on the mark, and the screw drives in fully without splitting.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Hold the bit behind the screw: bit hides the core but not the threads?",
+          "on_mismatch": "choose"
+        },
+        {
+          "id": "drill",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Drill on the mark, square to the surface, to the screw's length."
+        },
+        {
+          "id": "see_depth",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the depth mark or tape flag on the bit.",
+          "on_mismatch": "drill"
+        },
+        {
+          "id": "drive",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Drive the screw."
+        },
+        {
+          "id": "see",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: seated, no split?",
+          "on_match": "exit",
+          "on_mismatch": "choose"
+        },
+        {
+          "id": "choose",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Swap to a bit sized to the screw core."
+        },
+        {
+          "id": "see_choose",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Compare bit to screw again.",
+          "on_match": "drill",
+          "on_mismatch": "choose"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The pilot hole is at depth and on the mark, and the screw drives in fully without splitting.",
+          "on_mismatch": "drill"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.carpentry.set_finish_nail.v1",
+      "behavior_id": "trade.carpentry.set_finish_nail",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Set a finish nail",
+      "domain": "trade-carpentry",
+      "objective": "Sink a finish nail head below the surface for filling.",
+      "initial_test": "Look at the finish nail head.",
+      "exit_predicate": "The nail head is about 1/16 in below the surface with no hammer marks around it.",
+      "max_iterations": 6,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "hammer"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the finish nail head: flush or proud?"
+        },
+        {
+          "id": "place",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Place the nail set tip in the head's dimple, square to the surface."
+        },
+        {
+          "id": "feel_seat",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Feel the set seated without slipping.",
+          "on_mismatch": "place"
+        },
+        {
+          "id": "tap",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Tap the set once or twice."
+        },
+        {
+          "id": "see",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: head about 1/16 in below, no marks?",
+          "on_match": "exit",
+          "on_mismatch": "place"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The nail head is about 1/16 in below the surface with no hammer marks around it.",
+          "on_mismatch": "place"
+        }
+      ]
+    }
+  ]
+}

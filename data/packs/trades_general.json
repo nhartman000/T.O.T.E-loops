@@ -1,0 +1,848 @@
+{
+  "pack_id": "trades_general",
+  "gestalts": [
+    {
+      "gestalt_id": "measure",
+      "glyph": "📏",
+      "lexical_form": "measure",
+      "sense": "linear measurement with tape or rule",
+      "route": "G",
+      "recoverability_note": "Obvious in trade context."
+    },
+    {
+      "gestalt_id": "level_plumb",
+      "glyph": null,
+      "lexical_form": "level / plumb",
+      "sense": "horizontal or vertical within tolerance per a level",
+      "route": "P",
+      "recoverability_note": "Protected acceptance term."
+    },
+    {
+      "gestalt_id": "safety",
+      "glyph": "⚠️",
+      "lexical_form": "safety check",
+      "sense": "condition that must hold before work proceeds",
+      "route": "G",
+      "recoverability_note": "Must name the hazard checked."
+    }
+  ],
+  "loops": [
+    {
+      "loop_id": "trade.general.read_tape.v1",
+      "behavior_id": "trade.general.read_tape",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Read a tape measure",
+      "domain": "trade-general",
+      "objective": "Read a length to the nearest 1/16 inch.",
+      "initial_test": "Look at the tape where it meets the edge.",
+      "exit_predicate": "The reading, spoken as inches and fraction, is the same on a second reading.",
+      "max_iterations": 3,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2061.00 Construction Laborers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "measure"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at where the tape meets the edge."
+        },
+        {
+          "id": "inch",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Read the last full inch number."
+        },
+        {
+          "id": "fraction",
+          "phase": "OPERATE",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Count the marks past the inch by length: longest is 1/2, then 1/4, 1/8, 1/16."
+        },
+        {
+          "id": "say",
+          "phase": "OPERATE",
+          "op": "operative_intent",
+          "sense": "internal",
+          "text": "State the reading as inches plus fraction."
+        },
+        {
+          "id": "write",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Write the number down."
+        },
+        {
+          "id": "reread",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Read the tape again and compare to what was written.",
+          "on_match": "exit",
+          "on_mismatch": "fraction"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The reading, spoken as inches and fraction, is the same on a second reading.",
+          "on_mismatch": "look"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.general.set_ladder.v1",
+      "behavior_id": "trade.general.set_ladder",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Set up an extension ladder",
+      "domain": "trade-general",
+      "objective": "Set an extension ladder at a safe angle and footing.",
+      "initial_test": "Look at the ground and the wall contact point.",
+      "exit_predicate": "The base is 1 ft out for every 4 ft of height, the feet sit level and firm, locks are engaged, and the rails bear evenly.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2061.00 Construction Laborers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "safety"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the ground (level, firm) and the top contact point, and for overhead power lines.",
+          "on_mismatch": "relocate"
+        },
+        {
+          "id": "raise",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Raise the ladder and extend it; engage the rung locks."
+        },
+        {
+          "id": "see_locks",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: both locks hooked over rungs.",
+          "on_mismatch": "raise"
+        },
+        {
+          "id": "angle",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Set the base about 1 ft out per 4 ft of height."
+        },
+        {
+          "id": "check_angle",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Stand at the base, toes on the rails, arms straight: palms reach the rung?",
+          "on_mismatch": "angle"
+        },
+        {
+          "id": "rock",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Push the rails side to side: any rock or sink?",
+          "on_match": "exit",
+          "on_mismatch": "level"
+        },
+        {
+          "id": "level",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Level the feet with a leveler or firm pad."
+        },
+        {
+          "id": "see_level",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Rock-test again.",
+          "on_match": "exit",
+          "on_mismatch": "level"
+        },
+        {
+          "id": "relocate",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Choose another spot away from hazards."
+        },
+        {
+          "id": "see_relocate",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the new spot.",
+          "on_match": "raise",
+          "on_mismatch": "relocate"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The base is 1 ft out for every 4 ft of height, the feet sit level and firm, locks are engaged, and the rails bear evenly.",
+          "on_mismatch": "raise"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.general.lift_load.v1",
+      "behavior_id": "trade.general.lift_load",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Lift a heavy load",
+      "domain": "trade-general",
+      "objective": "Lift and carry a load without back strain.",
+      "initial_test": "Look at the load: size, weight estimate, handholds.",
+      "exit_predicate": "The load is set down at its destination with the back kept neutral throughout.",
+      "max_iterations": 3,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2061.00 Construction Laborers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "safety"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the load and path: clear path, handholds?"
+        },
+        {
+          "id": "heft",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Tip one edge to feel the weight: manageable alone?",
+          "on_mismatch": "get_help"
+        },
+        {
+          "id": "stance",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Feet shoulder-width, close to the load, bend knees, back straight."
+        },
+        {
+          "id": "feel_stance",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Feel: back neutral, load close?",
+          "on_mismatch": "stance"
+        },
+        {
+          "id": "lift",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Lift with the legs, no twisting; turn with the feet."
+        },
+        {
+          "id": "feel_lift",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Feel for strain or slipping grip.",
+          "on_mismatch": "set_down"
+        },
+        {
+          "id": "arrive",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: at the destination, set down with legs.",
+          "on_match": "exit",
+          "on_mismatch": "lift"
+        },
+        {
+          "id": "set_down",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Set the load down with the legs and reassess."
+        },
+        {
+          "id": "see_down",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: load down safely.",
+          "on_match": "heft",
+          "on_mismatch": "set_down"
+        },
+        {
+          "id": "get_help",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Get a second person or a cart."
+        },
+        {
+          "id": "see_help",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: help or cart in place.",
+          "on_match": "stance",
+          "on_mismatch": "get_help"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The load is set down at its destination with the back kept neutral throughout.",
+          "on_mismatch": "stance"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.general.mix_bag_concrete.v1",
+      "behavior_id": "trade.general.mix_bag_concrete",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Mix bagged concrete",
+      "domain": "trade-general",
+      "objective": "Mix bagged concrete to a workable, not soupy, consistency.",
+      "initial_test": "Look at the dry mix in the tub or mixer.",
+      "exit_predicate": "The mix is uniformly wet, holds its shape when a trowel groove is cut, and has no dry pockets.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2061.00 Construction Laborers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "safety"
+      ],
+      "steps": [
+        {
+          "id": "ppe",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Check gloves and eye protection on.",
+          "on_mismatch": "put_on"
+        },
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the dry mix."
+        },
+        {
+          "id": "water",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Add most of the label water amount."
+        },
+        {
+          "id": "see_water",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: water added without flooding the mix?",
+          "on_mismatch": "water"
+        },
+        {
+          "id": "mix",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Mix with a hoe, pulling from the bottom and corners."
+        },
+        {
+          "id": "see_dry",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for dry pockets.",
+          "on_mismatch": "mix"
+        },
+        {
+          "id": "slump",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Cut a groove with the hoe: does it hold its shape?",
+          "on_match": "exit",
+          "on_mismatch": "adjust"
+        },
+        {
+          "id": "adjust",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Add water in small amounts if stiff, or dry mix if soupy."
+        },
+        {
+          "id": "see_adjust",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look after remixing.",
+          "on_match": "slump",
+          "on_mismatch": "adjust"
+        },
+        {
+          "id": "put_on",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Put on gloves and eye protection."
+        },
+        {
+          "id": "see_ppe",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: on.",
+          "on_match": "look",
+          "on_mismatch": "put_on"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The mix is uniformly wet, holds its shape when a trowel groove is cut, and has no dry pockets.",
+          "on_mismatch": "adjust"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.general.snap_chalk_line.v1",
+      "behavior_id": "trade.general.snap_chalk_line",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Snap a chalk line",
+      "domain": "trade-general",
+      "objective": "Mark a straight line between two points.",
+      "initial_test": "Look at both end marks.",
+      "exit_predicate": "A crisp, continuous line runs exactly through both end marks.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2061.00 Construction Laborers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "measure"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at both end marks."
+        },
+        {
+          "id": "hook",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Hook or hold the line on the first mark and pull it taut to the second."
+        },
+        {
+          "id": "see_on",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: string on both marks?",
+          "on_mismatch": "hook"
+        },
+        {
+          "id": "snap",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Lift the string straight up from the middle and release."
+        },
+        {
+          "id": "see_line",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: crisp, continuous, through both marks?",
+          "on_match": "exit",
+          "on_mismatch": "rechalk"
+        },
+        {
+          "id": "rechalk",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Rewind to recharge chalk, then re-hook."
+        },
+        {
+          "id": "see_chalk",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: string coated.",
+          "on_match": "hook",
+          "on_mismatch": "rechalk"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "A crisp, continuous line runs exactly through both end marks.",
+          "on_mismatch": "hook"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.general.remove_cover_plates.v1",
+      "behavior_id": "trade.general.remove_cover_plates",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Remove switch and outlet covers",
+      "domain": "trade-general",
+      "objective": "Remove cover plates before painting and keep their screws.",
+      "initial_test": "Look around the room for cover plates.",
+      "exit_predicate": "Every plate is off, screws are bagged with their plates, and openings are masked.",
+      "max_iterations": 3,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "safety"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look around the room for plates."
+        },
+        {
+          "id": "remove",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Unscrew each plate, keeping fingers off the device terminals."
+        },
+        {
+          "id": "see",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: plate off, device undisturbed?",
+          "on_mismatch": "remove"
+        },
+        {
+          "id": "bag",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Bag the screws with their plate."
+        },
+        {
+          "id": "see_bag",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: screws in the bag.",
+          "on_mismatch": "bag"
+        },
+        {
+          "id": "mask",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Tape over the device face."
+        },
+        {
+          "id": "see_all",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look around: any plates left?",
+          "on_match": "exit",
+          "on_mismatch": "remove"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Every plate is off, screws are bagged with their plates, and openings are masked.",
+          "on_mismatch": "remove"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.general.site_cleanup.v1",
+      "behavior_id": "trade.general.site_cleanup",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "End-of-day cleanup",
+      "domain": "trade-general",
+      "objective": "Leave the work area safe and clean.",
+      "initial_test": "Look over the work area floor, tools, and materials.",
+      "exit_predicate": "Floors are clear of debris and trip hazards, tools are stored, and paint and solvents are sealed.",
+      "max_iterations": 3,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2061.00 Construction Laborers; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "safety"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look over floor, tools, and materials."
+        },
+        {
+          "id": "seal",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Close all paint cans (tap lids down) and solvent containers."
+        },
+        {
+          "id": "see_seal",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: every lid on.",
+          "on_mismatch": "seal"
+        },
+        {
+          "id": "smell",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "olfactory",
+          "text": "Smell for solvent: any open container left?",
+          "on_mismatch": "seal"
+        },
+        {
+          "id": "store",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Store tools and coil cords."
+        },
+        {
+          "id": "see_store",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: tools and cords put away?",
+          "on_mismatch": "store"
+        },
+        {
+          "id": "sweep",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Sweep or vacuum debris."
+        },
+        {
+          "id": "walk",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Walk the area: any trip hazards or debris?",
+          "on_match": "exit",
+          "on_mismatch": "sweep"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Floors are clear of debris and trip hazards, tools are stored, and paint and solvents are sealed.",
+          "on_mismatch": "seal"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.general.apply_adhesive.v1",
+      "behavior_id": "trade.general.apply_adhesive",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Apply construction adhesive",
+      "domain": "trade-general",
+      "objective": "Apply a bead of construction adhesive for a solid bond.",
+      "initial_test": "Look at the surfaces: clean and dry?",
+      "exit_predicate": "A continuous bead is applied as specified and the part is set within the adhesive's open time.",
+      "max_iterations": 3,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: surfaces clean, dry, and above the minimum temperature on the tube?",
+          "on_mismatch": "prep"
+        },
+        {
+          "id": "bead",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Run a 1/4 in bead in a zigzag or continuous line as the label says."
+        },
+        {
+          "id": "see_bead",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: bead continuous with no skips.",
+          "on_mismatch": "bead"
+        },
+        {
+          "id": "set",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Set and press the part within the open time."
+        },
+        {
+          "id": "feel",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Press: full contact, no rocking?",
+          "on_match": "exit",
+          "on_mismatch": "set"
+        },
+        {
+          "id": "prep",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Clean and dry the surfaces."
+        },
+        {
+          "id": "see_prep",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look again.",
+          "on_match": "bead",
+          "on_mismatch": "prep"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "A continuous bead is applied as specified and the part is set within the adhesive's open time.",
+          "on_mismatch": "bead"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.general.check_level_surface.v1",
+      "behavior_id": "trade.general.check_level_surface",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Check a surface for level",
+      "domain": "trade-general",
+      "objective": "Check a horizontal surface for level and flatness.",
+      "initial_test": "Set a long level across the surface.",
+      "exit_predicate": "The bubble is centered in both directions and no gap over 1/8 in shows under a straightedge.",
+      "max_iterations": 6,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2031.00 Carpenters; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "level_plumb"
+      ],
+      "steps": [
+        {
+          "id": "read",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Set a long level on the surface and read the bubble."
+        },
+        {
+          "id": "turn",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Rotate 90 degrees and read again.",
+          "on_mismatch": "shim"
+        },
+        {
+          "id": "gap",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look under the straightedge for gaps.",
+          "on_match": "exit",
+          "on_mismatch": "shim"
+        },
+        {
+          "id": "shim",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Shim or plane the high or low point."
+        },
+        {
+          "id": "reread",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Read the level again.",
+          "on_match": "turn",
+          "on_mismatch": "shim"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The bubble is centered in both directions and no gap over 1/8 in shows under a straightedge.",
+          "on_mismatch": "shim"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2165 @@
+{
+  "pack_id": "trades_painting",
+  "gestalts": [
+    {
+      "gestalt_id": "paint",
+      "glyph": "🎨",
+      "lexical_form": "paint",
+      "sense": "liquid coating applied to a surface",
+      "route": "G",
+      "recoverability_note": "Obvious in trade context."
+    },
+    {
+      "gestalt_id": "brush",
+      "glyph": "🖌️",
+      "lexical_form": "brush",
+      "sense": "hand paint brush",
+      "route": "G",
+      "recoverability_note": "Obvious in painting context."
+    },
+    {
+      "gestalt_id": "roller",
+      "glyph": null,
+      "lexical_form": "paint roller",
+      "sense": "roller frame and cover for applying paint",
+      "route": "L",
+      "recoverability_note": "No unambiguous glyph; preserve lexically."
+    },
+    {
+      "gestalt_id": "coverage",
+      "glyph": null,
+      "lexical_form": "coverage",
+      "sense": "uniform opacity with no substrate or holidays showing",
+      "route": "P",
+      "recoverability_note": "Protected trade acceptance term."
+    },
+    {
+      "gestalt_id": "flush",
+      "glyph": null,
+      "lexical_form": "flush",
+      "sense": "surface of fastener or part even with the surrounding surface",
+      "route": "P",
+      "recoverability_note": "Protected acceptance term."
+    },
+    {
+      "gestalt_id": "safety",
+      "glyph": "⚠️",
+      "lexical_form": "safety check",
+      "sense": "condition that must hold before work proceeds",
+      "route": "G",
+      "recoverability_note": "Must name the hazard checked."
+    }
+  ],
+  "loops": [
+    {
+      "loop_id": "trade.painting.load_brush.v1",
+      "behavior_id": "trade.painting.load_brush",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Load a brush",
+      "domain": "trade-painting",
+      "objective": "Carry a working load of paint on the brush without drips.",
+      "initial_test": "Look at the bristles: dry, or how far paint has been drawn up.",
+      "exit_predicate": "Bristles are loaded one-third to one-half their length and no drop falls when the brush is held level for a moment.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "brush",
+        "paint"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the bristles: dry, or how far paint has been drawn up."
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "kinesthetic",
+          "text": "Compare with the felt memory of a correctly loaded brush for this surface.",
+          "on_match": "exit"
+        },
+        {
+          "id": "intend",
+          "phase": "OPERATE",
+          "op": "operative_intent",
+          "sense": "internal",
+          "text": "Intend to dip only the bristle tips."
+        },
+        {
+          "id": "dip",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Dip bristles one-third to one-half into the paint."
+        },
+        {
+          "id": "see_depth",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Check the dip depth did not reach the ferrule.",
+          "on_mismatch": "wipe_ferrule"
+        },
+        {
+          "id": "tap",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Tap the brush against the inside of the can on both sides; do not wipe on the rim."
+        },
+        {
+          "id": "feel_hold",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Hold the brush level over the can; feel the weight and watch for a forming drop.",
+          "on_match": "exit",
+          "on_mismatch": "intend"
+        },
+        {
+          "id": "wipe_ferrule",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Wipe paint off the ferrule and upper bristles with a rag."
+        },
+        {
+          "id": "see_clean",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: ferrule clean, paint only on the lower bristles.",
+          "on_match": "tap",
+          "on_mismatch": "wipe_ferrule"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Bristles are loaded one-third to one-half their length and no drop falls when the brush is held level for a moment.",
+          "on_mismatch": "intend"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.cut_in_ceiling_line.v1",
+      "behavior_id": "trade.painting.cut_in_ceiling_line",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Cut in a wall-to-ceiling line",
+      "domain": "trade-painting",
+      "objective": "Paint a straight wall edge at the ceiling without touching the ceiling.",
+      "initial_test": "Look along the next arm's-length of wall-ceiling corner: unpainted wall band remaining?",
+      "exit_predicate": "A 2-3 inch band is painted along the whole run, the line is straight to the eye, and the ceiling shows no paint.",
+      "max_iterations": 40,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "brush",
+        "paint",
+        "coverage"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look along the next arm's-length of the corner for unpainted wall band."
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Compare the run against the image of a finished straight band.",
+          "on_match": "exit"
+        },
+        {
+          "id": "load",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Load the brush (see trade.painting.load_brush)."
+        },
+        {
+          "id": "see_load",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Feel a working load with no drop forming.",
+          "on_mismatch": "load"
+        },
+        {
+          "id": "imagine",
+          "phase": "OPERATE",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Picture the stroke path about a quarter inch below the corner."
+        },
+        {
+          "id": "intend",
+          "phase": "OPERATE",
+          "op": "operative_intent",
+          "sense": "internal",
+          "text": "Intend one stroke: place the paint off the line, then drag it up to the line."
+        },
+        {
+          "id": "stroke",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Press the brush flat to fan the bristles and pull along the line with a steady wrist."
+        },
+        {
+          "id": "check_line",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Sight down the fresh edge: straight, and no paint on the ceiling?",
+          "on_mismatch": "wipe_ceiling"
+        },
+        {
+          "id": "check_band",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for a solid band with no holidays.",
+          "on_match": "look",
+          "on_mismatch": "stroke"
+        },
+        {
+          "id": "wipe_ceiling",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Wipe the ceiling mark immediately with a damp rag wrapped on a putty knife."
+        },
+        {
+          "id": "see_ceiling",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: ceiling mark gone.",
+          "on_match": "imagine",
+          "on_mismatch": "wipe_ceiling"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "A 2-3 inch band is painted along the whole run, the line is straight to the eye, and the ceiling shows no paint.",
+          "on_mismatch": "load"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.cut_in_trim_edge.v1",
+      "behavior_id": "trade.painting.cut_in_trim_edge",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Cut in along trim",
+      "domain": "trade-painting",
+      "objective": "Paint the wall edge against casing or baseboard without getting wall color on the trim.",
+      "initial_test": "Look at the wall-trim joint for unpainted wall.",
+      "exit_predicate": "The wall is painted up to the trim along the whole run with no wall color on the trim face.",
+      "max_iterations": 30,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "brush",
+        "paint"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the wall-trim joint for unpainted wall."
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Compare against a clean painted joint.",
+          "on_match": "exit"
+        },
+        {
+          "id": "load",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Load the brush lightly; trim edges need less paint than open wall."
+        },
+        {
+          "id": "see_load",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Feel a light load with no drop.",
+          "on_mismatch": "load"
+        },
+        {
+          "id": "intend",
+          "phase": "OPERATE",
+          "op": "operative_intent",
+          "sense": "internal",
+          "text": "Intend to lead with the long bristle edge toward the trim."
+        },
+        {
+          "id": "stroke",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Draw the brush along the joint, bristle tips just kissing the corner."
+        },
+        {
+          "id": "check_trim",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the trim face: any wall color on it?",
+          "on_mismatch": "wipe_trim"
+        },
+        {
+          "id": "check_band",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for solid wall coverage to the joint.",
+          "on_match": "look",
+          "on_mismatch": "stroke"
+        },
+        {
+          "id": "wipe_trim",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Wipe the trim mark at once with a damp rag."
+        },
+        {
+          "id": "see_trim",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: trim face clean.",
+          "on_match": "check_band",
+          "on_mismatch": "wipe_trim"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The wall is painted up to the trim along the whole run with no wall color on the trim face.",
+          "on_mismatch": "load"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.load_roller.v1",
+      "behavior_id": "trade.painting.load_roller",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Load a roller",
+      "domain": "trade-painting",
+      "objective": "Charge the roller cover evenly without dripping.",
+      "initial_test": "Look at the roller cover: dry, patchy, or evenly wet all around.",
+      "exit_predicate": "The cover is evenly wet around its full circumference and does not drip when lifted.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "roller",
+        "paint"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the cover: dry, patchy, or evenly wet all around."
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Compare with an evenly charged cover.",
+          "on_match": "exit"
+        },
+        {
+          "id": "dip",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Roll into the shallow end of the paint well; do not submerge the frame."
+        },
+        {
+          "id": "see_dip",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Check paint did not reach the frame ends.",
+          "on_mismatch": "dip"
+        },
+        {
+          "id": "roll_grid",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Roll back and forth on the tray ramp or grid several times to spread the load."
+        },
+        {
+          "id": "feel",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Lift the roller; feel for even weight and watch for drips.",
+          "on_match": "exit",
+          "on_mismatch": "roll_grid"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The cover is evenly wet around its full circumference and does not drip when lifted.",
+          "on_mismatch": "dip"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.roll_wall_section.v1",
+      "behavior_id": "trade.painting.roll_wall_section",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Roll a wall section",
+      "domain": "trade-painting",
+      "objective": "Apply an even coat to a roughly 3x4 ft section of wall.",
+      "initial_test": "Look at the section: bare, partly covered, or evenly coated.",
+      "exit_predicate": "The section is evenly coated with no holidays, roller marks, or thick edges, blended into the wet edge.",
+      "max_iterations": 6,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "roller",
+        "paint",
+        "coverage"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the section: bare, partly covered, or evenly coated."
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Compare against the uniform sheen of a finished section.",
+          "on_match": "exit"
+        },
+        {
+          "id": "load",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Load the roller (see trade.painting.load_roller)."
+        },
+        {
+          "id": "see_load",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Feel an evenly charged roller.",
+          "on_mismatch": "load"
+        },
+        {
+          "id": "imagine",
+          "phase": "OPERATE",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Picture a W or M pattern across the section."
+        },
+        {
+          "id": "intend",
+          "phase": "OPERATE",
+          "op": "operative_intent",
+          "sense": "internal",
+          "text": "Intend to lay the paint on in the pattern, then fill in without lifting."
+        },
+        {
+          "id": "lay_on",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Roll the W pattern with light pressure, then fill in the gaps."
+        },
+        {
+          "id": "see_fill",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for gaps or thin spots in the section.",
+          "on_mismatch": "lay_on"
+        },
+        {
+          "id": "back_roll",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Back-roll top to bottom in one direction with a lightly loaded roller, overlapping each pass."
+        },
+        {
+          "id": "inspect",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the section at an angle: even sheen, no ridges, blended into the wet edge?",
+          "on_match": "exit",
+          "on_mismatch": "back_roll"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The section is evenly coated with no holidays, roller marks, or thick edges, blended into the wet edge.",
+          "on_mismatch": "load"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.check_coverage.v1",
+      "behavior_id": "trade.painting.check_coverage",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Inspect for holidays",
+      "domain": "trade-painting",
+      "objective": "Find missed spots and thin areas before paint sets.",
+      "initial_test": "Look at the painted area head-on.",
+      "exit_predicate": "Seen at a low angle with a light, the whole area shows uniform color and sheen with no substrate showing.",
+      "max_iterations": 5,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "coverage",
+        "paint"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the painted area head-on."
+        },
+        {
+          "id": "rake",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Shine a work light across the surface at a low angle and look for sheen changes and shadows."
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Compare against uniform color and sheen.",
+          "on_match": "exit"
+        },
+        {
+          "id": "intend",
+          "phase": "OPERATE",
+          "op": "operative_intent",
+          "sense": "internal",
+          "text": "Intend to touch up only the defective spots while the surrounding paint is still wet."
+        },
+        {
+          "id": "touch",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Apply a light touch-up and feather it into the surrounding paint."
+        },
+        {
+          "id": "reinspect",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look again under raking light.",
+          "on_match": "exit",
+          "on_mismatch": "intend"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Seen at a low angle with a light, the whole area shows uniform color and sheen with no substrate showing.",
+          "on_mismatch": "intend"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.maintain_wet_edge.v1",
+      "behavior_id": "trade.painting.maintain_wet_edge",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Keep a wet edge",
+      "domain": "trade-painting",
+      "objective": "Avoid lap marks by always rolling into still-wet paint.",
+      "initial_test": "Look at and touch-test the edge of the last painted section.",
+      "exit_predicate": "The whole wall is complete with no visible lap marks at section boundaries.",
+      "max_iterations": 20,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "roller",
+        "paint",
+        "coverage"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the edge of the last section: glossy (wet) or dull (setting)?"
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Compare progress against the finished wall.",
+          "on_match": "exit"
+        },
+        {
+          "id": "check_wet",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Is the leading edge still glossy?",
+          "on_mismatch": "finish_panel"
+        },
+        {
+          "id": "roll_next",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Roll the next section, starting in the dry area and rolling back into the wet edge."
+        },
+        {
+          "id": "see_lap",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the joint at an angle for a lap mark.",
+          "on_match": "look",
+          "on_mismatch": "roll_next"
+        },
+        {
+          "id": "finish_panel",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Stop at the nearest natural break (corner or trim), finishing the panel fully."
+        },
+        {
+          "id": "see_break",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: the break is at a corner or trim line, not mid-wall.",
+          "on_match": "look",
+          "on_mismatch": "finish_panel"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The whole wall is complete with no visible lap marks at section boundaries.",
+          "on_mismatch": "check_wet"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.fix_run.v1",
+      "behavior_id": "trade.painting.fix_run",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Fix a run or drip",
+      "domain": "trade-painting",
+      "objective": "Remove a run so it leaves no mark.",
+      "initial_test": "Look for runs, sags, or drips on the painted surface.",
+      "exit_predicate": "No run, sag, or drip bead is visible, and the repaired spot matches the surrounding sheen.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "brush",
+        "paint"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for runs, sags, or drips on the painted surface."
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Compare with a clean surface.",
+          "on_match": "exit"
+        },
+        {
+          "id": "feel_wet",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Lightly touch nearby excess: still wet?",
+          "on_mismatch": "wait_dry"
+        },
+        {
+          "id": "brush_out",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Brush the run out upward with a nearly dry brush, feathering into the surrounding paint."
+        },
+        {
+          "id": "see_fixed",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at an angle: run gone, sheen even?",
+          "on_match": "exit",
+          "on_mismatch": "brush_out"
+        },
+        {
+          "id": "wait_dry",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Leave it; once fully dry, sand the run flat."
+        },
+        {
+          "id": "see_sanded",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Run a hand over it: flat to the touch?",
+          "on_mismatch": "wait_dry"
+        },
+        {
+          "id": "repaint",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Spot-paint the sanded area, feathering the edges."
+        },
+        {
+          "id": "see_repaint",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at an angle: sheen matches.",
+          "on_match": "exit",
+          "on_mismatch": "repaint"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "No run, sag, or drip bead is visible, and the repaired spot matches the surrounding sheen.",
+          "on_mismatch": "look"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.sand_between_coats.v1",
+      "behavior_id": "trade.painting.sand_between_coats",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Sand between coats",
+      "domain": "trade-painting",
+      "objective": "Knock down nibs and raised grain so the next coat lies smooth.",
+      "initial_test": "Run a hand over the dry first coat.",
+      "exit_predicate": "The surface feels smooth to a flat hand and is wiped free of dust.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "paint"
+      ],
+      "steps": [
+        {
+          "id": "feel",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Run a flat hand over the dry coat."
+        },
+        {
+          "id": "dry_test",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Check the paint is dry: no tackiness, no print from a fingernail.",
+          "on_mismatch": "wait"
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "kinesthetic",
+          "text": "Compare with a smooth surface.",
+          "on_match": "wipe"
+        },
+        {
+          "id": "sand",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Sand lightly with fine grit (about 220), following the grain, without cutting through."
+        },
+        {
+          "id": "see_cut",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for cut-through to substrate.",
+          "on_mismatch": "spot_prime"
+        },
+        {
+          "id": "refeel",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Feel again for nibs.",
+          "on_match": "wipe",
+          "on_mismatch": "sand"
+        },
+        {
+          "id": "wipe",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Wipe off dust with a tack cloth or damp rag."
+        },
+        {
+          "id": "see_dust",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look and wipe a fingertip: dust-free?",
+          "on_match": "exit",
+          "on_mismatch": "wipe"
+        },
+        {
+          "id": "wait",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Stop and wait for the recoat time on the label."
+        },
+        {
+          "id": "see_wait",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Retest: tack-free and hard.",
+          "on_match": "compare",
+          "on_mismatch": "wait"
+        },
+        {
+          "id": "spot_prime",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Spot-prime the cut-through area."
+        },
+        {
+          "id": "see_prime",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: spot is covered.",
+          "on_match": "refeel",
+          "on_mismatch": "spot_prime"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The surface feels smooth to a flat hand and is wiped free of dust.",
+          "on_mismatch": "feel"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.fill_nail_holes.v1",
+      "behavior_id": "trade.painting.fill_nail_holes",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Fill nail holes",
+      "domain": "trade-painting",
+      "objective": "Fill nail holes and dents flush before painting.",
+      "initial_test": "Look at the wall under raking light for holes and dents.",
+      "exit_predicate": "Every hole is filled, dry, and sanded flush so that no dimple or ridge shows under raking light.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "flush",
+        "paint"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the wall under raking light for holes and dents."
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Compare against a flawless surface.",
+          "on_match": "exit"
+        },
+        {
+          "id": "fill",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Press spackle into the hole with a putty knife, then scrape the surface clean with the knife held flat."
+        },
+        {
+          "id": "see_fill",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: hole full, little excess around it.",
+          "on_mismatch": "fill"
+        },
+        {
+          "id": "dry",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Let the spackle dry."
+        },
+        {
+          "id": "feel_dry",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Press lightly: firm and not cool to the touch?",
+          "on_mismatch": "dry"
+        },
+        {
+          "id": "sand",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Sand flush with fine paper on a block."
+        },
+        {
+          "id": "feel_flush",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Run a fingertip across: flush?",
+          "on_mismatch": "sand"
+        },
+        {
+          "id": "recheck",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look under raking light for a dimple (shrinkage).",
+          "on_match": "exit",
+          "on_mismatch": "fill"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Every hole is filled, dry, and sanded flush so that no dimple or ridge shows under raking light.",
+          "on_mismatch": "fill"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.caulk_trim_gap.v1",
+      "behavior_id": "trade.painting.caulk_trim_gap",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Caulk a trim gap",
+      "domain": "trade-painting",
+      "objective": "Seal the gap between trim and wall with a clean bead.",
+      "initial_test": "Look along the trim-wall joint for gaps.",
+      "exit_predicate": "The joint is filled continuously with a smooth, concave bead and no smears on the wall or trim.",
+      "max_iterations": 6,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "paint"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look along the trim-wall joint for gaps."
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Compare against a sealed, smooth joint.",
+          "on_match": "exit"
+        },
+        {
+          "id": "cut_tip",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Cut the caulk tip at 45 degrees with an opening smaller than the gap."
+        },
+        {
+          "id": "see_tip",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the tip opening against the gap width.",
+          "on_mismatch": "cut_tip"
+        },
+        {
+          "id": "run_bead",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Squeeze with steady pressure and move the gun at a steady pace, pushing the bead into the joint."
+        },
+        {
+          "id": "see_bead",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for a continuous bead with no skips.",
+          "on_mismatch": "run_bead"
+        },
+        {
+          "id": "tool",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Tool the bead with a wet fingertip in one pass; wipe the finger often."
+        },
+        {
+          "id": "see_tooled",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: smooth concave bead, no smears.",
+          "on_match": "look",
+          "on_mismatch": "clean_smear"
+        },
+        {
+          "id": "clean_smear",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Wipe smears with a damp rag."
+        },
+        {
+          "id": "see_clean",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: smears gone.",
+          "on_match": "look",
+          "on_mismatch": "clean_smear"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The joint is filled continuously with a smooth, concave bead and no smears on the wall or trim.",
+          "on_mismatch": "cut_tip"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.mask_edge.v1",
+      "behavior_id": "trade.painting.mask_edge",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Mask an edge with tape",
+      "domain": "trade-painting",
+      "objective": "Apply painter's tape to protect a surface edge.",
+      "initial_test": "Look at the edge to be protected.",
+      "exit_predicate": "Tape runs straight along the whole edge, fully burnished, with no lifted edges or gaps.",
+      "max_iterations": 6,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "paint"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the edge to be protected: clean and dry?"
+        },
+        {
+          "id": "dust",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Wipe dust off the surface."
+        },
+        {
+          "id": "see_clean",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: surface clean.",
+          "on_mismatch": "dust"
+        },
+        {
+          "id": "lay",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Lay the tape in arm-length runs, aligning its edge exactly to the line."
+        },
+        {
+          "id": "see_line",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Sight down the tape: straight on the line?",
+          "on_mismatch": "relay"
+        },
+        {
+          "id": "burnish",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Burnish the paint-side edge with a putty knife or fingernail."
+        },
+        {
+          "id": "check",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for lifted edges, wrinkles, or gaps at joints.",
+          "on_match": "exit",
+          "on_mismatch": "burnish"
+        },
+        {
+          "id": "relay",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Peel back and relay that run."
+        },
+        {
+          "id": "see_relay",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Sight down again.",
+          "on_match": "burnish",
+          "on_mismatch": "relay"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Tape runs straight along the whole edge, fully burnished, with no lifted edges or gaps.",
+          "on_mismatch": "look"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.protect_floor.v1",
+      "behavior_id": "trade.painting.protect_floor",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Lay drop cloths",
+      "domain": "trade-painting",
+      "objective": "Protect floors and furniture from paint.",
+      "initial_test": "Look at the work area: what surfaces are exposed below the work?",
+      "exit_predicate": "Every surface below and beside the work is covered, with overlapping seams and no trip hazards.",
+      "max_iterations": 4,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "paint",
+        "safety"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at what surfaces are exposed below the work."
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Picture the drip zone for the work planned.",
+          "on_match": "exit"
+        },
+        {
+          "id": "move",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Move furniture to the center of the room."
+        },
+        {
+          "id": "see_moved",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: walls clear by about 3 feet.",
+          "on_mismatch": "move"
+        },
+        {
+          "id": "lay",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Lay canvas drops along the walls, overlapping seams by about a foot."
+        },
+        {
+          "id": "check_trip",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for bunched or curled edges that could trip.",
+          "on_mismatch": "flatten"
+        },
+        {
+          "id": "check_cover",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for exposed floor in the drip zone.",
+          "on_match": "exit",
+          "on_mismatch": "lay"
+        },
+        {
+          "id": "flatten",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Flatten and tape down curled edges."
+        },
+        {
+          "id": "see_flat",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: edges flat.",
+          "on_match": "check_cover",
+          "on_mismatch": "flatten"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Every surface below and beside the work is covered, with overlapping seams and no trip hazards.",
+          "on_mismatch": "lay"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.box_paint.v1",
+      "behavior_id": "trade.painting.box_paint",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Stir and box paint",
+      "domain": "trade-painting",
+      "objective": "Get uniform color and consistency across cans.",
+      "initial_test": "Look into the opened can for settled pigment or a liquid layer.",
+      "exit_predicate": "Paint is uniform in color and consistency from top to bottom, with batches boxed together.",
+      "max_iterations": 3,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "paint"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look into the can for settled pigment or a liquid layer."
+        },
+        {
+          "id": "stir",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Stir from the bottom up with a stick for a couple of minutes."
+        },
+        {
+          "id": "feel_bottom",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Scrape the bottom with the stick: sludge left?",
+          "on_mismatch": "stir"
+        },
+        {
+          "id": "see_uniform",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Lift the stick: color and flow uniform?",
+          "on_mismatch": "stir"
+        },
+        {
+          "id": "count",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Check: more than one can needed for this surface?",
+          "on_match": "box",
+          "on_mismatch": "exit_check"
+        },
+        {
+          "id": "box",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Pour all cans into one bucket and mix together."
+        },
+        {
+          "id": "see_box",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: single uniform batch.",
+          "on_match": "exit_check",
+          "on_mismatch": "box"
+        },
+        {
+          "id": "exit_check",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Final look at the paint surface for uniformity.",
+          "on_match": "exit",
+          "on_mismatch": "stir"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Paint is uniform in color and consistency from top to bottom, with batches boxed together.",
+          "on_mismatch": "stir"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.clean_brush_latex.v1",
+      "behavior_id": "trade.painting.clean_brush_latex",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Clean a latex brush",
+      "domain": "trade-painting",
+      "objective": "Remove all latex paint so the brush keeps its shape.",
+      "initial_test": "Look at the bristles near the ferrule for paint.",
+      "exit_predicate": "Rinse water runs clear, no paint shows when bristles are spread at the ferrule, and the brush is shaped and hung to dry.",
+      "max_iterations": 6,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "brush",
+        "paint"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the bristles near the ferrule for paint."
+        },
+        {
+          "id": "scrape",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Scrape excess back into the can with the edge of a putty knife."
+        },
+        {
+          "id": "see_scrape",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: bulk paint removed.",
+          "on_mismatch": "scrape"
+        },
+        {
+          "id": "wash",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Wash in warm soapy water, working the bristles with fingers or a brush comb."
+        },
+        {
+          "id": "see_water",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Rinse and watch the water: clear?",
+          "on_mismatch": "wash"
+        },
+        {
+          "id": "spread",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Spread the bristles at the ferrule: any paint?",
+          "on_mismatch": "wash"
+        },
+        {
+          "id": "shape",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Spin or shake out water, reshape the bristles, and hang or put back in its keeper."
+        },
+        {
+          "id": "see_shape",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: bristles straight and together.",
+          "on_match": "exit",
+          "on_mismatch": "shape"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Rinse water runs clear, no paint shows when bristles are spread at the ferrule, and the brush is shaped and hung to dry.",
+          "on_mismatch": "wash"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.scrape_loose_paint.v1",
+      "behavior_id": "trade.painting.scrape_loose_paint",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Scrape loose paint",
+      "domain": "trade-painting",
+      "objective": "Remove all loose and flaking paint before priming.",
+      "initial_test": "Look at the surface for peeling, flaking, or blistered paint.",
+      "exit_predicate": "No paint lifts when scraped firmly, and edges of remaining paint are feathered.",
+      "max_iterations": 8,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "paint",
+        "safety"
+      ],
+      "steps": [
+        {
+          "id": "safety",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Check whether the paint could be pre-1978 lead paint (building age or test kit).",
+          "on_mismatch": "stop_lead"
+        },
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the surface for peeling, flaking, or blistering."
+        },
+        {
+          "id": "scrape",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Scrape with a sharp scraper pulled toward you at a low angle, firm pressure."
+        },
+        {
+          "id": "feel_hold",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Scrape the area again: does anything still lift?",
+          "on_mismatch": "scrape"
+        },
+        {
+          "id": "feather",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Sand the edges of the remaining paint to feather them."
+        },
+        {
+          "id": "feel_edge",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Run a hand across the edges: smooth transition?",
+          "on_match": "exit",
+          "on_mismatch": "feather"
+        },
+        {
+          "id": "stop_lead",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Stop dry scraping; switch to lead-safe work practices (RRP) or test before continuing."
+        },
+        {
+          "id": "see_lead",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Confirm lead-safe setup or a negative test is in place.",
+          "on_match": "look",
+          "on_mismatch": "stop_lead"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "No paint lifts when scraped firmly, and edges of remaining paint are feathered.",
+          "on_mismatch": "scrape"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.spot_prime.v1",
+      "behavior_id": "trade.painting.spot_prime",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Spot-prime repairs",
+      "domain": "trade-painting",
+      "objective": "Seal patches and bare spots so the topcoat does not flash.",
+      "initial_test": "Look for patches, bare wood, or stains.",
+      "exit_predicate": "Every patch and bare spot has a dry primer coat extending slightly past its edges.",
+      "max_iterations": 3,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "paint",
+        "brush"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for patches, bare wood, or stains."
+        },
+        {
+          "id": "compare",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Compare with a uniformly sealed surface.",
+          "on_match": "exit"
+        },
+        {
+          "id": "prime",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Brush primer onto each spot, extending slightly beyond its edges."
+        },
+        {
+          "id": "see_covered",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: every spot covered?",
+          "on_mismatch": "prime"
+        },
+        {
+          "id": "dry",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Let the primer dry per the label."
+        },
+        {
+          "id": "feel_dry",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Touch-test: dry?",
+          "on_match": "look",
+          "on_mismatch": "dry"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Every patch and bare spot has a dry primer coat extending slightly past its edges.",
+          "on_mismatch": "prime"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.paint_panel_door.v1",
+      "behavior_id": "trade.painting.paint_panel_door",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Paint a panel door",
+      "domain": "trade-painting",
+      "objective": "Paint a six-panel door in the order that avoids lap marks.",
+      "initial_test": "Look at the door: hardware removed and surface prepped?",
+      "exit_predicate": "The whole door face is evenly coated, brushed out in the direction of each part's grain, with no runs at panel edges.",
+      "max_iterations": 3,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "brush",
+        "paint",
+        "coverage"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the door: hardware off, surface clean and sanded?",
+          "on_mismatch": "prep"
+        },
+        {
+          "id": "imagine",
+          "phase": "OPERATE",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Picture the order: panel moldings, panels, center stile, rails, outer stiles, edges."
+        },
+        {
+          "id": "panels",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Paint the panel moldings and panels first."
+        },
+        {
+          "id": "see_panels",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at panel corners for pooled paint.",
+          "on_mismatch": "brush_pool"
+        },
+        {
+          "id": "rails_stiles",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Paint the center stile, then rails, then outer stiles, brushing out along each piece's length."
+        },
+        {
+          "id": "see_all",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the whole face at an angle for runs and holidays.",
+          "on_match": "exit",
+          "on_mismatch": "rails_stiles"
+        },
+        {
+          "id": "brush_pool",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Brush out pooled paint from the corners with a nearly dry brush."
+        },
+        {
+          "id": "see_pool",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: corners clean.",
+          "on_match": "rails_stiles",
+          "on_mismatch": "brush_pool"
+        },
+        {
+          "id": "prep",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Remove the hardware and scuff-sand the door."
+        },
+        {
+          "id": "see_prep",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: ready.",
+          "on_match": "imagine",
+          "on_mismatch": "prep"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The whole door face is evenly coated, brushed out in the direction of each part's grain, with no runs at panel edges.",
+          "on_mismatch": "imagine"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.paint_baseboard.v1",
+      "behavior_id": "trade.painting.paint_baseboard",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Paint baseboard",
+      "domain": "trade-painting",
+      "objective": "Paint baseboard without picking up floor dirt or marking the floor or wall.",
+      "initial_test": "Look along the baseboard: masked and dust-free?",
+      "exit_predicate": "The baseboard face and top edge are evenly coated with no marks on floor or wall and no picked-up grit.",
+      "max_iterations": 20,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "brush",
+        "paint"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look along the baseboard: floor masked, dust vacuumed?",
+          "on_mismatch": "prep"
+        },
+        {
+          "id": "load",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Load the brush lightly."
+        },
+        {
+          "id": "see_load",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Feel a light load.",
+          "on_mismatch": "load"
+        },
+        {
+          "id": "stroke",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Paint the top edge, then the face, in long strokes along the board."
+        },
+        {
+          "id": "see_grit",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for grit or hairs in the wet paint.",
+          "on_mismatch": "pick"
+        },
+        {
+          "id": "see_run",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look along the run for coverage.",
+          "on_match": "exit",
+          "on_mismatch": "load"
+        },
+        {
+          "id": "pick",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Pick out grit with the brush tip and brush smooth."
+        },
+        {
+          "id": "see_pick",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: clean.",
+          "on_match": "see_run",
+          "on_mismatch": "pick"
+        },
+        {
+          "id": "prep",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Vacuum along the board and tape the floor."
+        },
+        {
+          "id": "see_prep",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: prepped.",
+          "on_match": "load",
+          "on_mismatch": "prep"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The baseboard face and top edge are evenly coated with no marks on floor or wall and no picked-up grit.",
+          "on_mismatch": "load"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.recoat_ready.v1",
+      "behavior_id": "trade.painting.recoat_ready",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Test readiness to recoat",
+      "domain": "trade-painting",
+      "objective": "Decide when the previous coat can take the next coat.",
+      "initial_test": "Read the recoat time on the label and note the time the last coat finished.",
+      "exit_predicate": "The label's recoat time has passed and the coat is tack-free and does not mark under light pressure.",
+      "max_iterations": 6,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "paint"
+      ],
+      "steps": [
+        {
+          "id": "read",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Read the recoat time on the label and the time the last coat finished."
+        },
+        {
+          "id": "model",
+          "phase": "TEST",
+          "op": "internal_model",
+          "sense": "internal",
+          "text": "Adjust expectation for humidity and cold, which lengthen drying."
+        },
+        {
+          "id": "time",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "instrument",
+          "text": "Check the clock: has the recoat time passed?",
+          "on_mismatch": "wait"
+        },
+        {
+          "id": "touch",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Touch an inconspicuous spot: tacky, or does a light fingernail leave a mark?",
+          "on_match": "exit",
+          "on_mismatch": "wait"
+        },
+        {
+          "id": "wait",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Wait, improving airflow if possible."
+        },
+        {
+          "id": "recheck",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "instrument",
+          "text": "Check the clock again.",
+          "on_match": "touch",
+          "on_mismatch": "wait"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The label's recoat time has passed and the coat is tack-free and does not mark under light pressure.",
+          "on_mismatch": "wait"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.clean_roller_cover.v1",
+      "behavior_id": "trade.painting.clean_roller_cover",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Clean a roller cover",
+      "domain": "trade-painting",
+      "objective": "Clean a latex roller cover for reuse.",
+      "initial_test": "Look at the nap for paint.",
+      "exit_predicate": "Water squeezed from the nap runs clear and the cover is stood on end to dry.",
+      "max_iterations": 6,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "roller"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the nap for paint."
+        },
+        {
+          "id": "squeeze",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Scrape paint out with the curved edge of a 5-in-1 tool back into the can."
+        },
+        {
+          "id": "see_bulk",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: most paint removed.",
+          "on_mismatch": "squeeze"
+        },
+        {
+          "id": "rinse",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Rinse under running water, squeezing the nap repeatedly."
+        },
+        {
+          "id": "see_clear",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Squeeze and watch: water clear?",
+          "on_mismatch": "rinse"
+        },
+        {
+          "id": "stand",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Spin out water and stand the cover on end to dry."
+        },
+        {
+          "id": "see_stand",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look: standing on end, nap not crushed.",
+          "on_match": "exit",
+          "on_mismatch": "stand"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "Water squeezed from the nap runs clear and the cover is stood on end to dry.",
+          "on_mismatch": "rinse"
+        }
+      ]
+    },
+    {
+      "loop_id": "trade.painting.feather_touch_up.v1",
+      "behavior_id": "trade.painting.feather_touch_up",
+      "version": 1,
+      "status": "CANDIDATE",
+      "supersedes": null,
+      "name": "Feather a touch-up",
+      "domain": "trade-painting",
+      "objective": "Touch up a spot on a dry wall so it doesn't show.",
+      "initial_test": "Look at the damaged or dirty spot under normal room light.",
+      "exit_predicate": "The touched-up spot cannot be picked out from normal viewing distance under normal light.",
+      "max_iterations": 3,
+      "epistemic_status": "EXPERIMENTAL",
+      "source_basis": "O*NET-SOC 47-2141.00 Painters, Construction and Maintenance; occupation reference only. Steps machine-drafted by Claude (claude-opus-5-5) on 2026-09-29; not observed or verified.",
+      "verification_tier": "MACHINE_DRAFTED",
+      "gestalts": [
+        "brush",
+        "paint",
+        "coverage"
+      ],
+      "steps": [
+        {
+          "id": "look",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look at the spot under normal room light."
+        },
+        {
+          "id": "imagine",
+          "phase": "OPERATE",
+          "op": "internal_model",
+          "sense": "visual",
+          "text": "Picture the smallest patch that covers the defect."
+        },
+        {
+          "id": "load",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Load a nearly dry brush or small roller with the same paint."
+        },
+        {
+          "id": "see_load",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "kinesthetic",
+          "text": "Feel a very light load.",
+          "on_mismatch": "load"
+        },
+        {
+          "id": "dab",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Apply to the spot, then feather outward with lighter strokes."
+        },
+        {
+          "id": "see_wet",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "Look for a thick edge.",
+          "on_mismatch": "dab"
+        },
+        {
+          "id": "dry",
+          "phase": "OPERATE",
+          "op": "execute",
+          "sense": "kinesthetic",
+          "text": "Let it dry fully (touch-ups often look different wet)."
+        },
+        {
+          "id": "view",
+          "phase": "TEST",
+          "op": "external_observe",
+          "sense": "visual",
+          "text": "View from normal distance under normal light: can the spot be picked out?",
+          "on_match": "exit",
+          "on_mismatch": "imagine"
+        },
+        {
+          "id": "exit",
+          "phase": "EXIT",
+          "op": null,
+          "sense": "none",
+          "text": "The touched-up spot cannot be picked out from normal viewing distance under normal light.",
+          "on_mismatch": "imagine"
+        }
+      ]
+    }
+  ]
+}
