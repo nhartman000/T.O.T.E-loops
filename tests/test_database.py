@@ -29,9 +29,28 @@ class DatabaseTests(unittest.TestCase):
             conn.close()
 
     def test_counts_match_seed_and_foreign_keys(self):
-        self.assertEqual(self.query("SELECT COUNT(*) FROM modality_operators")[0][0], 4)
+        self.assertEqual(self.query("SELECT COUNT(*) FROM modality_operators")[0][0], 13)
         self.assertEqual(self.query("SELECT COUNT(*) FROM tote_loops")[0][0], len(self.seed["loops"]))
         self.assertEqual(self.query("PRAGMA foreign_key_check"), [])
+
+    def test_canonical_annotation_operators(self):
+        expected = {
+            "internal_sensation": "🫀",
+            "first_person": "👤",
+            "second_person": "👥️",
+            "third_person_narrative": "🗣",
+            "past_tense": "⏪️",
+            "present_tense": "🎁",
+            "future_tense": "⏩️",
+            "internal_auditory": "👂",
+            "external_auditory": "👂👂",
+        }
+        rows = dict(self.query("SELECT operator_id, symbol FROM modality_operators"))
+        for operator_id, symbol in expected.items():
+            self.assertEqual(rows.get(operator_id), symbol)
+        definitions = dict(self.query("SELECT operator_id, definition FROM modality_operators"))
+        self.assertIn("surfaced working commentary", definitions["internal_auditory"])
+        self.assertIn("every user-facing response", definitions["external_auditory"])
 
     def test_original_seed_loops_unchanged(self):
         # The ten schema-0.1.0 loops keep their six template steps and become CURRENT v1.
