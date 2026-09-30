@@ -41,3 +41,8 @@ evaluation.
 This repository is a seed ontology and reference dataset. Entries describe
 admissible control-loop structures; they are not evidence that a specific AI
 system executed those loops successfully.
+
+## License
+
+MIT — see [LICENSE](LICENSE). No restriction on commercial use; the intent is
+wide adoption.
