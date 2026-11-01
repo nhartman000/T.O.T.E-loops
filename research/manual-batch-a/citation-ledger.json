@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://docs.qgis.org/3.40/en/docs/training_manual/forestry/map_georeferencing.html",
+      "title": "14.2. Lesson: Georeferencing a Map — QGIS Documentation  documentation",
+      "accessed": "2026-11-01",
+      "quotes": [
+        {
+          "text": "The error in pixels\ncan be seen also in the GCP table in the dX[pixels] and dY[pixels] columns.",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "The error in pixels should not be higher than\n10 pixels.",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "If it is, you should review the points you have digitized and the\ncoordinates you have entered to find what the problem is.",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "set the map transparency to 50%\nand compare it to the aerial image.",
+          "added": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://docs.qgis.org/3.40/en/docs/user_manual/plugins/core_plugins/plugins_topology_checker.html",
+      "title": "25.2.5. Topology Checker Plugin — QGIS Documentation  documentation",
+      "accessed": "2026-11-01",
+      "quotes": [
+        {
+          "text": "Must not overlap : Adjacent polygons should not share common area.",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "Validate All : applies the active rules to all the features\nof the involved layer(s)",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "Errors will show up in the table of results containing type of error, layer and feature ID.",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "where you can use QGIS digitizing tools to fix the error.",
+          "added": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc31.htm",
+      "title": "6.3.1. What are Control\nCharts?",
+      "accessed": "2026-11-01",
+      "quotes": [
+        {
+          "text": "If a data point falls outside the control limits, we assume\nthat the process is probably out of control",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "an\ninvestigation is warranted to find and eliminate the cause or\ncauses.",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "Control charts are used to routinely monitor quality.",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "\"in control\" implies that all points are between the\ncontrol limits and they form a random pattern.",
+          "added": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://www.itl.nist.gov/div898/handbook/pmc/section1/pmc15.htm",
+      "title": "6.1.5. What to do if \"In Control\" but Unacceptable?",
+      "accessed": "2026-11-01",
+      "quotes": [
+        {
+          "text": "the average level is too high or too low or\nthe variability is unacceptable?",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "experiments calibration re-analysis of historical database can be initiated to put the process on target or reduce the variability.",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "the process must be stable before it can be centered at a\ntarget value or its overall variation can be reduced.",
+          "added": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://www.nps.gov/subjects/museums/upload/MHI_Ch4_Environment.pdf",
+      "title": "NPS Museum Handbook Part I, Chapter 4: Museum Collections Environment (2016)",
+      "accessed": "2026-11-01",
+      "quotes": [
+        {
+          "text": "if temperature and RH levels are stable and within the \nrecommended set point and permissible range",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "Assemble a qualified team to carefully plan and implement a climate \ncontrol strategy.",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "Implement non-mechanical measures to control climate when \nand wherever feasible",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "Monitor regularly to insure that these controls are effective and adjust \naccordingly.",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "gather baseline and ongoing lighting information",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "Lower light intensity and duration in exhibit and storage areas.",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "Monitor and document light levels before \nand after taking any action to be sure that your changes have been \neffective.",
+          "added": "2026-11-01"
+        },
+        {
+          "text": "be sure that light levels are at required levels and that UV \nblocking materials are still effective, that there is no IR and \nthat visible light is appropriately controlled",
+          "added": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://www.nist.gov/open/license",
+      "title": "Copyright, Fair Use, and Licensing Statements for SRD, Data, Software, and Technical Series Publications | NIST",
+      "accessed": "2026-11-01",
+      "quotes": [
+        {
+          "text": "Data/works created by NIST employees that are not covered by the Standard Reference Data Act",
+          "added": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "url": "https://www.nps.gov/aboutus/disclaimer.htm",
+      "title": "Disclaimer (U.S. National Park Service)",
+      "accessed": "2026-11-01",
+      "quotes": [
+        {
+          "text": "material created by the National Park Service and presented on this website, unless otherwise indicated, is generally considered in the public domain.",
+          "added": "2026-11-01"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://docs.qgis.org/3.40/en/docs/about/license/index.html",
+      "title": "Complying with Licenses — QGIS Documentation  documentation",
+      "accessed": "2026-11-01",
+      "quotes": [
+        {
+          "text": "Version 1.3 or any later version.",
+          "added": "2026-11-01"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "chunk-0000",
+      "end": 849,
+      "line_start": 1,
+      "start": 0,
+      "text": "REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN\n25.2.5. Topology Checker Plugin — QGIS Documentation documentation\nhttps://docs.qgis.org/3.40/en/docs/user_manual/plugins/core_plugins/plugins_topology_checker.html\nPublisher: QGIS Project\nSections: User Manual §25.2.5, polygon rules and error validation\nRights: GNU Free Documentation License 1.3 or later; short research excerpts with attribution; see QGIS licensing snapshot.\nChange notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.\nMust not overlap : Adjacent polygons should not share common area.\nValidate All : applies the active rules to all the features of the involved layer(s)\nErrors will show up in the table of results containing type of error, layer and feature ID.\nwhere you can use QGIS digitizing tools to fix the error.\n"
+    }
+  ],
+  "format_version": "1.0",
+  "raw_sha256": "f6cf33fca30522401c2adc0834a80260393b202bfe9fa73d5600e628244fa55f",
+  "snapshot_sha256": "dee7073aaac3f76d128153a25ff81c664713d8333678e4bc477193c0eee20efe",
+  "source": {
+    "access": "public",
+    "domain": [
+      "GEOSPATIAL_CARTOGRAPHY"
+    ],
+    "edition": "QGIS 3.40 documentation",
+    "excerpt_derivation": {
+      "excerpts": [
+        {
+          "private_line_start": 33,
+          "private_locator": "snapshots/qgis-topology.txt",
+          "private_text_end": 4310,
+          "private_text_sha256": "2a08b428f504bfcc0ea66a941bdfed345415603aa9542fcccdf1670537f94320",
+          "private_text_start": 4244,
+          "quote": "Must not overlap : Adjacent polygons should not share common area."
+        },
+        {
+          "private_line_start": 37,
+          "private_locator": "snapshots/qgis-topology.txt",
+          "private_text_end": 4977,
+          "private_text_sha256": "2a08b428f504bfcc0ea66a941bdfed345415603aa9542fcccdf1670537f94320",
+          "private_text_start": 4893,
+          "quote": "Validate All : applies the active rules to all the features of the involved layer(s)"
+        },
+        {
+          "private_line_start": 40,
+          "private_locator": "snapshots/qgis-topology.txt",
+          "private_text_end": 5276,
+          "private_text_sha256": "2a08b428f504bfcc0ea66a941bdfed345415603aa9542fcccdf1670537f94320",
+          "private_text_start": 5185,
+          "quote": "Errors will show up in the table of results containing type of error, layer and feature ID."
+        },
+        {
+          "private_line_start": 43,
+          "private_locator": "snapshots/qgis-topology.txt",
+          "private_text_end": 5561,
+          "private_text_sha256": "2a08b428f504bfcc0ea66a941bdfed345415603aa9542fcccdf1670537f94320",
+          "private_text_start": 5504,
+          "quote": "where you can use QGIS digitizing tools to fix the error."
+        }
+      ],
+      "method": "Minimal selected text, whitespace collapsed; no ellipses inside quotations. Authored header and blank-line separators added. No full manual was scanned by this admission run."
+    },
+    "format": "text",
+    "license": "GNU Free Documentation License 1.3 or later; short research excerpts with attribution; see QGIS licensing snapshot.",
+    "original_retrieval": {
+      "note": "Research retrieval hash, not independently authenticated publisher identity. Original response not bundled; A retained extracted text only. NPS PDF extraction/page labels were reviewed separately.",
+      "response_retained_privately": false,
+      "response_sha256": "0b5ff564e1c224c19a2d0fb265871e1cc4b7c8eda5be311f51fed4646ea96d44",
+      "retrieved_at": "2026-11-01T04:25:22.879367+00:00",
+      "text_sha256": "2a08b428f504bfcc0ea66a941bdfed345415603aa9542fcccdf1670537f94320"
+    },
+    "profession": [
+      "Cartographer / spatial data quality analyst"
+    ],
+    "publisher": "QGIS Project",
+    "representation": "reviewed_evidence_excerpt",
+    "review_needs": [
+      "No execution authority; domain professional approval required before use"
+    ],
+    "rights_notice": "See data/THIRD_PARTY_NOTICES.txt and data/licenses/. This excerpt selection is changed/abridged from the linked original; no endorsement.",
+    "section": [
+      "User Manual §25.2.5, polygon rules and error validation"
+    ],
+    "source_id": "manual-qgis-topology-excerpt-v1",
+    "title": "25.2.5. Topology Checker Plugin — QGIS Documentation  documentation",
+    "url": "https://docs.qgis.org/3.40/en/docs/user_manual/plugins/core_plugins/plugins_topology_checker.html"
+  }
+}

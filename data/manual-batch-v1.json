@@ -1,0 +1,1379 @@
+{
+  "batch_id": "manuals-2026-11-01-v1",
+  "candidates": [
+    {
+      "evidence": [
+        {
+          "chunk_id": "chunk-0000",
+          "end": 645,
+          "quote": "The error in pixels can be seen also in the GCP table in the dX[pixels] and dY[pixels] columns.",
+          "snapshot_sha256": "e99e6890239e3b9f50b0f351967b15bca7b854a8256dfcdb155c0bbdc349a1c8",
+          "source_id": "manual-qgis-georef-excerpt-v1",
+          "start": 550
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 702,
+          "quote": "The error in pixels should not be higher than 10 pixels.",
+          "snapshot_sha256": "e99e6890239e3b9f50b0f351967b15bca7b854a8256dfcdb155c0bbdc349a1c8",
+          "source_id": "manual-qgis-georef-excerpt-v1",
+          "start": 646
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 826,
+          "quote": "If it is, you should review the points you have digitized and the coordinates you have entered to find what the problem is.",
+          "snapshot_sha256": "e99e6890239e3b9f50b0f351967b15bca7b854a8256dfcdb155c0bbdc349a1c8",
+          "source_id": "manual-qgis-georef-excerpt-v1",
+          "start": 703
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 894,
+          "quote": "set the map transparency to 50% and compare it to the aerial image.",
+          "snapshot_sha256": "e99e6890239e3b9f50b0f351967b15bca7b854a8256dfcdb155c0bbdc349a1c8",
+          "source_id": "manual-qgis-georef-excerpt-v1",
+          "start": 827
+        }
+      ],
+      "loop": {
+        "domain": "GEOSPATIAL_CARTOGRAPHY",
+        "epistemic_status": "DERIVED",
+        "exit_predicate": "After correction, every reviewed absolute dX and dY is at most 10 pixels, control-point identities and CRS are confirmed, and a cartographer accepts the overlay comparison; not a universal mapping accuracy claim.",
+        "gestalts": [
+          "provenance",
+          "exit_predicate"
+        ],
+        "initial_test": "Inspect the ground-control-point table dX[pixels] and dY[pixels] errors and review digitized points and entered coordinates when the exercise error exceeds 10 pixels.",
+        "loop_id": "A-GEO-001",
+        "max_iterations": 3,
+        "name": "Review forestry map ground-control residuals",
+        "objective": "Prepare a legacy forestry map registration for reviewer acceptance."
+      },
+      "procedure": {
+        "exit": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "After correction, every reviewed absolute dX and dY is at most 10 pixels, control-point identities and CRS are confirmed, and a cartographer accepts the overlay comparison; not a universal mapping accuracy claim."
+        },
+        "fresh_retest": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Recompute the control-point residual table from the changed working copy and compare the registered map with its reference aerial image; do not reuse the old residuals."
+        },
+        "initial_test": {
+          "basis": "source_fact",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Inspect the ground-control-point table dX[pixels] and dY[pixels] errors and review digitized points and entered coordinates when the exercise error exceeds 10 pixels."
+        },
+        "iteration_policy": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "At most 3 operation/fresh-retest cycles; initial passing test may exit. Entry prerequisites and detailed test profile (authored): Read fresh dX[pixels] and dY[pixels] for the exercise map control points; flag residuals exceeding the exercise-specific 10-pixel criterion and check coordinate transcription. Exit only when the fresh retest satisfies the exit predicate; preserve the before/after evidence. Stop unresolved on missing evidence, missing authorization, no measurable progress, oscillation, or exhausted author-policy iteration budget. The 10-pixel advice is from this Finland forestry training exercise only; the absolute component interpretation and mandatory overlay sign-off are conservative author derivations. This is an author-derived research specification, not a published TOTE loop, executed procedure, certified result, or professional authorization. max_iterations is author policy, not a manual requirement. Test windows, review criteria, progress checks and closure logic are derived unless explicitly quoted. 10 pixels belongs only to the Finland forestry exercise. Absolute component interpretation and overlay sign-off are authored, not general cartographic accuracy."
+        },
+        "operation": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Propose one correction to a demonstrably mis-digitized control point or transcribed coordinate, for a cartographer to approve on a working copy; preserve the reference values and prior residuals."
+        }
+      },
+      "review": {
+        "license": "Only minimal attributed evidence excerpts retained; no raw manuals/PDFs/images published. GNU Free Documentation License 1.3 or later; short research excerpts with attribution; see QGIS licensing snapshot. See data/THIRD_PARTY_NOTICES.txt and data/licenses/.",
+        "notes": "Approved for database inclusion as a DERIVED SPECIFICATION only. 10 pixels belongs only to the Finland forestry exercise. Absolute component interpretation and overlay sign-off are authored, not general cartographic accuracy.",
+        "reviewer": "Integration reviewer (separate from batch A/B research agents)",
+        "safety": "Not professional approval, safety certification, operating authorization, or observed success. Cartographer must approve the coordinate system, reference imagery, corrections and acceptance criteria before use; unsuitable as cadastral/navigation assurance.",
+        "status": "approved"
+      }
+    },
+    {
+      "evidence": [
+        {
+          "chunk_id": "chunk-0000",
+          "end": 613,
+          "quote": "Must not overlap : Adjacent polygons should not share common area.",
+          "snapshot_sha256": "dee7073aaac3f76d128153a25ff81c664713d8333678e4bc477193c0eee20efe",
+          "source_id": "manual-qgis-topology-excerpt-v1",
+          "start": 547
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 698,
+          "quote": "Validate All : applies the active rules to all the features of the involved layer(s)",
+          "snapshot_sha256": "dee7073aaac3f76d128153a25ff81c664713d8333678e4bc477193c0eee20efe",
+          "source_id": "manual-qgis-topology-excerpt-v1",
+          "start": 614
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 790,
+          "quote": "Errors will show up in the table of results containing type of error, layer and feature ID.",
+          "snapshot_sha256": "dee7073aaac3f76d128153a25ff81c664713d8333678e4bc477193c0eee20efe",
+          "source_id": "manual-qgis-topology-excerpt-v1",
+          "start": 699
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 848,
+          "quote": "where you can use QGIS digitizing tools to fix the error.",
+          "snapshot_sha256": "dee7073aaac3f76d128153a25ff81c664713d8333678e4bc477193c0eee20efe",
+          "source_id": "manual-qgis-topology-excerpt-v1",
+          "start": 791
+        }
+      ],
+      "loop": {
+        "domain": "GEOSPATIAL_CARTOGRAPHY",
+        "epistemic_status": "DERIVED",
+        "exit_predicate": "A fresh full-layer validation reports zero overlaps under the same approved rule, and a cartographer confirms the corrections preserve the intended boundaries; no claim of legal boundary accuracy.",
+        "gestalts": [
+          "provenance",
+          "exit_predicate"
+        ],
+        "initial_test": "Apply the active Must not overlap rule to all features and inspect errors by type, layer and feature ID.",
+        "loop_id": "A-GEO-002",
+        "max_iterations": 3,
+        "name": "Resolve reviewed polygon overlap findings",
+        "objective": "Bring a thematic polygon coverage into conformance with an approved no-overlap rule without erasing legitimate features."
+      },
+      "procedure": {
+        "exit": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "A fresh full-layer validation reports zero overlaps under the same approved rule, and a cartographer confirms the corrections preserve the intended boundaries; no claim of legal boundary accuracy."
+        },
+        "fresh_retest": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Apply the same active rule to all features again after the approved edit and review the new error table, including previously edited neighbors."
+        },
+        "initial_test": {
+          "basis": "source_fact",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Apply the active Must not overlap rule to all features and inspect errors by type, layer and feature ID."
+        },
+        "iteration_policy": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "At most 3 operation/fresh-retest cycles; initial passing test may exit. Entry prerequisites and detailed test profile (authored): Run full-layer topology validation using the reviewer-approved Must not overlap rule; retain feature IDs and inspect flagged common areas against the authoritative reference. Exit only when the fresh retest satisfies the exit predicate; preserve the before/after evidence. Stop unresolved on missing evidence, missing authorization, no measurable progress, oscillation, or exhausted author-policy iteration budget. Zero-error termination and reviewer sign-off are derived; a clean checker output is not proof of geographic truth. This is an author-derived research specification, not a published TOTE loop, executed procedure, certified result, or professional authorization. max_iterations is author policy, not a manual requirement. Test windows, review criteria, progress checks and closure logic are derived unless explicitly quoted. Full-layer validation and rule meaning are supported. Boundary correction remains qualified review, not automatic deletion or cadastral certification."
+        },
+        "operation": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "For one confirmed erroneous overlap, propose a boundary edit on a copy using the authoritative map evidence; a cartographer must approve edits, not automatic deletion of every flagged feature."
+        }
+      },
+      "review": {
+        "license": "Only minimal attributed evidence excerpts retained; no raw manuals/PDFs/images published. GNU Free Documentation License 1.3 or later; short research excerpts with attribution; see QGIS licensing snapshot. See data/THIRD_PARTY_NOTICES.txt and data/licenses/.",
+        "notes": "Approved for database inclusion as a DERIVED SPECIFICATION only. Full-layer validation and rule meaning are supported. Boundary correction remains qualified review, not automatic deletion or cadastral certification.",
+        "reviewer": "Integration reviewer (separate from batch A/B research agents)",
+        "safety": "Not professional approval, safety certification, operating authorization, or observed success. Spatial-data custodian must approve applicable topology rules and authoritative boundaries; do not modify cadastral or other legally consequential data without qualified authorization.",
+        "status": "approved"
+      }
+    },
+    {
+      "evidence": [
+        {
+          "chunk_id": "chunk-0000",
+          "end": 749,
+          "quote": "If a data point falls outside the control limits, we assume that the process is probably out of control",
+          "snapshot_sha256": "b0183a87b2785694d5991a581fc888446a8f36aebd9fc911f5c9c4e2ffe77fc1",
+          "source_id": "manual-nist-control-excerpt-v1",
+          "start": 646
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 822,
+          "quote": "an investigation is warranted to find and eliminate the cause or causes.",
+          "snapshot_sha256": "b0183a87b2785694d5991a581fc888446a8f36aebd9fc911f5c9c4e2ffe77fc1",
+          "source_id": "manual-nist-control-excerpt-v1",
+          "start": 750
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 876,
+          "quote": "Control charts are used to routinely monitor quality.",
+          "snapshot_sha256": "b0183a87b2785694d5991a581fc888446a8f36aebd9fc911f5c9c4e2ffe77fc1",
+          "source_id": "manual-nist-control-excerpt-v1",
+          "start": 823
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 976,
+          "quote": "\"in control\" implies that all points are between the control limits and they form a random pattern.",
+          "snapshot_sha256": "b0183a87b2785694d5991a581fc888446a8f36aebd9fc911f5c9c4e2ffe77fc1",
+          "source_id": "manual-nist-control-excerpt-v1",
+          "start": 877
+        }
+      ],
+      "loop": {
+        "domain": "MANUFACTURING_QUALITY",
+        "epistemic_status": "DERIVED",
+        "exit_predicate": "Fresh samples over a quality-engineer-defined verification window show no outside-limit points or signals under the same approved pattern rules; documented cause disposition is accepted by the engineer. This does not certify product conformance.",
+        "gestalts": [
+          "provenance",
+          "exit_predicate"
+        ],
+        "initial_test": "Inspect control-chart points for outside-limit observations and systematic nonrandom patterns; either finding warrants investigation.",
+        "loop_id": "A-QUAL-001",
+        "max_iterations": 3,
+        "name": "Review a statistical process-control signal",
+        "objective": "Resolve a reviewed chart signal using documentary evidence and an approved corrective-action plan."
+      },
+      "procedure": {
+        "exit": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Fresh samples over a quality-engineer-defined verification window show no outside-limit points or signals under the same approved pattern rules; documented cause disposition is accepted by the engineer. This does not certify product conformance."
+        },
+        "fresh_retest": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "After separately authorized corrective work, chart newly collected samples under the approved sampling plan and test the same limits and nonrandom-pattern rules; do not merely relabel old points."
+        },
+        "initial_test": {
+          "basis": "source_fact",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Inspect control-chart points for outside-limit observations and systematic nonrandom patterns; either finding warrants investigation."
+        },
+        "iteration_policy": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "At most 3 operation/fresh-retest cycles; initial passing test may exit. Entry prerequisites and detailed test profile (authored): Inspect a valid chart with approved fixed control limits and predeclared nonrandom-pattern rules; flag an outside-limit point or systematic pattern. Exit only when the fresh retest satisfies the exit predicate; preserve the before/after evidence. Stop unresolved on missing evidence, missing authorization, no measurable progress, oscillation, or exhausted author-policy iteration budget. Finite-window absence of signals is not proof of perpetual stability. Do not widen limits to suppress a signal; verification-window length and cause disposition are authored review policy. This is an author-derived research specification, not a published TOTE loop, executed procedure, certified result, or professional authorization. max_iterations is author policy, not a manual requirement. Test windows, review criteria, progress checks and closure logic are derived unless explicitly quoted. Outside limits and nonrandom patterns both matter. Do not widen limits to hide a signal. Finite-window absence of signals is not proof of stability or product conformance."
+        },
+        "operation": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Investigate the suspected assignable cause and draft one evidence-supported corrective-action request for qualified review; this research specification gives no machine adjustment or shop-floor command."
+        }
+      },
+      "review": {
+        "license": "Only minimal attributed evidence excerpts retained; no raw manuals/PDFs/images published. NIST employee non-SRD text generally not copyright-protected in US under 17 USC 105; handbook co-produced with SEMATECH, so no blanket public-domain assertion; limited attributed research quotations only. See data/THIRD_PARTY_NOTICES.txt and data/licenses/.",
+        "notes": "Approved for database inclusion as a DERIVED SPECIFICATION only. Outside limits and nonrandom patterns both matter. Do not widen limits to hide a signal. Finite-window absence of signals is not proof of stability or product conformance.",
+        "reviewer": "Integration reviewer (separate from batch A/B research agents)",
+        "safety": "Not professional approval, safety certification, operating authorization, or observed success. Quality engineer/statistician must approve chart assumptions, sampling window, pattern rules and corrective-action request; any physical intervention requires a separate qualified site procedure.",
+        "status": "approved"
+      }
+    },
+    {
+      "evidence": [
+        {
+          "chunk_id": "chunk-0000",
+          "end": 685,
+          "quote": "the average level is too high or too low or the variability is unacceptable?",
+          "snapshot_sha256": "2f6d32ec388f9923cde348d94be10142ff1a92f819aa920fae00aaf29df1a12d",
+          "source_id": "manual-nist-unacceptable-excerpt-v1",
+          "start": 609
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 817,
+          "quote": "experiments calibration re-analysis of historical database can be initiated to put the process on target or reduce the variability.",
+          "snapshot_sha256": "2f6d32ec388f9923cde348d94be10142ff1a92f819aa920fae00aaf29df1a12d",
+          "source_id": "manual-nist-unacceptable-excerpt-v1",
+          "start": 686
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 929,
+          "quote": "the process must be stable before it can be centered at a target value or its overall variation can be reduced.",
+          "snapshot_sha256": "2f6d32ec388f9923cde348d94be10142ff1a92f819aa920fae00aaf29df1a12d",
+          "source_id": "manual-nist-unacceptable-excerpt-v1",
+          "start": 818
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 876,
+          "quote": "Control charts are used to routinely monitor quality.",
+          "snapshot_sha256": "b0183a87b2785694d5991a581fc888446a8f36aebd9fc911f5c9c4e2ffe77fc1",
+          "source_id": "manual-nist-control-excerpt-v1",
+          "start": 823
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 976,
+          "quote": "\"in control\" implies that all points are between the control limits and they form a random pattern.",
+          "snapshot_sha256": "b0183a87b2785694d5991a581fc888446a8f36aebd9fc911f5c9c4e2ffe77fc1",
+          "source_id": "manual-nist-control-excerpt-v1",
+          "start": 877
+        }
+      ],
+      "loop": {
+        "domain": "MANUFACTURING_QUALITY",
+        "epistemic_status": "DERIVED",
+        "exit_predicate": "New post-intervention data remain stable and meet the preapproved target/variation criteria over the approved verification window, with quality-engineer sign-off; missing specification or stability evidence is unresolved, not success.",
+        "gestalts": [
+          "provenance",
+          "exit_predicate"
+        ],
+        "initial_test": "Check whether the statistically stable process has an average level too high or too low, or unacceptable variability.",
+        "loop_id": "A-QUAL-002",
+        "max_iterations": 3,
+        "name": "Review stable but off-target process performance",
+        "objective": "Prepare and assess a reviewed improvement proposal for a stable but unacceptable process."
+      },
+      "procedure": {
+        "exit": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "New post-intervention data remain stable and meet the preapproved target/variation criteria over the approved verification window, with quality-engineer sign-off; missing specification or stability evidence is unresolved, not success."
+        },
+        "fresh_retest": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "After any separately approved intervention, collect independent fresh observations, check stability first, then recompare level and variability with the unchanged approved target criteria."
+        },
+        "initial_test": {
+          "basis": "source_fact",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "Check whether the statistically stable process has an average level too high or too low, or unacceptable variability."
+        },
+        "iteration_policy": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "At most 3 operation/fresh-retest cycles; initial passing test may exit. Entry prerequisites and detailed test profile (authored): First confirm stability using the approved control-chart plan; compare the documented process level and variability with separately approved target and acceptance limits. Enter only if stable but unacceptable. Exit only when the fresh retest satisfies the exit predicate; preserve the before/after evidence. Stop unresolved on missing evidence, missing authorization, no measurable progress, oscillation, or exhausted author-policy iteration budget. The two handbook sections motivate the improvement-and-monitoring structure; fresh-sample closure and specific acceptance criteria must be supplied by the qualified reviewer. This is an author-derived research specification, not a published TOTE loop, executed procedure, certified result, or professional authorization. max_iterations is author policy, not a manual requirement. Test windows, review criteria, progress checks and closure logic are derived unless explicitly quoted. The source supports stability before centering/reducing variation and proposes experiments/calibration/reanalysis. Targets, sampling and verification windows remain required professional inputs."
+        },
+        "operation": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "Choose one documented improvement proposal (experimental study, calibration review, or historical-data re-analysis) for quality-engineer approval. Do not perform calibration or prescribe process settings in this research artifact."
+        }
+      },
+      "review": {
+        "license": "Only minimal attributed evidence excerpts retained; no raw manuals/PDFs/images published. NIST employee non-SRD text generally not copyright-protected in US under 17 USC 105; handbook co-produced with SEMATECH, so no blanket public-domain assertion; limited attributed research quotations only.; NIST employee non-SRD text generally not copyright-protected in US under 17 USC 105; handbook co-produced with SEMATECH, so no blanket public-domain assertion; limited attributed research quotations only. See data/THIRD_PARTY_NOTICES.txt and data/licenses/.",
+        "notes": "Approved for database inclusion as a DERIVED SPECIFICATION only. The source supports stability before centering/reducing variation and proposes experiments/calibration/reanalysis. Targets, sampling and verification windows remain required professional inputs.",
+        "reviewer": "Integration reviewer (separate from batch A/B research agents)",
+        "safety": "Not professional approval, safety certification, operating authorization, or observed success. Quality engineer/statistician must approve stability, specification limits, target tolerances, sample design and any experiment/calibration; this is not equipment operating guidance.",
+        "status": "approved"
+      }
+    },
+    {
+      "evidence": [
+        {
+          "chunk_id": "chunk-0000",
+          "end": 725,
+          "quote": "if temperature and RH levels are stable and within the recommended set point and permissible range",
+          "snapshot_sha256": "05706ed5648f4426ea44d16d00fab9f12d48de7d333f280fa8f4c03aecdc34ab",
+          "source_id": "manual-nps-environment-excerpt-v1",
+          "start": 627
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 811,
+          "quote": "Assemble a qualified team to carefully plan and implement a climate control strategy.",
+          "snapshot_sha256": "05706ed5648f4426ea44d16d00fab9f12d48de7d333f280fa8f4c03aecdc34ab",
+          "source_id": "manual-nps-environment-excerpt-v1",
+          "start": 726
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 891,
+          "quote": "Implement non-mechanical measures to control climate when and wherever feasible",
+          "snapshot_sha256": "05706ed5648f4426ea44d16d00fab9f12d48de7d333f280fa8f4c03aecdc34ab",
+          "source_id": "manual-nps-environment-excerpt-v1",
+          "start": 812
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 977,
+          "quote": "Monitor regularly to insure that these controls are effective and adjust accordingly.",
+          "snapshot_sha256": "05706ed5648f4426ea44d16d00fab9f12d48de7d333f280fa8f4c03aecdc34ab",
+          "source_id": "manual-nps-environment-excerpt-v1",
+          "start": 892
+        }
+      ],
+      "loop": {
+        "domain": "COLLECTIONS_PRESERVATION",
+        "epistemic_status": "DERIVED",
+        "exit_predicate": "Fresh logger records for the agreed post-change window are stable and within the approved setpoint ranges, with conservator acceptance; close this corrective episode only, not ongoing monitoring.",
+        "gestalts": [
+          "provenance",
+          "exit_predicate"
+        ],
+        "initial_test": "Determine whether temperature and RH levels are stable and within the recommended set point and permissible range.",
+        "loop_id": "A-PRES-001",
+        "max_iterations": 3,
+        "name": "Review a museum collection microclimate deviation",
+        "objective": "Assess whether a reviewed non-mechanical preservation change restores approved temperature/RH conditions."
+      },
+      "procedure": {
+        "exit": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Fresh logger records for the agreed post-change window are stable and within the approved setpoint ranges, with conservator acceptance; close this corrective episode only, not ongoing monitoring."
+        },
+        "fresh_retest": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "After an approved change, review newly recorded logger data with matched locations and contextual notes, comparing against the same approved ranges and baseline."
+        },
+        "initial_test": {
+          "basis": "source_fact",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Determine whether temperature and RH levels are stable and within the recommended set point and permissible range."
+        },
+        "iteration_policy": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "At most 3 operation/fresh-retest cycles; initial passing test may exit. Entry prerequisites and detailed test profile (authored): Review calibrated logger records and contextual observations against conservator-approved temperature/RH setpoints, permissible fluctuations and a declared assessment window; identify a persistent deviation. Exit only when the fresh retest satisfies the exit predicate; preserve the before/after evidence. Stop unresolved on missing evidence, missing authorization, no measurable progress, oscillation, or exhausted author-policy iteration budget. No numerical climate target is imported: different collection materials and historic structures require professional judgment. Baseline duration requirements are not replaced by this loop budget. This is an author-derived research specification, not a published TOTE loop, executed procedure, certified result, or professional authorization. max_iterations is author policy, not a manual requirement. Test windows, review criteria, progress checks and closure logic are derived unless explicitly quoted. Source supports team planning, non-mechanical measures, monitoring and adjustment. No collection-independent RH/temperature prescription; continuous monitoring must continue."
+        },
+        "operation": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Prepare one evidence-based non-mechanical climate-control proposal for the qualified museum team; the team decides and separately authorizes any implementation. No HVAC work, hazardous materials treatment, or object relocation is instructed here."
+        }
+      },
+      "review": {
+        "license": "Only minimal attributed evidence excerpts retained; no raw manuals/PDFs/images published. US government NPS text generally public domain under 17 USC 105, unless otherwise indicated; third-party images excluded. See data/THIRD_PARTY_NOTICES.txt and data/licenses/.",
+        "notes": "Approved for database inclusion as a DERIVED SPECIFICATION only. Source supports team planning, non-mechanical measures, monitoring and adjustment. No collection-independent RH/temperature prescription; continuous monitoring must continue.",
+        "reviewer": "Integration reviewer (separate from batch A/B research agents)",
+        "safety": "Not professional approval, safety certification, operating authorization, or observed success. Preventive conservator, curator and facilities team must approve collection-specific limits, observation duration and any intervention. No universal RH prescription is inferred.",
+        "status": "approved"
+      }
+    },
+    {
+      "evidence": [
+        {
+          "chunk_id": "chunk-0000",
+          "end": 1026,
+          "quote": "gather baseline and ongoing lighting information",
+          "snapshot_sha256": "05706ed5648f4426ea44d16d00fab9f12d48de7d333f280fa8f4c03aecdc34ab",
+          "source_id": "manual-nps-environment-excerpt-v1",
+          "start": 978
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 1091,
+          "quote": "Lower light intensity and duration in exhibit and storage areas.",
+          "snapshot_sha256": "05706ed5648f4426ea44d16d00fab9f12d48de7d333f280fa8f4c03aecdc34ab",
+          "source_id": "manual-nps-environment-excerpt-v1",
+          "start": 1027
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 1210,
+          "quote": "Monitor and document light levels before and after taking any action to be sure that your changes have been effective.",
+          "snapshot_sha256": "05706ed5648f4426ea44d16d00fab9f12d48de7d333f280fa8f4c03aecdc34ab",
+          "source_id": "manual-nps-environment-excerpt-v1",
+          "start": 1092
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 1382,
+          "quote": "be sure that light levels are at required levels and that UV blocking materials are still effective, that there is no IR and that visible light is appropriately controlled",
+          "snapshot_sha256": "05706ed5648f4426ea44d16d00fab9f12d48de7d333f280fa8f4c03aecdc34ab",
+          "source_id": "manual-nps-environment-excerpt-v1",
+          "start": 1211
+        }
+      ],
+      "loop": {
+        "domain": "COLLECTIONS_PRESERVATION",
+        "epistemic_status": "DERIVED",
+        "exit_predicate": "Fresh before/after-comparable site records satisfy all approved visible-light, UV, heat and exposure-duration criteria, and the conservator accepts effectiveness; ongoing exposure monitoring continues.",
+        "gestalts": [
+          "provenance",
+          "exit_predicate"
+        ],
+        "initial_test": "Gather baseline and ongoing lighting information and assess required light levels, UV blocking, IR and visible-light control.",
+        "loop_id": "A-PRES-002",
+        "max_iterations": 3,
+        "name": "Review the effectiveness of a collection lighting plan",
+        "objective": "Assess whether a reviewed lighting-protection change meets collection-specific exposure criteria."
+      },
+      "procedure": {
+        "exit": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Fresh before/after-comparable site records satisfy all approved visible-light, UV, heat and exposure-duration criteria, and the conservator accepts effectiveness; ongoing exposure monitoring continues."
+        },
+        "fresh_retest": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "After separate approval/implementation, obtain new comparable readings from the same declared sites and assess the approved exposure schedule; retain the before/after Light and Heat Measurement Record."
+        },
+        "initial_test": {
+          "basis": "source_fact",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Gather baseline and ongoing lighting information and assess required light levels, UV blocking, IR and visible-light control."
+        },
+        "iteration_policy": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "At most 3 operation/fresh-retest cycles; initial passing test may exit. Entry prerequisites and detailed test profile (authored): Review baseline visible-light, UV, heat and exposure-duration records at declared monitoring sites against conservator-approved material-specific criteria; flag a deviation or unverified filter performance. Exit only when the fresh retest satisfies the exit predicate; preserve the before/after evidence. Stop unresolved on missing evidence, missing authorization, no measurable progress, oscillation, or exhausted author-policy iteration budget. The multi-factor exit and continuation of monitoring are derived review policy. No electrical procedure, UV source operation or fixed lighting level is prescribed. This is an author-derived research specification, not a published TOTE loop, executed procedure, certified result, or professional authorization. max_iterations is author policy, not a manual requirement. Test windows, review criteria, progress checks and closure logic are derived unless explicitly quoted. Source explicitly supports before/after monitoring and reducing exposure. Preserve collection-specific criteria; exclude installations, electrical work and object handling."
+        },
+        "operation": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Prepare one lighting-improvement-plan revision for conservator and facilities review, such as a documented reduction in exposure duration. Any installation, electrical work or handling of collection objects is outside this specification."
+        }
+      },
+      "review": {
+        "license": "Only minimal attributed evidence excerpts retained; no raw manuals/PDFs/images published. US government NPS text generally public domain under 17 USC 105, unless otherwise indicated; third-party images excluded. See data/THIRD_PARTY_NOTICES.txt and data/licenses/.",
+        "notes": "Approved for database inclusion as a DERIVED SPECIFICATION only. Source explicitly supports before/after monitoring and reducing exposure. Preserve collection-specific criteria; exclude installations, electrical work and object handling.",
+        "reviewer": "Integration reviewer (separate from batch A/B research agents)",
+        "safety": "Not professional approval, safety certification, operating authorization, or observed success. Conservator and facilities staff must approve sensitivity classifications, exposure budgets, meter procedures, plan revisions and any physical/electrical work; no object-safety guarantee.",
+        "status": "approved"
+      }
+    },
+    {
+      "evidence": [
+        {
+          "chunk_id": "chunk-0000",
+          "end": 606,
+          "quote": "pg_verifybackup is used to check the integrity of a database cluster backup taken using pg_basebackup against a backup_manifest generated by the server at the time of the backup.",
+          "snapshot_sha256": "868583bac36df449ccbeb0f957c1a9f88c417341374111b1db8580a0a3289083",
+          "source_id": "manual-pg-verifybackup-excerpt-v1",
+          "start": 428
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 661,
+          "quote": "$ pg_basebackup -h mydbserver -D /usr/local/pgsql/data",
+          "snapshot_sha256": "868583bac36df449ccbeb0f957c1a9f88c417341374111b1db8580a0a3289083",
+          "source_id": "manual-pg-verifybackup-excerpt-v1",
+          "start": 607
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 701,
+          "quote": "$ pg_verifybackup /usr/local/pgsql/data",
+          "snapshot_sha256": "868583bac36df449ccbeb0f957c1a9f88c417341374111b1db8580a0a3289083",
+          "source_id": "manual-pg-verifybackup-excerpt-v1",
+          "start": 662
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 762,
+          "quote": "Don't print anything when a backup is successfully verified.",
+          "snapshot_sha256": "868583bac36df449ccbeb0f957c1a9f88c417341374111b1db8580a0a3289083",
+          "source_id": "manual-pg-verifybackup-excerpt-v1",
+          "start": 702
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 935,
+          "quote": "Even if you use this tool, you should still perform test restores and verify that the resulting databases work as expected and that they appear to contain the correct data.",
+          "snapshot_sha256": "868583bac36df449ccbeb0f957c1a9f88c417341374111b1db8580a0a3289083",
+          "source_id": "manual-pg-verifybackup-excerpt-v1",
+          "start": 763
+        }
+      ],
+      "loop": {
+        "domain": "database_administration",
+        "epistemic_status": "DERIVED",
+        "exit_predicate": "Fresh full verification completes without reported errors (including required WAL parsing); this is not proof of restorability.",
+        "gestalts": [
+          "provenance",
+          "exit_predicate"
+        ],
+        "initial_test": "Use pg_verifybackup to check a pg_basebackup backup against its server-generated backup_manifest.",
+        "loop_id": "MB-B-PG-001",
+        "max_iterations": 3,
+        "name": "Reacquire and verify a base backup",
+        "objective": "Obtain a plain-format base-backup candidate with no reported manifest/file/checksum/required-WAL verification failures."
+      },
+      "procedure": {
+        "exit": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "Fresh full verification completes without reported errors (including required WAL parsing); this is not proof of restorability."
+        },
+        "fresh_retest": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "Invoke pg_verifybackup again against the newly acquired candidate and its manifest; capture new diagnostics rather than reusing the previous report."
+        },
+        "initial_test": {
+          "basis": "source_fact",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "Use pg_verifybackup to check a pg_basebackup backup against its server-generated backup_manifest."
+        },
+        "iteration_policy": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "At most 3 operation/fresh-retest cycles; initial passing test may exit. Entry prerequisites and detailed test profile (authored): On an immutable candidate, run version-compatible pg_verifybackup BACKUP_DIR, without --ignore, --skip-checksums or --no-parse-wal; record diagnostics and tool version. Exit only after a fresh, complete observation satisfies the exit predicate; an initial passing test may exit without operating. Stop unresolved on missing permission, missing evidence, tool error, stagnation, oscillation, or exhausted max_iterations; never convert exhaustion into success. AUTHOR POLICY: max_iterations counts operate/fresh-retest cycles, not the initial test; the manuals do not specify this bound. DERIVED specification only: no domain commands, site edits, database changes, or success trials executed. Fresh retest is explicitly authored by reapplying the cited check to the changed artifact; no source is claimed to prescribe this whole TOTE loop. Plain-format only for this candidate; match pg_verifybackup/pg_waldump version to backup for WAL verification. Reacquisition, rather than in-place repair, is author strategy. Test restore remains a separate required assurance task. The source supports creation then verification, not automatic retry. Plain-format WAL-capable verification and version compatibility are required by this profile; verification does not replace test restores."
+        },
+        "operation": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "After investigating diagnostics and obtaining approval, acquire a new base backup using pg_basebackup into a new empty, separately provisioned directory; never overwrite, delete, or patch the failed backup."
+        }
+      },
+      "review": {
+        "license": "Only minimal attributed evidence excerpts retained; no raw manuals/PDFs/images published. PostgreSQL License; https://www.postgresql.org/about/licence/ See data/THIRD_PARTY_NOTICES.txt and data/licenses/.",
+        "notes": "Approved for database inclusion as a DERIVED SPECIFICATION only. The source supports creation then verification, not automatic retry. Plain-format WAL-capable verification and version compatibility are required by this profile; verification does not replace test restores.",
+        "reviewer": "Integration reviewer (separate from batch A/B research agents)",
+        "safety": "Not professional approval, safety certification, operating authorization, or observed success. Qualified domain owner must approve all actual actions. The source supports creation then verification, not automatic retry. Plain-format WAL-capable verification and version compatibility are required by this profile; verification does not replace test restores.",
+        "status": "approved"
+      }
+    },
+    {
+      "evidence": [
+        {
+          "chunk_id": "chunk-0000",
+          "end": 497,
+          "quote": "The server must be shut down cleanly before running pg_checksums.",
+          "snapshot_sha256": "1e102bf5385fde124fd769c54127055d9bce945a3391dff958154f777c0170fe",
+          "source_id": "manual-pg-checksums-excerpt-v1",
+          "start": 432
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 638,
+          "quote": "When verifying checksums, the exit status is zero if there are no checksum errors, and nonzero if at least one checksum failure is detected.",
+          "snapshot_sha256": "1e102bf5385fde124fd769c54127055d9bce945a3391dff958154f777c0170fe",
+          "source_id": "manual-pg-checksums-excerpt-v1",
+          "start": 498
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 735,
+          "quote": "When enabling checksums, each relation file block with a changed checksum is rewritten in-place.",
+          "snapshot_sha256": "1e102bf5385fde124fd769c54127055d9bce945a3391dff958154f777c0170fe",
+          "source_id": "manual-pg-checksums-excerpt-v1",
+          "start": 639
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 763,
+          "quote": "--enable Enables checksums.",
+          "snapshot_sha256": "1e102bf5385fde124fd769c54127055d9bce945a3391dff958154f777c0170fe",
+          "source_id": "manual-pg-checksums-excerpt-v1",
+          "start": 736
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 844,
+          "quote": "--check Checks checksums. This is the default mode if nothing else is specified.",
+          "snapshot_sha256": "1e102bf5385fde124fd769c54127055d9bce945a3391dff958154f777c0170fe",
+          "source_id": "manual-pg-checksums-excerpt-v1",
+          "start": 764
+        }
+      ],
+      "loop": {
+        "domain": "database_administration",
+        "epistemic_status": "DERIVED",
+        "exit_predicate": "Fresh pg_checksums --check -D CLUSTER_DIR completes with exit status zero over the whole cluster; no --filenode narrowing.",
+        "gestalts": [
+          "provenance",
+          "exit_predicate"
+        ],
+        "initial_test": "With the server shut down cleanly, use pg_checksums --check to check cluster checksums; verification exits zero only without checksum errors.",
+        "loop_id": "MB-B-PG-002",
+        "max_iterations": 1,
+        "name": "Enable checksums on an approved offline cluster and verify",
+        "objective": "For an approved, cleanly stopped offline cluster with disabled checksums, enable checksums and require a complete clean checksum scan."
+      },
+      "procedure": {
+        "exit": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "Fresh pg_checksums --check -D CLUSTER_DIR completes with exit status zero over the whole cluster; no --filenode narrowing."
+        },
+        "fresh_retest": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "After enable completes, freshly invoke pg_checksums --check -D CLUSTER_DIR; retain full diagnostics and exit status."
+        },
+        "initial_test": {
+          "basis": "source_fact",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "With the server shut down cleanly, use pg_checksums --check to check cluster checksums; verification exits zero only without checksum errors."
+        },
+        "iteration_policy": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "At most 1 operation/fresh-retest cycles; initial passing test may exit. Entry prerequisites and detailed test profile (authored): Require independently reviewed evidence of checksum configuration and clean shutdown. If checksums are enabled run pg_checksums --check -D CLUSTER_DIR; if disabled, mark target unmet without treating a disabled-checksum error as corruption. Exit only after a fresh, complete observation satisfies the exit predicate; an initial passing test may exit without operating. Stop unresolved on missing permission, missing evidence, tool error, stagnation, oscillation, or exhausted max_iterations; never convert exhaustion into success. AUTHOR POLICY: max_iterations counts operate/fresh-retest cycles, not the initial test; the manuals do not specify this bound. DERIVED specification only: no domain commands, site edits, database changes, or success trials executed. Fresh retest is explicitly authored by reapplying the cited check to the changed artifact; no source is claimed to prescribe this whole TOTE loop. High-risk proposed maintenance action, NOT executed; never enable checksums to conceal existing corruption. Configuration discovery, backup strategy, replication coordination and recovery require DBA review; no configuration-discovery command is asserted from this manual. This is a configuration-to-verification loop, not a corruption-repair recipe. High-risk in-place rewrite is explicitly documented. Include only as an offline configuration-to-verification specification, never corruption repair. Disabled state, clean shutdown, protected backup, replication coordination and approval must be established externally; existing failures stop/escalate."
+        },
+        "operation": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "text": "Only if independently confirmed disabled and explicitly authorized, run pg_checksums --enable -D CLUSTER_DIR in an isolated maintenance environment with all writers stopped and a protected backup. If checksums already enabled but failures exist, do not rewrite checksums: stop and escalate."
+        }
+      },
+      "review": {
+        "license": "Only minimal attributed evidence excerpts retained; no raw manuals/PDFs/images published. PostgreSQL License; https://www.postgresql.org/about/licence/ See data/THIRD_PARTY_NOTICES.txt and data/licenses/.",
+        "notes": "Approved for database inclusion as a DERIVED SPECIFICATION only. High-risk in-place rewrite is explicitly documented. Include only as an offline configuration-to-verification specification, never corruption repair. Disabled state, clean shutdown, protected backup, replication coordination and approval must be established externally; existing failures stop/escalate.",
+        "reviewer": "Integration reviewer (separate from batch A/B research agents)",
+        "safety": "Not professional approval, safety certification, operating authorization, or observed success. Qualified domain owner must approve all actual actions. High-risk in-place rewrite is explicitly documented. Include only as an offline configuration-to-verification specification, never corruption repair. Disabled state, clean shutdown, protected backup, replication coordination and approval must be established externally; existing failures stop/escalate.",
+        "status": "approved"
+      }
+    },
+    {
+      "evidence": [
+        {
+          "chunk_id": "chunk-0000",
+          "end": 630,
+          "quote": "The magick identify program describes the format and characteristics of one or more image files. It also reports if an image is incomplete or corrupt.",
+          "snapshot_sha256": "e673f4fde05735505f2162ed3ffff7d2bb0d0c2a74af848c76991d87315eb75e",
+          "source_id": "manual-im-identify-excerpt-v1",
+          "start": 480
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 673,
+          "quote": "$ magick input.png -quality 85 output.webp",
+          "snapshot_sha256": "e673f4fde05735505f2162ed3ffff7d2bb0d0c2a74af848c76991d87315eb75e",
+          "source_id": "manual-im-identify-excerpt-v1",
+          "start": 631
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 752,
+          "quote": "To accurately identify all image metadata and pixel characteristics, use +ping",
+          "snapshot_sha256": "e673f4fde05735505f2162ed3ffff7d2bb0d0c2a74af848c76991d87315eb75e",
+          "source_id": "manual-im-identify-excerpt-v1",
+          "start": 674
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 786,
+          "quote": "the width and height of the image",
+          "snapshot_sha256": "e673f4fde05735505f2162ed3ffff7d2bb0d0c2a74af848c76991d87315eb75e",
+          "source_id": "manual-im-identify-excerpt-v1",
+          "start": 753
+        }
+      ],
+      "loop": {
+        "domain": "digital_imaging",
+        "epistemic_status": "DERIVED",
+        "exit_predicate": "Fresh full-read identify report shows actual WEBP format, expected source dimensions and no decode/corruption diagnostics.",
+        "gestalts": [
+          "provenance",
+          "exit_predicate"
+        ],
+        "initial_test": "Use magick identify to inspect actual image format and dimensions and report incomplete or corrupt image data; use +ping for accurate pixel characteristics.",
+        "loop_id": "MB-B-IM-001",
+        "max_iterations": 3,
+        "name": "Convert a derivative and verify actual image format",
+        "objective": "Produce a fully readable WebP derivative while preserving source and expected dimensions."
+      },
+      "procedure": {
+        "exit": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Fresh full-read identify report shows actual WEBP format, expected source dimensions and no decode/corruption diagnostics."
+        },
+        "fresh_retest": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Run magick identify +ping -verbose on the new derivative, not the input or cached report; recheck actual format and dimensions."
+        },
+        "initial_test": {
+          "basis": "source_fact",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Use magick identify to inspect actual image format and dimensions and report incomplete or corrupt image data; use +ping for accurate pixel characteristics."
+        },
+        "iteration_policy": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "At most 3 operation/fresh-retest cycles; initial passing test may exit. Entry prerequisites and detailed test profile (authored): Run magick identify +ping -verbose on the current derivative; inspect actual format, dimensions and corruption diagnostics against the author-approved delivery manifest. Exit only after a fresh, complete observation satisfies the exit predicate; an initial passing test may exit without operating. Stop unresolved on missing permission, missing evidence, tool error, stagnation, oscillation, or exhausted max_iterations; never convert exhaustion into success. AUTHOR POLICY: max_iterations counts operate/fresh-retest cycles, not the initial test; the manuals do not specify this bound. DERIVED specification only: no domain commands, site edits, database changes, or success trials executed. Fresh retest is explicitly authored by reapplying the cited check to the changed artifact; no source is claimed to prescribe this whole TOTE loop. Expected dimensions and WEBP delivery target are author inputs. This checks format/readability, not perceptual quality or malicious-image safety; unknown/untrusted files require sandbox/resource policy. The command and identify checks are documented. WEBP, dimensions, quality 85 and new filenames are profile inputs/example choices, not universal quality guarantees. Untrusted inputs require an external sandbox/resource policy."
+        },
+        "operation": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "From the preserved input, create a new uniquely named derivative using the documented conversion pattern magick input.png -quality 85 output.webp; do not overwrite originals. Quality 85 is the manual example, not a universal quality requirement."
+        }
+      },
+      "review": {
+        "license": "Only minimal attributed evidence excerpts retained; no raw manuals/PDFs/images published. ImageMagick License linked by manual; https://imagemagick.org/license/; review redistribution obligations See data/THIRD_PARTY_NOTICES.txt and data/licenses/.",
+        "notes": "Approved for database inclusion as a DERIVED SPECIFICATION only. The command and identify checks are documented. WEBP, dimensions, quality 85 and new filenames are profile inputs/example choices, not universal quality guarantees. Untrusted inputs require an external sandbox/resource policy.",
+        "reviewer": "Integration reviewer (separate from batch A/B research agents)",
+        "safety": "Not professional approval, safety certification, operating authorization, or observed success. Qualified domain owner must approve all actual actions. The command and identify checks are documented. WEBP, dimensions, quality 85 and new filenames are profile inputs/example choices, not universal quality guarantees. Untrusted inputs require an external sandbox/resource policy.",
+        "status": "approved"
+      }
+    },
+    {
+      "evidence": [
+        {
+          "chunk_id": "chunk-0000",
+          "end": 544,
+          "quote": "$ magick compare -verbose -metric rmse rose.jpg reconstruct.jpg difference.png",
+          "snapshot_sha256": "0eb5e04949f4c964e066b29b170bf4f9037b81f5022cd6bfe1909e3889ca4556",
+          "source_id": "manual-im-compare-excerpt-v1",
+          "start": 466
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 569,
+          "quote": "all: 2604.73 (0.0397456)",
+          "snapshot_sha256": "0eb5e04949f4c964e066b29b170bf4f9037b81f5022cd6bfe1909e3889ca4556",
+          "source_id": "manual-im-compare-excerpt-v1",
+          "start": 545
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 612,
+          "quote": "$ magick input.png -quality 85 output.webp",
+          "snapshot_sha256": "0eb5e04949f4c964e066b29b170bf4f9037b81f5022cd6bfe1909e3889ca4556",
+          "source_id": "manual-im-compare-excerpt-v1",
+          "start": 570
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 759,
+          "quote": "In addition to the visual interpretation of the difference in an image and its reconstruction, we report a mathematical measure of the difference:",
+          "snapshot_sha256": "0eb5e04949f4c964e066b29b170bf4f9037b81f5022cd6bfe1909e3889ca4556",
+          "source_id": "manual-im-compare-excerpt-v1",
+          "start": 613
+        }
+      ],
+      "loop": {
+        "domain": "digital_imaging",
+        "epistemic_status": "DERIVED",
+        "exit_predicate": "Fresh normalized all-channel RMSE is at or below the explicitly supplied project threshold, comparison finishes without errors, and human visual review accepts the derivative; absent threshold means unresolved.",
+        "gestalts": [
+          "provenance",
+          "exit_predicate"
+        ],
+        "initial_test": "Use magick compare -verbose -metric rmse to measure differences between the reference image and its reconstruction, including the all-channel result.",
+        "loop_id": "MB-B-IM-002",
+        "max_iterations": 3,
+        "name": "Re-encode and remeasure reconstruction error",
+        "objective": "Produce a WebP derivative satisfying a preapproved normalized RMSE threshold relative to a preserved reference."
+      },
+      "procedure": {
+        "exit": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Fresh normalized all-channel RMSE is at or below the explicitly supplied project threshold, comparison finishes without errors, and human visual review accepts the derivative; absent threshold means unresolved."
+        },
+        "fresh_retest": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Repeat the same explicit-RMSE comparison on the newly encoded candidate, generating a new diagnostic/difference artifact; do not infer improvement from quality setting alone."
+        },
+        "initial_test": {
+          "basis": "source_fact",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Use magick compare -verbose -metric rmse to measure differences between the reference image and its reconstruction, including the all-channel result."
+        },
+        "iteration_policy": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "At most 3 operation/fresh-retest cycles; initial passing test may exit. Entry prerequisites and detailed test profile (authored): Confirm equal dimensions, page offsets, colorspace, channels, alpha and alignment before running magick compare -verbose -metric rmse REFERENCE CANDIDATE DIFF.png; record the normalized all-channel result and diagnostics. Exit only after a fresh, complete observation satisfies the exit predicate; an initial passing test may exit without operating. Stop unresolved on missing permission, missing evidence, tool error, stagnation, oscillation, or exhausted max_iterations; never convert exhaustion into success. AUTHOR POLICY: max_iterations counts operate/fresh-retest cycles, not the initial test; the manuals do not specify this bound. DERIVED specification only: no domain commands, site edits, database changes, or success trials executed. Fresh retest is explicitly authored by reapplying the cited check to the changed artifact; no source is claimed to prescribe this whole TOTE loop. Threshold, quality schedule, human acceptance and alignment prerequisites are author policy, not manual quality guarantees. RMSE is not perceptual equivalence and quality adjustment is not guaranteed to improve it. Manual conflicts about default metric (NCC in prose, RMSE in table), so this specification ALWAYS sets -metric rmse. Manual return-status wording is unusual; no inferred integer exit semantics are used. Explicit RMSE avoids contradictory default-metric prose/table. The normalized all-channel example supports measurement; no universal threshold, monotonic quality guarantee or exit-code semantics is inferred."
+        },
+        "operation": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Choose one reviewed quality setting from a finite author-approved schedule and re-encode the preserved reference to a NEW WebP derivative using magick input.png -quality QUALITY output.webp. Preserve all originals and previous candidates."
+        }
+      },
+      "review": {
+        "license": "Only minimal attributed evidence excerpts retained; no raw manuals/PDFs/images published. ImageMagick License linked by manual; https://imagemagick.org/license/; review redistribution obligations See data/THIRD_PARTY_NOTICES.txt and data/licenses/.",
+        "notes": "Approved for database inclusion as a DERIVED SPECIFICATION only. Explicit RMSE avoids contradictory default-metric prose/table. The normalized all-channel example supports measurement; no universal threshold, monotonic quality guarantee or exit-code semantics is inferred.",
+        "reviewer": "Integration reviewer (separate from batch A/B research agents)",
+        "safety": "Not professional approval, safety certification, operating authorization, or observed success. Qualified domain owner must approve all actual actions. Explicit RMSE avoids contradictory default-metric prose/table. The normalized all-channel example supports measurement; no universal threshold, monotonic quality guarantee or exit-code semantics is inferred.",
+        "status": "approved"
+      }
+    },
+    {
+      "evidence": [
+        {
+          "chunk_id": "chunk-0000",
+          "end": 599,
+          "quote": "Click on the ‘Check page title’ link in your bookmarks",
+          "snapshot_sha256": "c95b6623dcdfced82ff1cd308130d1c0b3a36e11625ea262678f426f23ddcf3c",
+          "source_id": "manual-w3c-title-excerpt-v1",
+          "start": 545
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 689,
+          "quote": "Check that there is a title that adequately and briefly describes the content of the page",
+          "snapshot_sha256": "c95b6623dcdfced82ff1cd308130d1c0b3a36e11625ea262678f426f23ddcf3c",
+          "source_id": "manual-w3c-title-excerpt-v1",
+          "start": 600
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 785,
+          "quote": "Check that the title on the page your are checking is different from other pages on the website",
+          "snapshot_sha256": "c95b6623dcdfced82ff1cd308130d1c0b3a36e11625ea262678f426f23ddcf3c",
+          "source_id": "manual-w3c-title-excerpt-v1",
+          "start": 690
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 858,
+          "quote": "best practice is for the important and unique information to come first.",
+          "snapshot_sha256": "c95b6623dcdfced82ff1cd308130d1c0b3a36e11625ea262678f426f23ddcf3c",
+          "source_id": "manual-w3c-title-excerpt-v1",
+          "start": 786
+        }
+      ],
+      "loop": {
+        "domain": "accessibility_web_qa",
+        "epistemic_status": "DERIVED",
+        "exit_predicate": "Fresh inspection shows a present, adequate brief description of current page content and a title distinct from every page in the declared comparison set, confirmed by reviewer.",
+        "gestalts": [
+          "provenance",
+          "exit_predicate"
+        ],
+        "initial_test": "Check that a page title adequately and briefly describes page content and differs from titles of other pages on the website.",
+        "loop_id": "MB-B-WAI-001",
+        "max_iterations": 3,
+        "name": "Review, revise and recheck page title",
+        "objective": "Give one scoped page a brief descriptive title distinguishable from other scoped site pages."
+      },
+      "procedure": {
+        "exit": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Fresh inspection shows a present, adequate brief description of current page content and a title distinct from every page in the declared comparison set, confirmed by reviewer."
+        },
+        "fresh_retest": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Reload the changed page and reapply the documented title check plus cross-page comparison on the new revision; capture fresh title text and reviewer decision."
+        },
+        "initial_test": {
+          "basis": "source_fact",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Check that a page title adequately and briefly describes page content and differs from titles of other pages on the website."
+        },
+        "iteration_policy": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "At most 3 operation/fresh-retest cycles; initial passing test may exit. Entry prerequisites and detailed test profile (authored): Inspect the page title using the documented Check page title bookmark procedure and compare its content description and distinctiveness against an explicitly enumerated site-page set. Exit only after a fresh, complete observation satisfies the exit predicate; an initial passing test may exit without operating. Stop unresolved on missing permission, missing evidence, tool error, stagnation, oscillation, or exhausted max_iterations; never convert exhaustion into success. AUTHOR POLICY: max_iterations counts operate/fresh-retest cycles, not the initial test; the manuals do not specify this bound. DERIVED specification only: no domain commands, site edits, database changes, or success trials executed. Fresh retest is explicitly authored by reapplying the cited check to the changed artifact; no source is claimed to prescribe this whole TOTE loop. Source explicitly DRAFT, not a normative WCAG conformance algorithm. Authorized editing, deployment/reload and repeat-until-pass are author-derived workflow. Title adequacy is semantic and requires human review; scoped comparison does not establish uniqueness on unexamined pages. Draft Easy Checks provide screening, not normative conformance. Semantic adequacy requires human judgment; distinctiveness holds only for the declared compared pages. No bookmark code is retained/executed."
+        },
+        "operation": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "text": "Have an authorized web editor revise the title to describe the page and distinguish it from other scoped pages, preferring important unique information first; deploy only through the approved site workflow."
+        }
+      },
+      "review": {
+        "license": "Only minimal attributed evidence excerpts retained; no raw manuals/PDFs/images published. W3C Software and Document License linked in footer: https://www.w3.org/copyright/software-license/; Copyright © 2026 World Wide Web Consortium. See data/THIRD_PARTY_NOTICES.txt and data/licenses/.",
+        "notes": "Approved for database inclusion as a DERIVED SPECIFICATION only. Draft Easy Checks provide screening, not normative conformance. Semantic adequacy requires human judgment; distinctiveness holds only for the declared compared pages. No bookmark code is retained/executed.",
+        "reviewer": "Integration reviewer (separate from batch A/B research agents)",
+        "safety": "Not professional approval, safety certification, operating authorization, or observed success. Qualified domain owner must approve all actual actions. Draft Easy Checks provide screening, not normative conformance. Semantic adequacy requires human judgment; distinctiveness holds only for the declared compared pages. No bookmark code is retained/executed.",
+        "status": "approved"
+      }
+    },
+    {
+      "evidence": [
+        {
+          "chunk_id": "chunk-0000",
+          "end": 609,
+          "quote": "Click on the ‘Check headings’ link in your bookmarks",
+          "snapshot_sha256": "205e9bce07ac104e2620d37fea75f5056b21563359e49917572320d843ca5fd7",
+          "source_id": "manual-w3c-headings-excerpt-v1",
+          "start": 557
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 655,
+          "quote": "They should be nested by their rank or level.",
+          "snapshot_sha256": "205e9bce07ac104e2620d37fea75f5056b21563359e49917572320d843ca5fd7",
+          "source_id": "manual-w3c-headings-excerpt-v1",
+          "start": 610
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 742,
+          "quote": "Headings should be succinct and describe the section or text of the page that follows.",
+          "snapshot_sha256": "205e9bce07ac104e2620d37fea75f5056b21563359e49917572320d843ca5fd7",
+          "source_id": "manual-w3c-headings-excerpt-v1",
+          "start": 656
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 879,
+          "quote": "Are any heading levels skipped? Are any headings levels blank with no text? Does any text look like a heading but not showing up as one?",
+          "snapshot_sha256": "205e9bce07ac104e2620d37fea75f5056b21563359e49917572320d843ca5fd7",
+          "source_id": "manual-w3c-headings-excerpt-v1",
+          "start": 743
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 1020,
+          "quote": "Does the heading text reflect the content that follows? Do the headings represent the structure of the content, particularly nested content?",
+          "snapshot_sha256": "205e9bce07ac104e2620d37fea75f5056b21563359e49917572320d843ca5fd7",
+          "source_id": "manual-w3c-headings-excerpt-v1",
+          "start": 880
+        },
+        {
+          "chunk_id": "chunk-0000",
+          "end": 1055,
+          "quote": "Did the the list start with an H1?",
+          "snapshot_sha256": "205e9bce07ac104e2620d37fea75f5056b21563359e49917572320d843ca5fd7",
+          "source_id": "manual-w3c-headings-excerpt-v1",
+          "start": 1021
+        }
+      ],
+      "loop": {
+        "domain": "accessibility_web_qa",
+        "epistemic_status": "DERIVED",
+        "exit_predicate": "Fresh heading check finds headings, a starting H1, no blank headings or skipped subsection levels, no unmarked visual headings, and a reviewer confirms descriptive text and nesting matching the content.",
+        "gestalts": [
+          "provenance",
+          "exit_predicate"
+        ],
+        "initial_test": "Check heading presence, starting H1, skipped or blank levels, missing visual headings, descriptive text and nesting against page content.",
+        "loop_id": "MB-B-WAI-002",
+        "max_iterations": 3,
+        "name": "Review, repair and recheck heading structure",
+        "objective": "Make scoped page headings describe content and represent a coherent nested structure."
+      },
+      "procedure": {
+        "exit": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "text": "Fresh heading check finds headings, a starting H1, no blank headings or skipped subsection levels, no unmarked visual headings, and a reviewer confirms descriptive text and nesting matching the content."
+        },
+        "fresh_retest": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "text": "Reload the changed revision, invoke Check headings again and repeat all initial questions against both the fresh outline and visible page."
+        },
+        "initial_test": {
+          "basis": "source_fact",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "text": "Check heading presence, starting H1, skipped or blank levels, missing visual headings, descriptive text and nesting against page content."
+        },
+        "iteration_policy": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "text": "At most 3 operation/fresh-retest cycles; initial passing test may exit. Entry prerequisites and detailed test profile (authored): Use the documented Check headings bookmark and compare its heading list with visible content: check presence, initial H1, skipped levels, blank headings, visually apparent headings absent from markup, and semantic fit. Exit only after a fresh, complete observation satisfies the exit predicate; an initial passing test may exit without operating. Stop unresolved on missing permission, missing evidence, tool error, stagnation, oscillation, or exhausted max_iterations; never convert exhaustion into success. AUTHOR POLICY: max_iterations counts operate/fresh-retest cycles, not the initial test; the manuals do not specify this bound. DERIVED specification only: no domain commands, site edits, database changes, or success trials executed. Fresh retest is explicitly authored by reapplying the cited check to the changed artifact; no source is claimed to prescribe this whole TOTE loop. Source explicitly DRAFT; these Easy Checks are quick screening, not exhaustive evaluation or conformance certification. Starting-H1/no-skipped-subheading criteria are this screening profile, not a claim that every deviation is automatically a WCAG violation. Editing/reload/repetition is author-derived. Draft screening questions are supported. Starting-H1/no-skipped-subheading criteria are this profile, not universal WCAG violations. Reload/repetition/editing and human semantic acceptance are authored."
+        },
+        "operation": {
+          "basis": "authored_policy",
+          "evidence": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "text": "Have an authorized editor correct heading markup, rank, and text to match the actual content hierarchy; do not merely style ordinary text to look like headings."
+        }
+      },
+      "review": {
+        "license": "Only minimal attributed evidence excerpts retained; no raw manuals/PDFs/images published. W3C Software and Document License linked in footer: https://www.w3.org/copyright/software-license/; Copyright © 2026 World Wide Web Consortium. See data/THIRD_PARTY_NOTICES.txt and data/licenses/.",
+        "notes": "Approved for database inclusion as a DERIVED SPECIFICATION only. Draft screening questions are supported. Starting-H1/no-skipped-subheading criteria are this profile, not universal WCAG violations. Reload/repetition/editing and human semantic acceptance are authored.",
+        "reviewer": "Integration reviewer (separate from batch A/B research agents)",
+        "safety": "Not professional approval, safety certification, operating authorization, or observed success. Qualified domain owner must approve all actual actions. Draft screening questions are supported. Starting-H1/no-skipped-subheading criteria are this profile, not universal WCAG violations. Reload/repetition/editing and human semantic acceptance are authored.",
+        "status": "approved"
+      }
+    }
+  ],
+  "format_version": "1.0"
+}

@@ -1,0 +1,116 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "chunk-0000",
+      "end": 1383,
+      "line_start": 1,
+      "start": 0,
+      "text": "REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN\nNPS Museum Handbook Part I, Chapter 4: Museum Collections Environment (2016)\nhttps://www.nps.gov/subjects/museums/upload/MHI_Ch4_Environment.pdf\nPublisher: US National Park Service\nSections: Museum Handbook I, Ch.4 §J.1–3, printed pp.4:46–4:49; PDF pp.49–52; Museum Handbook I, Ch.4 §§G.4/H.1, printed pp.4:30–4:32; PDF pp.33–35\nRights: US government NPS text generally public domain under 17 USC 105, unless otherwise indicated; third-party images excluded.\nChange notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.\nif temperature and RH levels are stable and within the recommended set point and permissible range\nAssemble a qualified team to carefully plan and implement a climate control strategy.\nImplement non-mechanical measures to control climate when and wherever feasible\nMonitor regularly to insure that these controls are effective and adjust accordingly.\ngather baseline and ongoing lighting information\nLower light intensity and duration in exhibit and storage areas.\nMonitor and document light levels before and after taking any action to be sure that your changes have been effective.\nbe sure that light levels are at required levels and that UV blocking materials are still effective, that there is no IR and that visible light is appropriately controlled\n"
+    }
+  ],
+  "format_version": "1.0",
+  "raw_sha256": "f8410d520352c4db7acb5b9ccc74b6870b51753790bb649fd5c1f84bd1420759",
+  "snapshot_sha256": "05706ed5648f4426ea44d16d00fab9f12d48de7d333f280fa8f4c03aecdc34ab",
+  "source": {
+    "access": "public",
+    "domain": [
+      "COLLECTIONS_PRESERVATION"
+    ],
+    "edition": "Museum Handbook Part I, Chapter 4 (2016)",
+    "excerpt_derivation": {
+      "excerpts": [
+        {
+          "private_line_start": 273,
+          "private_locator": "snapshots/nps-environment.txt",
+          "private_text_end": 4921,
+          "private_text_sha256": "de3b654cf18f1ee90718149fa6da74b27e3857edd97ca031e445fbb213183fa5",
+          "private_text_start": 4822,
+          "quote": "if temperature and RH levels are stable and within the recommended set point and permissible range"
+        },
+        {
+          "private_line_start": 488,
+          "private_locator": "snapshots/nps-environment.txt",
+          "private_text_end": 7640,
+          "private_text_sha256": "de3b654cf18f1ee90718149fa6da74b27e3857edd97ca031e445fbb213183fa5",
+          "private_text_start": 7554,
+          "quote": "Assemble a qualified team to carefully plan and implement a climate control strategy."
+        },
+        {
+          "private_line_start": 495,
+          "private_locator": "snapshots/nps-environment.txt",
+          "private_text_end": 8018,
+          "private_text_sha256": "de3b654cf18f1ee90718149fa6da74b27e3857edd97ca031e445fbb213183fa5",
+          "private_text_start": 7938,
+          "quote": "Implement non-mechanical measures to control climate when and wherever feasible"
+        },
+        {
+          "private_line_start": 502,
+          "private_locator": "snapshots/nps-environment.txt",
+          "private_text_end": 8450,
+          "private_text_sha256": "de3b654cf18f1ee90718149fa6da74b27e3857edd97ca031e445fbb213183fa5",
+          "private_text_start": 8364,
+          "quote": "Monitor regularly to insure that these controls are effective and adjust accordingly."
+        },
+        {
+          "private_line_start": 1024,
+          "private_locator": "snapshots/nps-environment.txt",
+          "private_text_end": 18140,
+          "private_text_sha256": "de3b654cf18f1ee90718149fa6da74b27e3857edd97ca031e445fbb213183fa5",
+          "private_text_start": 18092,
+          "quote": "gather baseline and ongoing lighting information"
+        },
+        {
+          "private_line_start": 1263,
+          "private_locator": "snapshots/nps-environment.txt",
+          "private_text_end": 21719,
+          "private_text_sha256": "de3b654cf18f1ee90718149fa6da74b27e3857edd97ca031e445fbb213183fa5",
+          "private_text_start": 21655,
+          "quote": "Lower light intensity and duration in exhibit and storage areas."
+        },
+        {
+          "private_line_start": 1131,
+          "private_locator": "snapshots/nps-environment.txt",
+          "private_text_end": 19553,
+          "private_text_sha256": "de3b654cf18f1ee90718149fa6da74b27e3857edd97ca031e445fbb213183fa5",
+          "private_text_start": 19433,
+          "quote": "Monitor and document light levels before and after taking any action to be sure that your changes have been effective."
+        },
+        {
+          "private_line_start": 859,
+          "private_locator": "snapshots/nps-environment.txt",
+          "private_text_end": 14222,
+          "private_text_sha256": "de3b654cf18f1ee90718149fa6da74b27e3857edd97ca031e445fbb213183fa5",
+          "private_text_start": 14049,
+          "quote": "be sure that light levels are at required levels and that UV blocking materials are still effective, that there is no IR and that visible light is appropriately controlled"
+        }
+      ],
+      "method": "Minimal selected text, whitespace collapsed; no ellipses inside quotations. Authored header and blank-line separators added. No full manual was scanned by this admission run."
+    },
+    "format": "text",
+    "license": "US government NPS text generally public domain under 17 USC 105, unless otherwise indicated; third-party images excluded.",
+    "original_retrieval": {
+      "note": "Research retrieval hash, not independently authenticated publisher identity. Original response not bundled; A retained extracted text only. NPS PDF extraction/page labels were reviewed separately.",
+      "response_retained_privately": false,
+      "response_sha256": "7209283aadf09752cf1e48e7f168f9090955fb935fba68be737ad410c9b41252",
+      "retrieved_at": "2026-11-01T04:25:24.103253+00:00",
+      "text_sha256": "de3b654cf18f1ee90718149fa6da74b27e3857edd97ca031e445fbb213183fa5"
+    },
+    "profession": [
+      "Museum collections manager / preventive conservator",
+      "Museum conservator / collections lighting coordinator"
+    ],
+    "publisher": "US National Park Service",
+    "representation": "reviewed_evidence_excerpt",
+    "review_needs": [
+      "No execution authority; domain professional approval required before use"
+    ],
+    "rights_notice": "See data/THIRD_PARTY_NOTICES.txt and data/licenses/. This excerpt selection is changed/abridged from the linked original; no endorsement.",
+    "section": [
+      "Museum Handbook I, Ch.4 §J.1–3, printed pp.4:46–4:49; PDF pp.49–52",
+      "Museum Handbook I, Ch.4 §§G.4/H.1, printed pp.4:30–4:32; PDF pp.33–35"
+    ],
+    "source_id": "manual-nps-environment-excerpt-v1",
+    "title": "NPS Museum Handbook Part I, Chapter 4: Museum Collections Environment (2016)",
+    "url": "https://www.nps.gov/subjects/museums/upload/MHI_Ch4_Environment.pdf"
+  }
+}

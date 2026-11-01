@@ -1,0 +1,13 @@
+REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN
+[Draft] Headings - Easy Checks
+https://www.w3.org/WAI/test-evaluate/easy-checks/headings/
+Publisher: W3C WAI / Education and Outreach Working Group
+Sections: What are Headings?; Checking Headings / Checking other pages; What to look for
+Rights: W3C Software and Document License linked in footer: https://www.w3.org/copyright/software-license/; Copyright © 2026 World Wide Web Consortium.
+Change notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.
+Click on the ‘Check headings’ link in your bookmarks
+They should be nested by their rank or level.
+Headings should be succinct and describe the section or text of the page that follows.
+Are any heading levels skipped? Are any headings levels blank with no text? Does any text look like a heading but not showing up as one?
+Does the heading text reflect the content that follows? Do the headings represent the structure of the content, particularly nested content?
+Did the the list start with an H1?

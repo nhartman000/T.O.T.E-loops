@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "terms": 15,
+  "relations": 4,
+  "literal_excerpts": 21,
+  "quoted_whitespace_words": 170,
+  "errors": [],
+  "verified": "Snapshot hashes, literal webpage excerpt offsets, exact-term occurrence, reference integrity",
+  "not_verified": "Original book pages, semantic entailment, edition equivalence, historical first use, clinical efficacy"
+}

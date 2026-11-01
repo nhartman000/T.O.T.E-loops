@@ -1,0 +1,98 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "chunk-0000",
+      "end": 1056,
+      "line_start": 1,
+      "start": 0,
+      "text": "REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN\n[Draft] Headings - Easy Checks\nhttps://www.w3.org/WAI/test-evaluate/easy-checks/headings/\nPublisher: W3C WAI / Education and Outreach Working Group\nSections: What are Headings?; Checking Headings / Checking other pages; What to look for\nRights: W3C Software and Document License linked in footer: https://www.w3.org/copyright/software-license/; Copyright © 2026 World Wide Web Consortium.\nChange notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.\nClick on the ‘Check headings’ link in your bookmarks\nThey should be nested by their rank or level.\nHeadings should be succinct and describe the section or text of the page that follows.\nAre any heading levels skipped? Are any headings levels blank with no text? Does any text look like a heading but not showing up as one?\nDoes the heading text reflect the content that follows? Do the headings represent the structure of the content, particularly nested content?\nDid the the list start with an H1?\n"
+    }
+  ],
+  "format_version": "1.0",
+  "raw_sha256": "fa8447737c95c4d540d4bf056c8c8e1816eadba66efe79b0aba5c85dac2ea55c",
+  "snapshot_sha256": "205e9bce07ac104e2620d37fea75f5056b21563359e49917572320d843ca5fd7",
+  "source": {
+    "access": "public",
+    "domain": [
+      "accessibility_web_qa"
+    ],
+    "edition": "Draft; Updated 19 March 2024; Kevin White",
+    "excerpt_derivation": {
+      "excerpts": [
+        {
+          "private_line_start": 77,
+          "private_locator": "snapshots/w3c_headings.txt",
+          "private_text_end": 2960,
+          "private_text_sha256": "44d34efb89d32cae95d7730ec5390439b67f743f297d65b68dbabe12d418d2b7",
+          "private_text_start": 2908,
+          "quote": "Click on the ‘Check headings’ link in your bookmarks"
+        },
+        {
+          "private_line_start": 49,
+          "private_locator": "snapshots/w3c_headings.txt",
+          "private_text_end": 1160,
+          "private_text_sha256": "44d34efb89d32cae95d7730ec5390439b67f743f297d65b68dbabe12d418d2b7",
+          "private_text_start": 1115,
+          "quote": "They should be nested by their rank or level."
+        },
+        {
+          "private_line_start": 61,
+          "private_locator": "snapshots/w3c_headings.txt",
+          "private_text_end": 1866,
+          "private_text_sha256": "44d34efb89d32cae95d7730ec5390439b67f743f297d65b68dbabe12d418d2b7",
+          "private_text_start": 1780,
+          "quote": "Headings should be succinct and describe the section or text of the page that follows."
+        },
+        {
+          "private_line_start": 88,
+          "private_locator": "snapshots/w3c_headings.txt",
+          "private_text_end": 3612,
+          "private_text_sha256": "44d34efb89d32cae95d7730ec5390439b67f743f297d65b68dbabe12d418d2b7",
+          "private_text_start": 3476,
+          "quote": "Are any heading levels skipped? Are any headings levels blank with no text? Does any text look like a heading but not showing up as one?"
+        },
+        {
+          "private_line_start": 91,
+          "private_locator": "snapshots/w3c_headings.txt",
+          "private_text_end": 3753,
+          "private_text_sha256": "44d34efb89d32cae95d7730ec5390439b67f743f297d65b68dbabe12d418d2b7",
+          "private_text_start": 3613,
+          "quote": "Does the heading text reflect the content that follows? Do the headings represent the structure of the content, particularly nested content?"
+        },
+        {
+          "private_line_start": 87,
+          "private_locator": "snapshots/w3c_headings.txt",
+          "private_text_end": 3475,
+          "private_text_sha256": "44d34efb89d32cae95d7730ec5390439b67f743f297d65b68dbabe12d418d2b7",
+          "private_text_start": 3441,
+          "quote": "Did the the list start with an H1?"
+        }
+      ],
+      "method": "Minimal selected text, whitespace collapsed; no ellipses inside quotations. Authored header and blank-line separators added. No full manual was scanned by this admission run."
+    },
+    "format": "text",
+    "license": "W3C Software and Document License linked in footer: https://www.w3.org/copyright/software-license/; Copyright © 2026 World Wide Web Consortium.",
+    "original_retrieval": {
+      "note": "Research retrieval hash, not independently authenticated publisher identity. Original response not bundled; A retained extracted text only. NPS PDF extraction/page labels were reviewed separately.",
+      "response_retained_privately": true,
+      "response_sha256": "f3da4a4672d36d44209f496f937e5c209eb20660e83d7a596d6a44f608ea449c",
+      "retrieved_at": "2026-11-01T04:25:02.035974+00:00",
+      "text_sha256": "44d34efb89d32cae95d7730ec5390439b67f743f297d65b68dbabe12d418d2b7"
+    },
+    "profession": [
+      "Web accessibility evaluator"
+    ],
+    "publisher": "W3C WAI / Education and Outreach Working Group",
+    "representation": "reviewed_evidence_excerpt",
+    "review_needs": [
+      "No execution authority; domain professional approval required before use"
+    ],
+    "rights_notice": "See data/THIRD_PARTY_NOTICES.txt and data/licenses/. This excerpt selection is changed/abridged from the linked original; no endorsement.",
+    "section": [
+      "What are Headings?; Checking Headings / Checking other pages; What to look for"
+    ],
+    "source_id": "manual-w3c-headings-excerpt-v1",
+    "title": "[Draft] Headings - Easy Checks",
+    "url": "https://www.w3.org/WAI/test-evaluate/easy-checks/headings/"
+  }
+}

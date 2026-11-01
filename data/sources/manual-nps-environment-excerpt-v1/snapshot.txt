@@ -1,0 +1,15 @@
+REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN
+NPS Museum Handbook Part I, Chapter 4: Museum Collections Environment (2016)
+https://www.nps.gov/subjects/museums/upload/MHI_Ch4_Environment.pdf
+Publisher: US National Park Service
+Sections: Museum Handbook I, Ch.4 §J.1–3, printed pp.4:46–4:49; PDF pp.49–52; Museum Handbook I, Ch.4 §§G.4/H.1, printed pp.4:30–4:32; PDF pp.33–35
+Rights: US government NPS text generally public domain under 17 USC 105, unless otherwise indicated; third-party images excluded.
+Change notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.
+if temperature and RH levels are stable and within the recommended set point and permissible range
+Assemble a qualified team to carefully plan and implement a climate control strategy.
+Implement non-mechanical measures to control climate when and wherever feasible
+Monitor regularly to insure that these controls are effective and adjust accordingly.
+gather baseline and ongoing lighting information
+Lower light intensity and duration in exhibit and storage areas.
+Monitor and document light levels before and after taking any action to be sure that your changes have been effective.
+be sure that light levels are at required levels and that UV blocking materials are still effective, that there is no IR and that visible light is appropriately controlled

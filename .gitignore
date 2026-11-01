@@ -18,5 +18,6 @@ credentials*.json
 service-account*.json
 
 # Local artifacts
+work/
 *.log
 .DS_Store

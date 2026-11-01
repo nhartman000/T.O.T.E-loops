@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "verified_at": "2026-11-01T04:27:20.683885+00:00",
+  "candidate_count": 6,
+  "domain_counts": {
+    "database_administration": 2,
+    "digital_imaging": 2,
+    "accessibility_web_qa": 2
+  },
+  "checked_quotes": 28,
+  "checked_source_snapshots": 11,
+  "quote_validation": "exact substring and line locator; phase support labels checked structurally, entailment not automated",
+  "domain_operations_executed": false,
+  "citation_verification": "info: stats: 43 prose sentence(s), 11 with declared provenance (26%) \u2014 11 cited, 0 marked [unverified] (a sentence may be both); 11 distinct source(s) cited, 11 in ledger (11 with evidence quotes)\ncitations OK\n",
+  "candidates_sha256": "4b20403c6b7cb2f1b28f10b021a836c278c7308161652c21bfff71c165939503"
+}

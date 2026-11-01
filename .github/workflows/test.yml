@@ -20,8 +20,34 @@ jobs:
         run: python -m src.build_db
       - name: Run integrity tests
         run: python -m unittest discover -s tests -v
+      - name: Audit populated database and committed manual provenance (offline)
+        run: |
+          python -m src.manual_agent audit --output data
+          python - <<'PY'
+          from pathlib import Path
+          from src.manual_admission import audit_output
+          for bundle in sorted(Path('manual-batches').glob('*/provenance.json')):
+              print(bundle.parent, audit_output(bundle.parent))
+          PY
       - name: Verify deterministic export
         run: |
-          cp data/tote_loops.json /tmp/tote_loops.json
+          cp data/tote_loops.json "$RUNNER_TEMP/tote_loops.json"
           python -m src.build_db
-          cmp /tmp/tote_loops.json data/tote_loops.json
+          cmp "$RUNNER_TEMP/tote_loops.json" data/tote_loops.json
+          git diff --exit-code -- data/seed_loops.json data/tote_loops.json
+      - name: Publish verified database artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tote-loop-database-${{ github.sha }}
+          if-no-files-found: error
+          path: |
+            data/tote_loops.sqlite3
+            data/tote_loops.json
+            data/seed_loops.json
+            data/provenance.json
+            data/manual-batch-v1.json
+            data/manual-review.json
+            data/sources/
+            data/licenses/
+            data/THIRD_PARTY_NOTICES.txt
+            schema.sql

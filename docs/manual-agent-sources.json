@@ -1,0 +1,38 @@
+{
+  "format_version": "1.0",
+  "sources": [
+    {
+      "source_id": "postgresql-vacuum-18",
+      "url": "https://www.postgresql.org/docs/18/routine-vacuuming.html",
+      "publisher": "PostgreSQL Global Development Group",
+      "domain": "database_administration",
+      "profession": "database administrator",
+      "license": "PostgreSQL License; verify documentation notice before redistribution",
+      "access": "public",
+      "review_needs": ["DBA semantic review", "version-specific commands", "license and excerpt review"],
+      "format": "html"
+    },
+    {
+      "source_id": "python-unittest-3",
+      "url": "https://docs.python.org/3/library/unittest.html",
+      "publisher": "Python Software Foundation",
+      "domain": "software_quality",
+      "profession": "software test engineer",
+      "license": "PSF documentation license; verify examples and notice requirements",
+      "access": "public",
+      "review_needs": ["software semantic review", "version pin before acceptance", "license and excerpt review"],
+      "format": "html"
+    },
+    {
+      "source_id": "nist-eda-outliers",
+      "url": "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm",
+      "publisher": "NIST/SEMATECH e-Handbook of Statistical Methods",
+      "domain": "statistical_quality",
+      "profession": "quality engineer / statistician",
+      "license": "US government publication; verify third-party rights and source notice",
+      "access": "public",
+      "review_needs": ["statistical assumptions", "do not remove data without justified policy", "rights review"],
+      "format": "html"
+    }
+  ]
+}

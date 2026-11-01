@@ -1,0 +1,463 @@
+[
+  {
+    "loop_id": "A-GEO-001",
+    "name": "Review forestry map ground-control residuals",
+    "domain": "GEOSPATIAL_CARTOGRAPHY",
+    "profession": "Cartographer / forestry GIS technician",
+    "objective": "Prepare a legacy forestry map registration for reviewer acceptance.",
+    "initial_test": "Read fresh dX[pixels] and dY[pixels] for the exercise map control points; flag residuals exceeding the exercise-specific 10-pixel criterion and check coordinate transcription.",
+    "exit_predicate": "After correction, every reviewed absolute dX and dY is at most 10 pixels, control-point identities and CRS are confirmed, and a cartographer accepts the overlay comparison; not a universal mapping accuracy claim.",
+    "max_iterations": 3,
+    "epistemic_status": "DERIVED",
+    "gestalts": {
+      "lexical": [
+        "forestry map control-point residual",
+        "legacy paper map georeferencing"
+      ]
+    },
+    "procedure": {
+      "operate_step": "Propose one correction to a demonstrably mis-digitized control point or transcribed coordinate, for a cartographer to approve on a working copy; preserve the reference values and prior residuals.",
+      "retest": "Recompute the control-point residual table from the changed working copy and compare the registered map with its reference aerial image; do not reuse the old residuals.",
+      "stop_conditions": [
+        "Exit only when the fresh retest satisfies the exit predicate; preserve the before/after evidence.",
+        "Stop unresolved on missing evidence, missing authorization, no measurable progress, oscillation, or exhausted author-policy iteration budget."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.qgis.org/3.40/en/docs/training_manual/forestry/map_georeferencing.html",
+        "title": "14.2. Lesson: Georeferencing a Map — QGIS Documentation  documentation",
+        "local_snapshot": "snapshots/qgis-georef.txt",
+        "sha256": "19ea375f483baaf55ba4ba63e849afd3b297aa256daaafb2fff6d182e7e85d83",
+        "accessed_at": "2026-11-01T04:25:22.283909+00:00",
+        "publisher": "QGIS Project",
+        "section": "Training Manual §14.2.2, Follow Along: Georeferencing the scanned map",
+        "license": "GNU Free Documentation License 1.3 or later; short research excerpts with attribution; see QGIS licensing snapshot.",
+        "edition": "QGIS 3.40 documentation",
+        "rights_basis_url": "https://docs.qgis.org/3.40/en/docs/about/license/index.html",
+        "quotes": [
+          {
+            "text": "The error in pixels\ncan be seen also in the GCP table in the dX[pixels] and dY[pixels] columns.",
+            "supports": [
+              "initial_test",
+              "procedure.retest"
+            ]
+          },
+          {
+            "text": "The error in pixels should not be higher than\n10 pixels.",
+            "supports": [
+              "initial_test",
+              "exit_predicate"
+            ]
+          },
+          {
+            "text": "If it is, you should review the points you have digitized and the\ncoordinates you have entered to find what the problem is.",
+            "supports": [
+              "procedure.operate_step"
+            ]
+          },
+          {
+            "text": "set the map transparency to 50%\nand compare it to the aerial image.",
+            "supports": [
+              "procedure.retest",
+              "exit_predicate"
+            ]
+          }
+        ]
+      }
+    ],
+    "review_required": "Cartographer must approve the coordinate system, reference imagery, corrections and acceptance criteria before use; unsuitable as cadastral/navigation assurance.",
+    "notes": [
+      "The 10-pixel advice is from this Finland forestry training exercise only; the absolute component interpretation and mandatory overlay sign-off are conservative author derivations.",
+      "This is an author-derived research specification, not a published TOTE loop, executed procedure, certified result, or professional authorization.",
+      "max_iterations is author policy, not a manual requirement. Test windows, review criteria, progress checks and closure logic are derived unless explicitly quoted."
+    ]
+  },
+  {
+    "loop_id": "A-GEO-002",
+    "name": "Resolve reviewed polygon overlap findings",
+    "domain": "GEOSPATIAL_CARTOGRAPHY",
+    "profession": "Cartographer / spatial data quality analyst",
+    "objective": "Bring a thematic polygon coverage into conformance with an approved no-overlap rule without erasing legitimate features.",
+    "initial_test": "Run full-layer topology validation using the reviewer-approved Must not overlap rule; retain feature IDs and inspect flagged common areas against the authoritative reference.",
+    "exit_predicate": "A fresh full-layer validation reports zero overlaps under the same approved rule, and a cartographer confirms the corrections preserve the intended boundaries; no claim of legal boundary accuracy.",
+    "max_iterations": 3,
+    "epistemic_status": "DERIVED",
+    "gestalts": {
+      "lexical": [
+        "polygon overlap review",
+        "thematic coverage topology"
+      ]
+    },
+    "procedure": {
+      "operate_step": "For one confirmed erroneous overlap, propose a boundary edit on a copy using the authoritative map evidence; a cartographer must approve edits, not automatic deletion of every flagged feature.",
+      "retest": "Apply the same active rule to all features again after the approved edit and review the new error table, including previously edited neighbors.",
+      "stop_conditions": [
+        "Exit only when the fresh retest satisfies the exit predicate; preserve the before/after evidence.",
+        "Stop unresolved on missing evidence, missing authorization, no measurable progress, oscillation, or exhausted author-policy iteration budget."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://docs.qgis.org/3.40/en/docs/user_manual/plugins/core_plugins/plugins_topology_checker.html",
+        "title": "25.2.5. Topology Checker Plugin — QGIS Documentation  documentation",
+        "local_snapshot": "snapshots/qgis-topology.txt",
+        "sha256": "2a08b428f504bfcc0ea66a941bdfed345415603aa9542fcccdf1670537f94320",
+        "accessed_at": "2026-11-01T04:25:22.879367+00:00",
+        "publisher": "QGIS Project",
+        "section": "User Manual §25.2.5, polygon rules and error validation",
+        "license": "GNU Free Documentation License 1.3 or later; short research excerpts with attribution; see QGIS licensing snapshot.",
+        "edition": "QGIS 3.40 documentation",
+        "rights_basis_url": "https://docs.qgis.org/3.40/en/docs/about/license/index.html",
+        "quotes": [
+          {
+            "text": "Must not overlap : Adjacent polygons should not share common area.",
+            "supports": [
+              "initial_test",
+              "exit_predicate"
+            ]
+          },
+          {
+            "text": "Validate All : applies the active rules to all the features\nof the involved layer(s)",
+            "supports": [
+              "initial_test",
+              "procedure.retest"
+            ]
+          },
+          {
+            "text": "Errors will show up in the table of results containing type of error, layer and feature ID.",
+            "supports": [
+              "initial_test",
+              "procedure.retest"
+            ]
+          },
+          {
+            "text": "where you can use QGIS digitizing tools to fix the error.",
+            "supports": [
+              "procedure.operate_step"
+            ]
+          }
+        ]
+      }
+    ],
+    "review_required": "Spatial-data custodian must approve applicable topology rules and authoritative boundaries; do not modify cadastral or other legally consequential data without qualified authorization.",
+    "notes": [
+      "Zero-error termination and reviewer sign-off are derived; a clean checker output is not proof of geographic truth.",
+      "This is an author-derived research specification, not a published TOTE loop, executed procedure, certified result, or professional authorization.",
+      "max_iterations is author policy, not a manual requirement. Test windows, review criteria, progress checks and closure logic are derived unless explicitly quoted."
+    ]
+  },
+  {
+    "loop_id": "A-QUAL-001",
+    "name": "Review a statistical process-control signal",
+    "domain": "MANUFACTURING_QUALITY",
+    "profession": "Quality engineer / statistical process-control analyst",
+    "objective": "Resolve a reviewed chart signal using documentary evidence and an approved corrective-action plan.",
+    "initial_test": "Inspect a valid chart with approved fixed control limits and predeclared nonrandom-pattern rules; flag an outside-limit point or systematic pattern.",
+    "exit_predicate": "Fresh samples over a quality-engineer-defined verification window show no outside-limit points or signals under the same approved pattern rules; documented cause disposition is accepted by the engineer. This does not certify product conformance.",
+    "max_iterations": 3,
+    "epistemic_status": "DERIVED",
+    "gestalts": {
+      "lexical": [
+        "assignable cause chart signal",
+        "quality control nonrandom pattern"
+      ]
+    },
+    "procedure": {
+      "operate_step": "Investigate the suspected assignable cause and draft one evidence-supported corrective-action request for qualified review; this research specification gives no machine adjustment or shop-floor command.",
+      "retest": "After separately authorized corrective work, chart newly collected samples under the approved sampling plan and test the same limits and nonrandom-pattern rules; do not merely relabel old points.",
+      "stop_conditions": [
+        "Exit only when the fresh retest satisfies the exit predicate; preserve the before/after evidence.",
+        "Stop unresolved on missing evidence, missing authorization, no measurable progress, oscillation, or exhausted author-policy iteration budget."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc31.htm",
+        "title": "6.3.1. What are Control\nCharts?",
+        "local_snapshot": "snapshots/nist-control.txt",
+        "sha256": "03608369680794b0e8c4b74138730089917e2ba0677d92123e815e6bdd45a89a",
+        "accessed_at": "2026-11-01T04:25:23.136507+00:00",
+        "publisher": "NIST / SEMATECH",
+        "section": "e-Handbook §6.3.1, Strategies for dealing with out-of-control findings",
+        "license": "NIST employee non-SRD text generally not copyright-protected in US under 17 USC 105; handbook co-produced with SEMATECH, so no blanket public-domain assertion; limited attributed research quotations only.",
+        "edition": "NIST/SEMATECH e-Handbook of Statistical Methods, live HTML; no edition/date displayed in retained section",
+        "rights_basis_url": "https://www.nist.gov/open/license",
+        "quotes": [
+          {
+            "text": "If a data point falls outside the control limits, we assume\nthat the process is probably out of control",
+            "supports": [
+              "initial_test"
+            ]
+          },
+          {
+            "text": "an\ninvestigation is warranted to find and eliminate the cause or\ncauses.",
+            "supports": [
+              "procedure.operate_step"
+            ]
+          },
+          {
+            "text": "Control charts are used to routinely monitor quality.",
+            "supports": [
+              "procedure.retest"
+            ]
+          },
+          {
+            "text": "\"in control\" implies that all points are between the\ncontrol limits and they form a random pattern.",
+            "supports": [
+              "exit_predicate",
+              "procedure.retest"
+            ]
+          }
+        ]
+      }
+    ],
+    "review_required": "Quality engineer/statistician must approve chart assumptions, sampling window, pattern rules and corrective-action request; any physical intervention requires a separate qualified site procedure.",
+    "notes": [
+      "Finite-window absence of signals is not proof of perpetual stability. Do not widen limits to suppress a signal; verification-window length and cause disposition are authored review policy.",
+      "This is an author-derived research specification, not a published TOTE loop, executed procedure, certified result, or professional authorization.",
+      "max_iterations is author policy, not a manual requirement. Test windows, review criteria, progress checks and closure logic are derived unless explicitly quoted."
+    ]
+  },
+  {
+    "loop_id": "A-QUAL-002",
+    "name": "Review stable but off-target process performance",
+    "domain": "MANUFACTURING_QUALITY",
+    "profession": "Manufacturing quality engineer",
+    "objective": "Prepare and assess a reviewed improvement proposal for a stable but unacceptable process.",
+    "initial_test": "First confirm stability using the approved control-chart plan; compare the documented process level and variability with separately approved target and acceptance limits. Enter only if stable but unacceptable.",
+    "exit_predicate": "New post-intervention data remain stable and meet the preapproved target/variation criteria over the approved verification window, with quality-engineer sign-off; missing specification or stability evidence is unresolved, not success.",
+    "max_iterations": 3,
+    "epistemic_status": "DERIVED",
+    "gestalts": {
+      "lexical": [
+        "stable process off target",
+        "unacceptable process variability"
+      ]
+    },
+    "procedure": {
+      "operate_step": "Choose one documented improvement proposal (experimental study, calibration review, or historical-data re-analysis) for quality-engineer approval. Do not perform calibration or prescribe process settings in this research artifact.",
+      "retest": "After any separately approved intervention, collect independent fresh observations, check stability first, then recompare level and variability with the unchanged approved target criteria.",
+      "stop_conditions": [
+        "Exit only when the fresh retest satisfies the exit predicate; preserve the before/after evidence.",
+        "Stop unresolved on missing evidence, missing authorization, no measurable progress, oscillation, or exhausted author-policy iteration budget."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://www.itl.nist.gov/div898/handbook/pmc/section1/pmc15.htm",
+        "title": "6.1.5. What to do if \"In Control\" but Unacceptable?",
+        "local_snapshot": "snapshots/nist-unacceptable.txt",
+        "sha256": "07591b8da847ef09e49bfa55454a85fb3a46a2604c0925904fadc41bfc115cb3",
+        "accessed_at": "2026-11-01T04:25:23.358923+00:00",
+        "publisher": "NIST / SEMATECH",
+        "section": "e-Handbook §6.1.5, Process improvement techniques / Process must be stable",
+        "license": "NIST employee non-SRD text generally not copyright-protected in US under 17 USC 105; handbook co-produced with SEMATECH, so no blanket public-domain assertion; limited attributed research quotations only.",
+        "edition": "NIST/SEMATECH e-Handbook of Statistical Methods, live HTML; no edition/date displayed in retained section",
+        "rights_basis_url": "https://www.nist.gov/open/license",
+        "quotes": [
+          {
+            "text": "the average level is too high or too low or\nthe variability is unacceptable?",
+            "supports": [
+              "initial_test",
+              "exit_predicate"
+            ]
+          },
+          {
+            "text": "experiments calibration re-analysis of historical database can be initiated to put the process on target or reduce the variability.",
+            "supports": [
+              "procedure.operate_step",
+              "exit_predicate"
+            ]
+          },
+          {
+            "text": "the process must be stable before it can be centered at a\ntarget value or its overall variation can be reduced.",
+            "supports": [
+              "initial_test",
+              "procedure.retest",
+              "exit_predicate"
+            ]
+          }
+        ]
+      },
+      {
+        "url": "https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc31.htm",
+        "title": "6.3.1. What are Control\nCharts?",
+        "local_snapshot": "snapshots/nist-control.txt",
+        "sha256": "03608369680794b0e8c4b74138730089917e2ba0677d92123e815e6bdd45a89a",
+        "accessed_at": "2026-11-01T04:25:23.136507+00:00",
+        "publisher": "NIST / SEMATECH",
+        "section": "e-Handbook §6.3.1, monitoring and in-control interpretation",
+        "license": "NIST employee non-SRD text generally not copyright-protected in US under 17 USC 105; handbook co-produced with SEMATECH, so no blanket public-domain assertion; limited attributed research quotations only.",
+        "edition": "NIST/SEMATECH e-Handbook of Statistical Methods, live HTML; no edition/date displayed in retained section",
+        "rights_basis_url": "https://www.nist.gov/open/license",
+        "quotes": [
+          {
+            "text": "Control charts are used to routinely monitor quality.",
+            "supports": [
+              "procedure.retest"
+            ]
+          },
+          {
+            "text": "\"in control\" implies that all points are between the\ncontrol limits and they form a random pattern.",
+            "supports": [
+              "initial_test",
+              "procedure.retest",
+              "exit_predicate"
+            ]
+          }
+        ]
+      }
+    ],
+    "review_required": "Quality engineer/statistician must approve stability, specification limits, target tolerances, sample design and any experiment/calibration; this is not equipment operating guidance.",
+    "notes": [
+      "The two handbook sections motivate the improvement-and-monitoring structure; fresh-sample closure and specific acceptance criteria must be supplied by the qualified reviewer.",
+      "This is an author-derived research specification, not a published TOTE loop, executed procedure, certified result, or professional authorization.",
+      "max_iterations is author policy, not a manual requirement. Test windows, review criteria, progress checks and closure logic are derived unless explicitly quoted."
+    ]
+  },
+  {
+    "loop_id": "A-PRES-001",
+    "name": "Review a museum collection microclimate deviation",
+    "domain": "COLLECTIONS_PRESERVATION",
+    "profession": "Museum collections manager / preventive conservator",
+    "objective": "Assess whether a reviewed non-mechanical preservation change restores approved temperature/RH conditions.",
+    "initial_test": "Review calibrated logger records and contextual observations against conservator-approved temperature/RH setpoints, permissible fluctuations and a declared assessment window; identify a persistent deviation.",
+    "exit_predicate": "Fresh logger records for the agreed post-change window are stable and within the approved setpoint ranges, with conservator acceptance; close this corrective episode only, not ongoing monitoring.",
+    "max_iterations": 3,
+    "epistemic_status": "DERIVED",
+    "gestalts": {
+      "lexical": [
+        "collection microclimate deviation",
+        "museum temperature humidity review"
+      ]
+    },
+    "procedure": {
+      "operate_step": "Prepare one evidence-based non-mechanical climate-control proposal for the qualified museum team; the team decides and separately authorizes any implementation. No HVAC work, hazardous materials treatment, or object relocation is instructed here.",
+      "retest": "After an approved change, review newly recorded logger data with matched locations and contextual notes, comparing against the same approved ranges and baseline.",
+      "stop_conditions": [
+        "Exit only when the fresh retest satisfies the exit predicate; preserve the before/after evidence.",
+        "Stop unresolved on missing evidence, missing authorization, no measurable progress, oscillation, or exhausted author-policy iteration budget."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://www.nps.gov/subjects/museums/upload/MHI_Ch4_Environment.pdf",
+        "title": "NPS Museum Handbook Part I, Chapter 4: Museum Collections Environment (2016)",
+        "local_snapshot": "snapshots/nps-environment.txt",
+        "sha256": "de3b654cf18f1ee90718149fa6da74b27e3857edd97ca031e445fbb213183fa5",
+        "accessed_at": "2026-11-01T04:25:24.103253+00:00",
+        "publisher": "US National Park Service",
+        "section": "Museum Handbook I, Ch.4 §§G.4/H.1, printed pp.4:30–4:32; PDF pp.33–35",
+        "license": "US government NPS text generally public domain under 17 USC 105, unless otherwise indicated; third-party images excluded.",
+        "edition": "Museum Handbook Part I, Chapter 4 (2016)",
+        "rights_basis_url": "https://www.nps.gov/aboutus/disclaimer.htm",
+        "quotes": [
+          {
+            "text": "if temperature and RH levels are stable and within the \nrecommended set point and permissible range",
+            "supports": [
+              "initial_test",
+              "exit_predicate"
+            ]
+          },
+          {
+            "text": "Assemble a qualified team to carefully plan and implement a climate \ncontrol strategy.",
+            "supports": [
+              "procedure.operate_step",
+              "review_required"
+            ]
+          },
+          {
+            "text": "Implement non-mechanical measures to control climate when \nand wherever feasible",
+            "supports": [
+              "procedure.operate_step"
+            ]
+          },
+          {
+            "text": "Monitor regularly to insure that these controls are effective and adjust \naccordingly.",
+            "supports": [
+              "procedure.retest"
+            ]
+          }
+        ]
+      }
+    ],
+    "review_required": "Preventive conservator, curator and facilities team must approve collection-specific limits, observation duration and any intervention. No universal RH prescription is inferred.",
+    "notes": [
+      "No numerical climate target is imported: different collection materials and historic structures require professional judgment. Baseline duration requirements are not replaced by this loop budget.",
+      "This is an author-derived research specification, not a published TOTE loop, executed procedure, certified result, or professional authorization.",
+      "max_iterations is author policy, not a manual requirement. Test windows, review criteria, progress checks and closure logic are derived unless explicitly quoted."
+    ]
+  },
+  {
+    "loop_id": "A-PRES-002",
+    "name": "Review the effectiveness of a collection lighting plan",
+    "domain": "COLLECTIONS_PRESERVATION",
+    "profession": "Museum conservator / collections lighting coordinator",
+    "objective": "Assess whether a reviewed lighting-protection change meets collection-specific exposure criteria.",
+    "initial_test": "Review baseline visible-light, UV, heat and exposure-duration records at declared monitoring sites against conservator-approved material-specific criteria; flag a deviation or unverified filter performance.",
+    "exit_predicate": "Fresh before/after-comparable site records satisfy all approved visible-light, UV, heat and exposure-duration criteria, and the conservator accepts effectiveness; ongoing exposure monitoring continues.",
+    "max_iterations": 3,
+    "epistemic_status": "DERIVED",
+    "gestalts": {
+      "lexical": [
+        "museum lighting effectiveness",
+        "collection light exposure review"
+      ]
+    },
+    "procedure": {
+      "operate_step": "Prepare one lighting-improvement-plan revision for conservator and facilities review, such as a documented reduction in exposure duration. Any installation, electrical work or handling of collection objects is outside this specification.",
+      "retest": "After separate approval/implementation, obtain new comparable readings from the same declared sites and assess the approved exposure schedule; retain the before/after Light and Heat Measurement Record.",
+      "stop_conditions": [
+        "Exit only when the fresh retest satisfies the exit predicate; preserve the before/after evidence.",
+        "Stop unresolved on missing evidence, missing authorization, no measurable progress, oscillation, or exhausted author-policy iteration budget."
+      ]
+    },
+    "sources": [
+      {
+        "url": "https://www.nps.gov/subjects/museums/upload/MHI_Ch4_Environment.pdf",
+        "title": "NPS Museum Handbook Part I, Chapter 4: Museum Collections Environment (2016)",
+        "local_snapshot": "snapshots/nps-environment.txt",
+        "sha256": "de3b654cf18f1ee90718149fa6da74b27e3857edd97ca031e445fbb213183fa5",
+        "accessed_at": "2026-11-01T04:25:24.103253+00:00",
+        "publisher": "US National Park Service",
+        "section": "Museum Handbook I, Ch.4 §J.1–3, printed pp.4:46–4:49; PDF pp.49–52",
+        "license": "US government NPS text generally public domain under 17 USC 105, unless otherwise indicated; third-party images excluded.",
+        "edition": "Museum Handbook Part I, Chapter 4 (2016)",
+        "rights_basis_url": "https://www.nps.gov/aboutus/disclaimer.htm",
+        "quotes": [
+          {
+            "text": "gather baseline and ongoing lighting information",
+            "supports": [
+              "initial_test"
+            ]
+          },
+          {
+            "text": "Lower light intensity and duration in exhibit and storage areas.",
+            "supports": [
+              "procedure.operate_step"
+            ]
+          },
+          {
+            "text": "Monitor and document light levels before \nand after taking any action to be sure that your changes have been \neffective.",
+            "supports": [
+              "procedure.retest"
+            ]
+          },
+          {
+            "text": "be sure that light levels are at required levels and that UV \nblocking materials are still effective, that there is no IR and \nthat visible light is appropriately controlled",
+            "supports": [
+              "exit_predicate"
+            ]
+          }
+        ]
+      }
+    ],
+    "review_required": "Conservator and facilities staff must approve sensitivity classifications, exposure budgets, meter procedures, plan revisions and any physical/electrical work; no object-safety guarantee.",
+    "notes": [
+      "The multi-factor exit and continuation of monitoring are derived review policy. No electrical procedure, UV source operation or fixed lighting level is prescribed.",
+      "This is an author-derived research specification, not a published TOTE loop, executed procedure, certified result, or professional authorization.",
+      "max_iterations is author policy, not a manual requirement. Test windows, review criteria, progress checks and closure logic are derived unless explicitly quoted."
+    ]
+  }
+]

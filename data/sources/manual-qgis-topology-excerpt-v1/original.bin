@@ -1,0 +1,15 @@
+REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN
+25.2.5. Topology Checker Plugin — QGIS Documentation  documentation
+https://docs.qgis.org/3.40/en/docs/user_manual/plugins/core_plugins/plugins_topology_checker.html
+Publisher: QGIS Project
+Sections: User Manual §25.2.5, polygon rules and error validation
+Rights: GNU Free Documentation License 1.3 or later; short research excerpts with attribution; see QGIS licensing snapshot.
+Change notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.
+
+Must not overlap : Adjacent polygons should not share common area.
+
+Validate All : applies the active rules to all the features of the involved layer(s)
+
+Errors will show up in the table of results containing type of error, layer and feature ID.
+
+where you can use QGIS digitizing tools to fix the error.

@@ -1,0 +1,90 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "chunk-0000",
+      "end": 845,
+      "line_start": 1,
+      "start": 0,
+      "text": "REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN\nPostgreSQL 18: pg_checksums\nhttps://www.postgresql.org/docs/18/app-pgchecksums.html\nPublisher: The PostgreSQL Global Development Group\nSections: Description; Options --check, --enable, --pgdata\nRights: PostgreSQL License; https://www.postgresql.org/about/licence/\nChange notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.\nThe server must be shut down cleanly before running pg_checksums.\nWhen verifying checksums, the exit status is zero if there are no checksum errors, and nonzero if at least one checksum failure is detected.\nWhen enabling checksums, each relation file block with a changed checksum is rewritten in-place.\n--enable Enables checksums.\n--check Checks checksums. This is the default mode if nothing else is specified.\n"
+    }
+  ],
+  "format_version": "1.0",
+  "raw_sha256": "62eb82c75e5ae1ed5d699f3ca55f00c36fedfd9a2035c67f2fcc0ed315a841be",
+  "snapshot_sha256": "1e102bf5385fde124fd769c54127055d9bce945a3391dff958154f777c0170fe",
+  "source": {
+    "access": "public",
+    "domain": [
+      "database_administration"
+    ],
+    "edition": "18",
+    "excerpt_derivation": {
+      "excerpts": [
+        {
+          "private_line_start": 43,
+          "private_locator": "snapshots/pg_checksums.txt",
+          "private_text_end": 702,
+          "private_text_sha256": "2fa0d8303eb540aa3ebdcc318b299b6a4b2a5418f4903df85b8eb693e5107cbd",
+          "private_text_start": 637,
+          "quote": "The server must be shut down cleanly before running pg_checksums."
+        },
+        {
+          "private_line_start": 43,
+          "private_locator": "snapshots/pg_checksums.txt",
+          "private_text_end": 843,
+          "private_text_sha256": "2fa0d8303eb540aa3ebdcc318b299b6a4b2a5418f4903df85b8eb693e5107cbd",
+          "private_text_start": 703,
+          "quote": "When verifying checksums, the exit status is zero if there are no checksum errors, and nonzero if at least one checksum failure is detected."
+        },
+        {
+          "private_line_start": 44,
+          "private_locator": "snapshots/pg_checksums.txt",
+          "private_text_end": 1094,
+          "private_text_sha256": "2fa0d8303eb540aa3ebdcc318b299b6a4b2a5418f4903df85b8eb693e5107cbd",
+          "private_text_start": 998,
+          "quote": "When enabling checksums, each relation file block with a changed checksum is rewritten in-place."
+        },
+        {
+          "private_line_start": 57,
+          "private_locator": "snapshots/pg_checksums.txt",
+          "private_text_end": 1448,
+          "private_text_sha256": "2fa0d8303eb540aa3ebdcc318b299b6a4b2a5418f4903df85b8eb693e5107cbd",
+          "private_text_start": 1421,
+          "quote": "--enable Enables checksums."
+        },
+        {
+          "private_line_start": 51,
+          "private_locator": "snapshots/pg_checksums.txt",
+          "private_text_end": 1384,
+          "private_text_sha256": "2fa0d8303eb540aa3ebdcc318b299b6a4b2a5418f4903df85b8eb693e5107cbd",
+          "private_text_start": 1304,
+          "quote": "--check Checks checksums. This is the default mode if nothing else is specified."
+        }
+      ],
+      "method": "Minimal selected text, whitespace collapsed; no ellipses inside quotations. Authored header and blank-line separators added. No full manual was scanned by this admission run."
+    },
+    "format": "text",
+    "license": "PostgreSQL License; https://www.postgresql.org/about/licence/",
+    "original_retrieval": {
+      "note": "Research retrieval hash, not independently authenticated publisher identity. Original response not bundled; A retained extracted text only. NPS PDF extraction/page labels were reviewed separately.",
+      "response_retained_privately": true,
+      "response_sha256": "71f93f4b0837e5d04a913bad4cf56e6f603071008016e8e94adf70dbc12a7d2a",
+      "retrieved_at": "2026-11-01T04:25:00.679986+00:00",
+      "text_sha256": "2fa0d8303eb540aa3ebdcc318b299b6a4b2a5418f4903df85b8eb693e5107cbd"
+    },
+    "profession": [
+      "PostgreSQL database administrator"
+    ],
+    "publisher": "The PostgreSQL Global Development Group",
+    "representation": "reviewed_evidence_excerpt",
+    "review_needs": [
+      "No execution authority; domain professional approval required before use"
+    ],
+    "rights_notice": "See data/THIRD_PARTY_NOTICES.txt and data/licenses/. This excerpt selection is changed/abridged from the linked original; no endorsement.",
+    "section": [
+      "Description; Options --check, --enable, --pgdata"
+    ],
+    "source_id": "manual-pg-checksums-excerpt-v1",
+    "title": "PostgreSQL 18: pg_checksums",
+    "url": "https://www.postgresql.org/docs/18/app-pgchecksums.html"
+  }
+}

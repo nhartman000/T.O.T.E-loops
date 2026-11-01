@@ -1,0 +1,118 @@
+{
+  "retrieval_utc": "2026-11-01T04:30:49.361931+00:00",
+  "attempts": [
+    {
+      "source_id": 1,
+      "url": "https://nlpu.com/Patterns/patt22.htm",
+      "outcome": "read extracted public webpage",
+      "used_for_terms": true
+    },
+    {
+      "source_id": 2,
+      "url": "https://www.crownhouse.co.uk/structure-of-magic-v1",
+      "outcome": "403 ModSecurity",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 3,
+      "url": "https://www.crownhouse.co.uk/structure-of-magic-vol-2",
+      "outcome": "403 ModSecurity",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 4,
+      "url": "https://www.karlpribram.com/plans-and-the-structure-of-behavior/",
+      "outcome": "403 Forbidden",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 5,
+      "url": "https://nlpuniversitypress.com/html3/TkTz17.html",
+      "outcome": "465",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 6,
+      "url": "https://www.nlpu.com/robbio.htm",
+      "outcome": "read extracted public webpage",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 7,
+      "url": "https://www.andreasnlp.com/store/real-people-press/",
+      "outcome": "403 Forbidden",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 8,
+      "url": "https://books.google.com/books/about/The_Structure_of_Magic.html?id=WEtBAQAAIAAJ",
+      "outcome": "read extracted public webpage",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 9,
+      "url": "https://archive.org/details/patternsofhypnot0001band",
+      "outcome": "read extracted public webpage",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 10,
+      "url": "https://books.google.com/books?id=7vvaAAAAMAAJ",
+      "outcome": "read extracted public webpage",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 11,
+      "url": "https://books.google.com/books/about/Frogs_Into_Princes.html?id=LH52QgAACAAJ",
+      "outcome": "read extracted public webpage",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 12,
+      "url": "https://www.karlpribram.com/wp-content/uploads/pdf/theory/T-142.pdf",
+      "outcome": "403 Forbidden",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 13,
+      "url": "https://www.realpeoplepress.com/",
+      "outcome": "redirect to Andreas NLP, then 403",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 14,
+      "url": "https://www.nlpu.com/Encyclopedia/html3/TkTz17.html",
+      "outcome": "404",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 15,
+      "url": "https://www.nlpu.com/html3/TkTz17.html",
+      "outcome": "404",
+      "used_for_terms": false
+    },
+    {
+      "source_id": 16,
+      "url": "https://www.nlpu.com/Articles/artic17.htm",
+      "outcome": "read extracted public webpage",
+      "used_for_terms": true
+    },
+    {
+      "source_id": 17,
+      "url": "https://www.nlpu.com/Articles/artic19.htm",
+      "outcome": "read extracted public webpage",
+      "used_for_terms": true
+    },
+    {
+      "source_id": 18,
+      "url": "https://catalog.hathitrust.org/Record/000743558",
+      "outcome": "403 Forbidden",
+      "used_for_terms": false
+    }
+  ],
+  "tool_issues": [
+    "web_extract: configured Brave Free backend is search-only",
+    "browser_exec: real Chromium profile write lock; browser not started"
+  ],
+  "unused_search_candidates_policy": "Unverified third-party book PDF mirrors not retrieved or relied on."
+}

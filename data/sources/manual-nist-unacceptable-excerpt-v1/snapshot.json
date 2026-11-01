@@ -1,0 +1,74 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "chunk-0000",
+      "end": 930,
+      "line_start": 1,
+      "start": 0,
+      "text": "REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN\n6.1.5. What to do if \"In Control\" but Unacceptable?\nhttps://www.itl.nist.gov/div898/handbook/pmc/section1/pmc15.htm\nPublisher: NIST / SEMATECH\nSections: e-Handbook §6.1.5, Process improvement techniques / Process must be stable\nRights: NIST employee non-SRD text generally not copyright-protected in US under 17 USC 105; handbook co-produced with SEMATECH, so no blanket public-domain assertion; limited attributed research quotations only.\nChange notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.\nthe average level is too high or too low or the variability is unacceptable?\nexperiments calibration re-analysis of historical database can be initiated to put the process on target or reduce the variability.\nthe process must be stable before it can be centered at a target value or its overall variation can be reduced.\n"
+    }
+  ],
+  "format_version": "1.0",
+  "raw_sha256": "7ebc89ca8131bdcf628ac6c7b9968c884c50089c9289d652a4697f3014da5399",
+  "snapshot_sha256": "2f6d32ec388f9923cde348d94be10142ff1a92f819aa920fae00aaf29df1a12d",
+  "source": {
+    "access": "public",
+    "domain": [
+      "MANUFACTURING_QUALITY"
+    ],
+    "edition": "NIST/SEMATECH e-Handbook of Statistical Methods, live HTML; no edition/date displayed in retained section",
+    "excerpt_derivation": {
+      "excerpts": [
+        {
+          "private_line_start": 3,
+          "private_locator": "snapshots/nist-unacceptable.txt",
+          "private_text_end": 366,
+          "private_text_sha256": "07591b8da847ef09e49bfa55454a85fb3a46a2604c0925904fadc41bfc115cb3",
+          "private_text_start": 290,
+          "quote": "the average level is too high or too low or the variability is unacceptable?"
+        },
+        {
+          "private_line_start": 4,
+          "private_locator": "snapshots/nist-unacceptable.txt",
+          "private_text_end": 568,
+          "private_text_sha256": "07591b8da847ef09e49bfa55454a85fb3a46a2604c0925904fadc41bfc115cb3",
+          "private_text_start": 437,
+          "quote": "experiments calibration re-analysis of historical database can be initiated to put the process on target or reduce the variability."
+        },
+        {
+          "private_line_start": 4,
+          "private_locator": "snapshots/nist-unacceptable.txt",
+          "private_text_end": 713,
+          "private_text_sha256": "07591b8da847ef09e49bfa55454a85fb3a46a2604c0925904fadc41bfc115cb3",
+          "private_text_start": 602,
+          "quote": "the process must be stable before it can be centered at a target value or its overall variation can be reduced."
+        }
+      ],
+      "method": "Minimal selected text, whitespace collapsed; no ellipses inside quotations. Authored header and blank-line separators added. No full manual was scanned by this admission run."
+    },
+    "format": "text",
+    "license": "NIST employee non-SRD text generally not copyright-protected in US under 17 USC 105; handbook co-produced with SEMATECH, so no blanket public-domain assertion; limited attributed research quotations only.",
+    "original_retrieval": {
+      "note": "Research retrieval hash, not independently authenticated publisher identity. Original response not bundled; A retained extracted text only. NPS PDF extraction/page labels were reviewed separately.",
+      "response_retained_privately": false,
+      "response_sha256": "7765cc7639a7b5aa0b2d46756845569a6214655ccf14bda352bc4cebb5f61599",
+      "retrieved_at": "2026-11-01T04:25:23.358923+00:00",
+      "text_sha256": "07591b8da847ef09e49bfa55454a85fb3a46a2604c0925904fadc41bfc115cb3"
+    },
+    "profession": [
+      "Manufacturing quality engineer"
+    ],
+    "publisher": "NIST / SEMATECH",
+    "representation": "reviewed_evidence_excerpt",
+    "review_needs": [
+      "No execution authority; domain professional approval required before use"
+    ],
+    "rights_notice": "See data/THIRD_PARTY_NOTICES.txt and data/licenses/. This excerpt selection is changed/abridged from the linked original; no endorsement.",
+    "section": [
+      "e-Handbook §6.1.5, Process improvement techniques / Process must be stable"
+    ],
+    "source_id": "manual-nist-unacceptable-excerpt-v1",
+    "title": "6.1.5. What to do if \"In Control\" but Unacceptable?",
+    "url": "https://www.itl.nist.gov/div898/handbook/pmc/section1/pmc15.htm"
+  }
+}

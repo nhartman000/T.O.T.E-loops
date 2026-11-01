@@ -1,0 +1,157 @@
+{
+  "excluded": [],
+  "original_seed_semantic_sha256": "2cb8dfd6c510c5a7f7a451fa4cc841d7b3edcfd46310e0d6b601a4940efa662d",
+  "reviews": [
+    {
+      "decision": "approved_derived_specification_only",
+      "domain": "GEOSPATIAL_CARTOGRAPHY",
+      "loop_id": "A-GEO-001",
+      "original_candidate_sha256": "195a0d119ca3a931ab56febae2b12498e0e5b71150d388ede0c29c0393e3b8c3",
+      "profession": "Cartographer / forestry GIS technician",
+      "reasoning": "10 pixels belongs only to the Finland forestry exercise. Absolute component interpretation and overlay sign-off are authored, not general cartographic accuracy.",
+      "researcher_lexical_routes_not_admitted": [
+        "forestry map control-point residual",
+        "legacy paper map georeferencing"
+      ]
+    },
+    {
+      "decision": "approved_derived_specification_only",
+      "domain": "GEOSPATIAL_CARTOGRAPHY",
+      "loop_id": "A-GEO-002",
+      "original_candidate_sha256": "46b793e1e08b57508e9294920335759c38d7f1a863d090088cf349ef41508f86",
+      "profession": "Cartographer / spatial data quality analyst",
+      "reasoning": "Full-layer validation and rule meaning are supported. Boundary correction remains qualified review, not automatic deletion or cadastral certification.",
+      "researcher_lexical_routes_not_admitted": [
+        "polygon overlap review",
+        "thematic coverage topology"
+      ]
+    },
+    {
+      "decision": "approved_derived_specification_only",
+      "domain": "MANUFACTURING_QUALITY",
+      "loop_id": "A-QUAL-001",
+      "original_candidate_sha256": "0ea2e86a5ab58654996312c3647dad1910f5a92f31bcd9fbd3bd5eafc9e12859",
+      "profession": "Quality engineer / statistical process-control analyst",
+      "reasoning": "Outside limits and nonrandom patterns both matter. Do not widen limits to hide a signal. Finite-window absence of signals is not proof of stability or product conformance.",
+      "researcher_lexical_routes_not_admitted": [
+        "assignable cause chart signal",
+        "quality control nonrandom pattern"
+      ]
+    },
+    {
+      "decision": "approved_derived_specification_only",
+      "domain": "MANUFACTURING_QUALITY",
+      "loop_id": "A-QUAL-002",
+      "original_candidate_sha256": "ba9f35b1904773b7eee7b3c65070a4489eb2c94cbcf1dcc3c74fec15fb46aed2",
+      "profession": "Manufacturing quality engineer",
+      "reasoning": "The source supports stability before centering/reducing variation and proposes experiments/calibration/reanalysis. Targets, sampling and verification windows remain required professional inputs.",
+      "researcher_lexical_routes_not_admitted": [
+        "stable process off target",
+        "unacceptable process variability"
+      ]
+    },
+    {
+      "decision": "approved_derived_specification_only",
+      "domain": "COLLECTIONS_PRESERVATION",
+      "loop_id": "A-PRES-001",
+      "original_candidate_sha256": "5bc848af8176e4471329b91dbde61945f96344f3cfe06e45a2e64cafb89b3e40",
+      "profession": "Museum collections manager / preventive conservator",
+      "reasoning": "Source supports team planning, non-mechanical measures, monitoring and adjustment. No collection-independent RH/temperature prescription; continuous monitoring must continue.",
+      "researcher_lexical_routes_not_admitted": [
+        "collection microclimate deviation",
+        "museum temperature humidity review"
+      ]
+    },
+    {
+      "decision": "approved_derived_specification_only",
+      "domain": "COLLECTIONS_PRESERVATION",
+      "loop_id": "A-PRES-002",
+      "original_candidate_sha256": "e2db897ff3e9d1c7382b63ff2957e40383554b19a2583efd694df94095dcf445",
+      "profession": "Museum conservator / collections lighting coordinator",
+      "reasoning": "Source explicitly supports before/after monitoring and reducing exposure. Preserve collection-specific criteria; exclude installations, electrical work and object handling.",
+      "researcher_lexical_routes_not_admitted": [
+        "museum lighting effectiveness",
+        "collection light exposure review"
+      ]
+    },
+    {
+      "decision": "approved_derived_specification_only",
+      "domain": "database_administration",
+      "loop_id": "MB-B-PG-001",
+      "original_candidate_sha256": "9cd92b6cd229c1bd24a911914c3a2a84373e375f8c975726ea5f0846077bfe81",
+      "profession": "PostgreSQL database administrator",
+      "reasoning": "The source supports creation then verification, not automatic retry. Plain-format WAL-capable verification and version compatibility are required by this profile; verification does not replace test restores.",
+      "researcher_lexical_routes_not_admitted": [
+        "base backup manifest verification",
+        "pg_verifybackup",
+        "backup checksum mismatch"
+      ]
+    },
+    {
+      "decision": "approved_derived_specification_only",
+      "domain": "database_administration",
+      "loop_id": "MB-B-PG-002",
+      "original_candidate_sha256": "213ccdcb04b08142be5b946eabe58f754d998f3af3770f8c364dcd65bb4ec3e7",
+      "profession": "PostgreSQL database administrator",
+      "reasoning": "High-risk in-place rewrite is explicitly documented. Include only as an offline configuration-to-verification specification, never corruption repair. Disabled state, clean shutdown, protected backup, replication coordination and approval must be established externally; existing failures stop/escalate.",
+      "researcher_lexical_routes_not_admitted": [
+        "enable offline data checksums",
+        "pg_checksums check",
+        "cluster checksum scan"
+      ]
+    },
+    {
+      "decision": "approved_derived_specification_only",
+      "domain": "digital_imaging",
+      "loop_id": "MB-B-IM-001",
+      "original_candidate_sha256": "e4d45f2003120ecf22e8b1443f6b8fb27bf6f27d609990ac6d777c8d1a92057e",
+      "profession": "Digital imaging technician",
+      "reasoning": "The command and identify checks are documented. WEBP, dimensions, quality 85 and new filenames are profile inputs/example choices, not universal quality guarantees. Untrusted inputs require an external sandbox/resource policy.",
+      "researcher_lexical_routes_not_admitted": [
+        "verify webp derivative format",
+        "identify corrupt image",
+        "imagemagick format dimensions"
+      ]
+    },
+    {
+      "decision": "approved_derived_specification_only",
+      "domain": "digital_imaging",
+      "loop_id": "MB-B-IM-002",
+      "original_candidate_sha256": "827c5722952c6411eae411886b6359beb853d7a1b932a5cb5cbac4584baa71df",
+      "profession": "Image quality assurance analyst",
+      "reasoning": "Explicit RMSE avoids contradictory default-metric prose/table. The normalized all-channel example supports measurement; no universal threshold, monotonic quality guarantee or exit-code semantics is inferred.",
+      "researcher_lexical_routes_not_admitted": [
+        "normalized rmse image quality",
+        "reconstruction error reencode",
+        "imagemagick compare quality"
+      ]
+    },
+    {
+      "decision": "approved_derived_specification_only",
+      "domain": "accessibility_web_qa",
+      "loop_id": "MB-B-WAI-001",
+      "original_candidate_sha256": "c1b7aee379ad27e6ddfb1932576bea2393009eee6fefeb18e8bd57ebb88883bd",
+      "profession": "Web accessibility evaluator",
+      "reasoning": "Draft Easy Checks provide screening, not normative conformance. Semantic adequacy requires human judgment; distinctiveness holds only for the declared compared pages. No bookmark code is retained/executed.",
+      "researcher_lexical_routes_not_admitted": [
+        "page title distinctiveness",
+        "accessible page title review",
+        "brief descriptive title"
+      ]
+    },
+    {
+      "decision": "approved_derived_specification_only",
+      "domain": "accessibility_web_qa",
+      "loop_id": "MB-B-WAI-002",
+      "original_candidate_sha256": "4d4e23ede3520e5229b5f9b21b74a3e32410918c58aae7c7c72e7f8644fb379d",
+      "profession": "Web accessibility evaluator",
+      "reasoning": "Draft screening questions are supported. Starting-H1/no-skipped-subheading criteria are this profile, not universal WCAG violations. Reload/repetition/editing and human semantic acceptance are authored.",
+      "researcher_lexical_routes_not_admitted": [
+        "heading hierarchy review",
+        "skipped heading levels",
+        "accessible heading structure"
+      ]
+    }
+  ],
+  "scope": "Independent source-context review for specification inclusion only, not domain certification. All operations/retests/exits/bounds are authored; initial tests are source-grounded paraphrases. No added gestalts; provenance and exit_predicate are existing domain-neutral protected terms."
+}

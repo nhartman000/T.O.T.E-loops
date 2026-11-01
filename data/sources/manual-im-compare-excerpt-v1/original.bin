@@ -1,0 +1,15 @@
+REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN
+ImageMagick: Command-line Tools: Compare
+https://imagemagick.org/compare/
+Publisher: ImageMagick Studio LLC
+Sections: Example Usage; Option Summary -quality; shared conversion example
+Rights: ImageMagick License linked by manual; https://imagemagick.org/license/; review redistribution obligations
+Change notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.
+
+$ magick compare -verbose -metric rmse rose.jpg reconstruct.jpg difference.png
+
+all: 2604.73 (0.0397456)
+
+$ magick input.png -quality 85 output.webp
+
+In addition to the visual interpretation of the difference in an image and its reconstruction, we report a mathematical measure of the difference:

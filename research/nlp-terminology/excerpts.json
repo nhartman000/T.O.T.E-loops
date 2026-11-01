@@ -1,0 +1,215 @@
+{
+  "notice": "Minimal quotations for terminology/provenance analysis. Copyright remains with respective rightsholders. No book full text is reproduced.",
+  "excerpts": [
+    {
+      "id": "e01",
+      "source_id": 1,
+      "quote": "Test-Operate-Test-Exit",
+      "locator": "Tools for Dreamers quotation, opening paragraph; cited there as 1993, pp. 23–24",
+      "local_snapshot": "private-snapshots/source-1.txt",
+      "start_character": 1897,
+      "snapshot_sha256": "b449d54e24650cb3a79dc75b041cd925408436e597e36b557513dd62869fd71a",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e02",
+      "source_id": 1,
+      "quote": "basic feedback loop",
+      "locator": "Tools for Dreamers quotation, opening sentence",
+      "local_snapshot": "private-snapshots/source-1.txt",
+      "start_character": 1791,
+      "snapshot_sha256": "b449d54e24650cb3a79dc75b041cd925408436e597e36b557513dd62869fd71a",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e03",
+      "source_id": 1,
+      "quote": "fixed goal and a variable means",
+      "locator": "Tools for Dreamers quotation, third sentence",
+      "local_snapshot": "private-snapshots/source-1.txt",
+      "start_character": 2016,
+      "snapshot_sha256": "b449d54e24650cb3a79dc75b041cd925408436e597e36b557513dd62869fd71a",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e04",
+      "source_id": 1,
+      "quote": "develop a TEST for when that goal has been achieved",
+      "locator": "Tools for Dreamers quotation, fourth sentence",
+      "local_snapshot": "private-snapshots/source-1.txt",
+      "start_character": 2170,
+      "snapshot_sha256": "b449d54e24650cb3a79dc75b041cd925408436e597e36b557513dd62869fd71a",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e05",
+      "source_id": 1,
+      "quote": "If that goal is not achieved we OPERATE to change something",
+      "locator": "Tools for Dreamers quotation, fifth sentence",
+      "local_snapshot": "private-snapshots/source-1.txt",
+      "start_character": 2223,
+      "snapshot_sha256": "b449d54e24650cb3a79dc75b041cd925408436e597e36b557513dd62869fd71a",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e06",
+      "source_id": 1,
+      "quote": "When our TEST criteria have been satisfied we then EXIT on to the next step.",
+      "locator": "Tools for Dreamers quotation, final sentence",
+      "local_snapshot": "private-snapshots/source-1.txt",
+      "start_character": 2326,
+      "snapshot_sha256": "b449d54e24650cb3a79dc75b041cd925408436e597e36b557513dd62869fd71a",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e07",
+      "source_id": 1,
+      "quote": "The term 'congruency' is used",
+      "locator": "Quotation explicitly attributed to The Structure of Magic Volume II (1976), p. 45",
+      "local_snapshot": "private-snapshots/source-1.txt",
+      "start_character": 3880,
+      "snapshot_sha256": "b449d54e24650cb3a79dc75b041cd925408436e597e36b557513dd62869fd71a",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e08",
+      "source_id": 1,
+      "quote": "aligned all of his output channels",
+      "locator": "Same quoted paragraph, first sentence",
+      "local_snapshot": "private-snapshots/source-1.txt",
+      "start_character": 3972,
+      "snapshot_sha256": "b449d54e24650cb3a79dc75b041cd925408436e597e36b557513dd62869fd71a",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e09",
+      "source_id": 1,
+      "quote": "the same or a compatible message",
+      "locator": "Same quoted paragraph, first sentence",
+      "local_snapshot": "private-snapshots/source-1.txt",
+      "start_character": 4067,
+      "snapshot_sha256": "b449d54e24650cb3a79dc75b041cd925408436e597e36b557513dd62869fd71a",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e10",
+      "source_id": 16,
+      "quote": "unless certain conditions defined by the \"Test\" are met, the person will continue to \"Operate\"",
+      "locator": "Motivation, paragraph beginning “The distinctions of the T.O.T.E.”",
+      "local_snapshot": "private-snapshots/source-16.txt",
+      "start_character": 5404,
+      "snapshot_sha256": "b34024ae27e6d6648e018aa801f4df4ed12d9e12be3c2b96d865fe7010125979",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e11",
+      "source_id": 17,
+      "quote": "evidence and evidence procedures",
+      "locator": "Modeling Capabilities, second item in key elements of T.O.T.E.",
+      "local_snapshot": "private-snapshots/source-17.txt",
+      "start_character": 12012,
+      "snapshot_sha256": "295c839334485320f4f69a9fc20f01255fea59823715b8f4d9aa19ee0c1921fb",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e12",
+      "source_id": 17,
+      "quote": "The way the performer(s) respond(s) if the goal is not initially achieved.",
+      "locator": "Modeling Capabilities, fourth item in key elements of T.O.T.E.",
+      "local_snapshot": "private-snapshots/source-17.txt",
+      "start_character": 12233,
+      "snapshot_sha256": "295c839334485320f4f69a9fc20f01255fea59823715b8f4d9aa19ee0c1921fb",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e13",
+      "source_id": 17,
+      "quote": "\"nested T.O.T.E.s,\" \"sub-loops,\" or \"sub-skills,\"",
+      "locator": "Levels of Complexity of Skills and Capabilities, first paragraph",
+      "local_snapshot": "private-snapshots/source-17.txt",
+      "start_character": 12799,
+      "snapshot_sha256": "295c839334485320f4f69a9fc20f01255fea59823715b8f4d9aa19ee0c1921fb",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e14",
+      "source_id": 1,
+      "quote": "A mental strategy",
+      "locator": "Tools for Dreamers quotation, opening sentence",
+      "local_snapshot": "private-snapshots/source-1.txt",
+      "start_character": 1743,
+      "snapshot_sha256": "b449d54e24650cb3a79dc75b041cd925408436e597e36b557513dd62869fd71a",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e15",
+      "source_id": 16,
+      "quote": "The T.O.T.E. Model (Miller, Gallanter and Pribram, 1960)",
+      "locator": "Motivation, paragraph beginning “As opposed to the reflex arc”",
+      "local_snapshot": "private-snapshots/source-16.txt",
+      "start_character": 4964,
+      "snapshot_sha256": "b34024ae27e6d6648e018aa801f4df4ed12d9e12be3c2b96d865fe7010125979",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e16",
+      "source_id": 6,
+      "quote": "co-authored with John Grinder, Richard Bandler, & Judith DeLozier, Meta Publications, Capitola, Ca., 1980.",
+      "locator": "BOOKS list, Neuro-Linguistic Programming: The Study of the Structure of Subjective Experience, Volume I",
+      "local_snapshot": "private-snapshots/source-6.txt",
+      "start_character": 11018,
+      "snapshot_sha256": "977536c487f5b0dab4e4122b15996642f0ce6ce0133942ca1e28ca32256df9b3",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e17",
+      "source_id": 8,
+      "quote": "Publisher Science and Behavior Books, 1975",
+      "locator": "Bibliographic information",
+      "local_snapshot": "private-snapshots/source-8.txt",
+      "start_character": 3359,
+      "snapshot_sha256": "886c5eb5a23bf89d1fa4ec2826a14ee712ad52ac0fcf5ff66191909645213602",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e18",
+      "source_id": 10,
+      "quote": "Publisher Science and Behavior Books, 1975",
+      "locator": "Bibliographic information",
+      "local_snapshot": "private-snapshots/source-10.txt",
+      "start_character": 2800,
+      "snapshot_sha256": "23096a652fead6c1711deaf0987ecbed6e7cc87b403cda031181c7eec7bb5fdd",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e19",
+      "source_id": 9,
+      "quote": "Access-restricted-item true",
+      "locator": "Item metadata",
+      "local_snapshot": "private-snapshots/source-9.txt",
+      "start_character": 4566,
+      "snapshot_sha256": "58f1c29b748386b5ead06d4fee8d9bccf21389bb8ed1b8125999c4045828845e",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e20",
+      "source_id": 11,
+      "quote": "Edition 4 Publisher Real People Press, 1979",
+      "locator": "Bibliographic information",
+      "local_snapshot": "private-snapshots/source-11.txt",
+      "start_character": 3021,
+      "snapshot_sha256": "036d11e546cf0f23dd1c82956b12f9fcd74ed3396fac60f22fd989b6313b06ff",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    },
+    {
+      "id": "e21",
+      "source_id": 6,
+      "quote": "Tools For Dreamers: Strategies of Creativity and the Structure of Innovation , co-authored with Todd Epstein and Robert W. Dilts, Meta Publications, Capitola, Ca., 1991.",
+      "locator": "BOOKS list",
+      "local_snapshot": "private-snapshots/source-6.txt",
+      "start_character": 10284,
+      "snapshot_sha256": "977536c487f5b0dab4e4122b15996642f0ce6ce0133942ca1e28ca32256df9b3",
+      "verification": "literal substring; extracted webpage, NOT original book-page image"
+    }
+  ]
+}

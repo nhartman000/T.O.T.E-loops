@@ -1,31 +1,450 @@
 {
-  "schema_version": "0.1.0",
-  "operators": [
-    {"operator_id":"external_observe","symbol":"👀","canonical_name":"external observation","definition":"Inspect externally available evidence without inventing a result.","evidence_channel":"external","may_assert_action":0},
-    {"operator_id":"internal_model","symbol":"👁️🧠","canonical_name":"internal model","definition":"Model, imagine, remember, or compare a candidate state internally.","evidence_channel":"internal","may_assert_action":0},
-    {"operator_id":"operative_intent","symbol":"🗯️","canonical_name":"operative intention","definition":"Represent a licensed intention, plan, or operative thought.","evidence_channel":"internal","may_assert_action":0},
-    {"operator_id":"execute","symbol":"💪","canonical_name":"execution","definition":"Perform an externally consequential operation.","evidence_channel":"external-effect","may_assert_action":1}
-  ],
   "gestalts": [
-    {"gestalt_id":"test","glyph":"🧪","lexical_form":"test","sense":"software or model evaluation","route":"G","recoverability_note":"Obvious in engineering context."},
-    {"gestalt_id":"bug","glyph":"🐛","lexical_form":"bug","sense":"software defect","route":"G","recoverability_note":"Obvious in software context."},
-    {"gestalt_id":"repair","glyph":"🔧","lexical_form":"repair","sense":"correct a software or configuration defect","route":"G","recoverability_note":"Tool/action gestalt remains context-bound."},
-    {"gestalt_id":"pass","glyph":"✅","lexical_form":"pass","sense":"declared acceptance predicate satisfied","route":"G","recoverability_note":"Only after external verification."},
-    {"gestalt_id":"fail","glyph":"❌","lexical_form":"fail","sense":"declared acceptance predicate not satisfied","route":"G","recoverability_note":"Must name the evaluated predicate."},
-    {"gestalt_id":"model_output","glyph":null,"lexical_form":"model output","sense":"generated AI response under evaluation","route":"L","recoverability_note":"No single unambiguous gestalt; preserve lexically."},
-    {"gestalt_id":"provenance","glyph":null,"lexical_form":"provenance","sense":"origin and evidentiary status of a proposition","route":"P","recoverability_note":"Protected technical term."},
-    {"gestalt_id":"exit_predicate","glyph":null,"lexical_form":"exit predicate","sense":"externally testable condition licensing loop exit","route":"P","recoverability_note":"Protected control term."}
+    {
+      "gestalt_id": "test",
+      "glyph": "🧪",
+      "lexical_form": "test",
+      "recoverability_note": "Obvious in engineering context.",
+      "route": "G",
+      "sense": "software or model evaluation"
+    },
+    {
+      "gestalt_id": "bug",
+      "glyph": "🐛",
+      "lexical_form": "bug",
+      "recoverability_note": "Obvious in software context.",
+      "route": "G",
+      "sense": "software defect"
+    },
+    {
+      "gestalt_id": "repair",
+      "glyph": "🔧",
+      "lexical_form": "repair",
+      "recoverability_note": "Tool/action gestalt remains context-bound.",
+      "route": "G",
+      "sense": "correct a software or configuration defect"
+    },
+    {
+      "gestalt_id": "pass",
+      "glyph": "✅",
+      "lexical_form": "pass",
+      "recoverability_note": "Only after external verification.",
+      "route": "G",
+      "sense": "declared acceptance predicate satisfied"
+    },
+    {
+      "gestalt_id": "fail",
+      "glyph": "❌",
+      "lexical_form": "fail",
+      "recoverability_note": "Must name the evaluated predicate.",
+      "route": "G",
+      "sense": "declared acceptance predicate not satisfied"
+    },
+    {
+      "gestalt_id": "model_output",
+      "glyph": null,
+      "lexical_form": "model output",
+      "recoverability_note": "No single unambiguous gestalt; preserve lexically.",
+      "route": "L",
+      "sense": "generated AI response under evaluation"
+    },
+    {
+      "gestalt_id": "provenance",
+      "glyph": null,
+      "lexical_form": "provenance",
+      "recoverability_note": "Protected technical term.",
+      "route": "P",
+      "sense": "origin and evidentiary status of a proposition"
+    },
+    {
+      "gestalt_id": "exit_predicate",
+      "glyph": null,
+      "lexical_form": "exit predicate",
+      "recoverability_note": "Protected control term.",
+      "route": "P",
+      "sense": "externally testable condition licensing loop exit"
+    }
   ],
   "loops": [
-    {"loop_id":"code.unit_test_repair","name":"Unit-test repair","domain":"software-engineering","objective":"Make the selected test suite pass without weakening its assertions.","initial_test":"Run the unchanged tests and capture failures.","exit_predicate":"The unchanged selected test suite exits successfully.","max_iterations":8,"epistemic_status":"CANONICAL","gestalts":["test","bug","repair","pass","fail"]},
-    {"loop_id":"code.debug_reproduction","name":"Defect reproduction and repair","domain":"software-engineering","objective":"Reproduce and correct a reported defect.","initial_test":"Execute the smallest known reproducer and inspect the observed result.","exit_predicate":"The original reproducer and regression test both pass.","max_iterations":8,"epistemic_status":"CANONICAL","gestalts":["test","bug","repair","pass","fail"]},
-    {"loop_id":"code.ci_repair","name":"CI failure repair","domain":"software-engineering","objective":"Restore the declared continuous-integration checks.","initial_test":"Inspect the failing job and reproduce its command in a clean environment.","exit_predicate":"All required CI checks report success on the candidate commit.","max_iterations":6,"epistemic_status":"CANONICAL","gestalts":["test","repair","pass","fail"]},
-    {"loop_id":"ai.output_gate","name":"LLM output governance gate","domain":"ai-governance","objective":"Release only output satisfying the declared policy and evidence constraints.","initial_test":"Inspect the candidate model output, policy, and cited evidence.","exit_predicate":"Every required policy and grounding predicate passes, or the output is withheld.","max_iterations":4,"epistemic_status":"DERIVED","gestalts":["model_output","provenance","pass","fail","exit_predicate"]},
-    {"loop_id":"ai.retrieval_grounding","name":"Retrieval grounding","domain":"ai-retrieval","objective":"Ground a claim in directly supporting retrieved evidence.","initial_test":"Compare each material claim with the retrieved source content.","exit_predicate":"Every material claim is supported, qualified, or removed.","max_iterations":5,"epistemic_status":"DERIVED","gestalts":["provenance","pass","fail","exit_predicate"]},
-    {"loop_id":"ai.tool_call_verify","name":"Tool-call verification","domain":"ai-agents","objective":"Verify that an external tool operation produced the intended state.","initial_test":"Inspect the current external state and define the intended postcondition.","exit_predicate":"A fresh external read confirms the intended postcondition.","max_iterations":3,"epistemic_status":"CANONICAL","gestalts":["pass","fail","exit_predicate"]},
-    {"loop_id":"ai.relay_integrity","name":"Agent relay integrity","domain":"multi-agent-ai","objective":"Accept only fresh, single-envelope peer contributions.","initial_test":"Inspect nonce, sender, turn lineage, envelope count, and payload freshness.","exit_predicate":"One fresh bidirectional chain is committed with SingleEnvelope equal to one.","max_iterations":5,"epistemic_status":"CANONICAL","gestalts":["provenance","pass","fail","exit_predicate"]},
-    {"loop_id":"ai.memory_roundtrip","name":"Memory write-read verification","domain":"ai-memory","objective":"Store and recover the same canonical record.","initial_test":"Inspect the normalized record and its closure hash before writing.","exit_predicate":"A fresh read returns the same normalized record and closure hash.","max_iterations":3,"epistemic_status":"DERIVED","gestalts":["provenance","pass","fail","exit_predicate"]},
-    {"loop_id":"code.dependency_repair","name":"Dependency resolution","domain":"software-engineering","objective":"Produce a reproducible environment satisfying declared dependency constraints.","initial_test":"Install from the locked declaration in a clean environment and capture resolver errors.","exit_predicate":"Clean installation and smoke tests succeed from the locked declaration.","max_iterations":6,"epistemic_status":"DERIVED","gestalts":["test","repair","pass","fail"]},
-    {"loop_id":"ai.model_evaluation","name":"Model evaluation gate","domain":"machine-learning","objective":"Evaluate a frozen model and dataset against preregistered thresholds.","initial_test":"Verify model, dataset, split, metric, seed, and thresholds are frozen.","exit_predicate":"The complete evaluation executes and its measured metrics are recorded without threshold revision.","max_iterations":2,"epistemic_status":"CANONICAL","gestalts":["test","provenance","pass","fail","exit_predicate"]}
-  ]
+    {
+      "domain": "software-engineering",
+      "epistemic_status": "CANONICAL",
+      "exit_predicate": "The unchanged selected test suite exits successfully.",
+      "gestalts": [
+        "test",
+        "bug",
+        "repair",
+        "pass",
+        "fail"
+      ],
+      "initial_test": "Run the unchanged tests and capture failures.",
+      "loop_id": "code.unit_test_repair",
+      "max_iterations": 8,
+      "name": "Unit-test repair",
+      "objective": "Make the selected test suite pass without weakening its assertions."
+    },
+    {
+      "domain": "software-engineering",
+      "epistemic_status": "CANONICAL",
+      "exit_predicate": "The original reproducer and regression test both pass.",
+      "gestalts": [
+        "test",
+        "bug",
+        "repair",
+        "pass",
+        "fail"
+      ],
+      "initial_test": "Execute the smallest known reproducer and inspect the observed result.",
+      "loop_id": "code.debug_reproduction",
+      "max_iterations": 8,
+      "name": "Defect reproduction and repair",
+      "objective": "Reproduce and correct a reported defect."
+    },
+    {
+      "domain": "software-engineering",
+      "epistemic_status": "CANONICAL",
+      "exit_predicate": "All required CI checks report success on the candidate commit.",
+      "gestalts": [
+        "test",
+        "repair",
+        "pass",
+        "fail"
+      ],
+      "initial_test": "Inspect the failing job and reproduce its command in a clean environment.",
+      "loop_id": "code.ci_repair",
+      "max_iterations": 6,
+      "name": "CI failure repair",
+      "objective": "Restore the declared continuous-integration checks."
+    },
+    {
+      "domain": "ai-governance",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "Every required policy and grounding predicate passes, or the output is withheld.",
+      "gestalts": [
+        "model_output",
+        "provenance",
+        "pass",
+        "fail",
+        "exit_predicate"
+      ],
+      "initial_test": "Inspect the candidate model output, policy, and cited evidence.",
+      "loop_id": "ai.output_gate",
+      "max_iterations": 4,
+      "name": "LLM output governance gate",
+      "objective": "Release only output satisfying the declared policy and evidence constraints."
+    },
+    {
+      "domain": "ai-retrieval",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "Every material claim is supported, qualified, or removed.",
+      "gestalts": [
+        "provenance",
+        "pass",
+        "fail",
+        "exit_predicate"
+      ],
+      "initial_test": "Compare each material claim with the retrieved source content.",
+      "loop_id": "ai.retrieval_grounding",
+      "max_iterations": 5,
+      "name": "Retrieval grounding",
+      "objective": "Ground a claim in directly supporting retrieved evidence."
+    },
+    {
+      "domain": "ai-agents",
+      "epistemic_status": "CANONICAL",
+      "exit_predicate": "A fresh external read confirms the intended postcondition.",
+      "gestalts": [
+        "pass",
+        "fail",
+        "exit_predicate"
+      ],
+      "initial_test": "Inspect the current external state and define the intended postcondition.",
+      "loop_id": "ai.tool_call_verify",
+      "max_iterations": 3,
+      "name": "Tool-call verification",
+      "objective": "Verify that an external tool operation produced the intended state."
+    },
+    {
+      "domain": "multi-agent-ai",
+      "epistemic_status": "CANONICAL",
+      "exit_predicate": "One fresh bidirectional chain is committed with SingleEnvelope equal to one.",
+      "gestalts": [
+        "provenance",
+        "pass",
+        "fail",
+        "exit_predicate"
+      ],
+      "initial_test": "Inspect nonce, sender, turn lineage, envelope count, and payload freshness.",
+      "loop_id": "ai.relay_integrity",
+      "max_iterations": 5,
+      "name": "Agent relay integrity",
+      "objective": "Accept only fresh, single-envelope peer contributions."
+    },
+    {
+      "domain": "ai-memory",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "A fresh read returns the same normalized record and closure hash.",
+      "gestalts": [
+        "provenance",
+        "pass",
+        "fail",
+        "exit_predicate"
+      ],
+      "initial_test": "Inspect the normalized record and its closure hash before writing.",
+      "loop_id": "ai.memory_roundtrip",
+      "max_iterations": 3,
+      "name": "Memory write-read verification",
+      "objective": "Store and recover the same canonical record."
+    },
+    {
+      "domain": "software-engineering",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "Clean installation and smoke tests succeed from the locked declaration.",
+      "gestalts": [
+        "test",
+        "repair",
+        "pass",
+        "fail"
+      ],
+      "initial_test": "Install from the locked declaration in a clean environment and capture resolver errors.",
+      "loop_id": "code.dependency_repair",
+      "max_iterations": 6,
+      "name": "Dependency resolution",
+      "objective": "Produce a reproducible environment satisfying declared dependency constraints."
+    },
+    {
+      "domain": "machine-learning",
+      "epistemic_status": "CANONICAL",
+      "exit_predicate": "The complete evaluation executes and its measured metrics are recorded without threshold revision.",
+      "gestalts": [
+        "test",
+        "provenance",
+        "pass",
+        "fail",
+        "exit_predicate"
+      ],
+      "initial_test": "Verify model, dataset, split, metric, seed, and thresholds are frozen.",
+      "loop_id": "ai.model_evaluation",
+      "max_iterations": 2,
+      "name": "Model evaluation gate",
+      "objective": "Evaluate a frozen model and dataset against preregistered thresholds."
+    },
+    {
+      "domain": "GEOSPATIAL_CARTOGRAPHY",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "After correction, every reviewed absolute dX and dY is at most 10 pixels, control-point identities and CRS are confirmed, and a cartographer accepts the overlay comparison; not a universal mapping accuracy claim.",
+      "gestalts": [
+        "provenance",
+        "exit_predicate"
+      ],
+      "initial_test": "Inspect the ground-control-point table dX[pixels] and dY[pixels] errors and review digitized points and entered coordinates when the exercise error exceeds 10 pixels.",
+      "loop_id": "A-GEO-001",
+      "max_iterations": 3,
+      "name": "Review forestry map ground-control residuals",
+      "objective": "Prepare a legacy forestry map registration for reviewer acceptance."
+    },
+    {
+      "domain": "GEOSPATIAL_CARTOGRAPHY",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "A fresh full-layer validation reports zero overlaps under the same approved rule, and a cartographer confirms the corrections preserve the intended boundaries; no claim of legal boundary accuracy.",
+      "gestalts": [
+        "provenance",
+        "exit_predicate"
+      ],
+      "initial_test": "Apply the active Must not overlap rule to all features and inspect errors by type, layer and feature ID.",
+      "loop_id": "A-GEO-002",
+      "max_iterations": 3,
+      "name": "Resolve reviewed polygon overlap findings",
+      "objective": "Bring a thematic polygon coverage into conformance with an approved no-overlap rule without erasing legitimate features."
+    },
+    {
+      "domain": "MANUFACTURING_QUALITY",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "Fresh samples over a quality-engineer-defined verification window show no outside-limit points or signals under the same approved pattern rules; documented cause disposition is accepted by the engineer. This does not certify product conformance.",
+      "gestalts": [
+        "provenance",
+        "exit_predicate"
+      ],
+      "initial_test": "Inspect control-chart points for outside-limit observations and systematic nonrandom patterns; either finding warrants investigation.",
+      "loop_id": "A-QUAL-001",
+      "max_iterations": 3,
+      "name": "Review a statistical process-control signal",
+      "objective": "Resolve a reviewed chart signal using documentary evidence and an approved corrective-action plan."
+    },
+    {
+      "domain": "MANUFACTURING_QUALITY",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "New post-intervention data remain stable and meet the preapproved target/variation criteria over the approved verification window, with quality-engineer sign-off; missing specification or stability evidence is unresolved, not success.",
+      "gestalts": [
+        "provenance",
+        "exit_predicate"
+      ],
+      "initial_test": "Check whether the statistically stable process has an average level too high or too low, or unacceptable variability.",
+      "loop_id": "A-QUAL-002",
+      "max_iterations": 3,
+      "name": "Review stable but off-target process performance",
+      "objective": "Prepare and assess a reviewed improvement proposal for a stable but unacceptable process."
+    },
+    {
+      "domain": "COLLECTIONS_PRESERVATION",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "Fresh logger records for the agreed post-change window are stable and within the approved setpoint ranges, with conservator acceptance; close this corrective episode only, not ongoing monitoring.",
+      "gestalts": [
+        "provenance",
+        "exit_predicate"
+      ],
+      "initial_test": "Determine whether temperature and RH levels are stable and within the recommended set point and permissible range.",
+      "loop_id": "A-PRES-001",
+      "max_iterations": 3,
+      "name": "Review a museum collection microclimate deviation",
+      "objective": "Assess whether a reviewed non-mechanical preservation change restores approved temperature/RH conditions."
+    },
+    {
+      "domain": "COLLECTIONS_PRESERVATION",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "Fresh before/after-comparable site records satisfy all approved visible-light, UV, heat and exposure-duration criteria, and the conservator accepts effectiveness; ongoing exposure monitoring continues.",
+      "gestalts": [
+        "provenance",
+        "exit_predicate"
+      ],
+      "initial_test": "Gather baseline and ongoing lighting information and assess required light levels, UV blocking, IR and visible-light control.",
+      "loop_id": "A-PRES-002",
+      "max_iterations": 3,
+      "name": "Review the effectiveness of a collection lighting plan",
+      "objective": "Assess whether a reviewed lighting-protection change meets collection-specific exposure criteria."
+    },
+    {
+      "domain": "database_administration",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "Fresh full verification completes without reported errors (including required WAL parsing); this is not proof of restorability.",
+      "gestalts": [
+        "provenance",
+        "exit_predicate"
+      ],
+      "initial_test": "Use pg_verifybackup to check a pg_basebackup backup against its server-generated backup_manifest.",
+      "loop_id": "MB-B-PG-001",
+      "max_iterations": 3,
+      "name": "Reacquire and verify a base backup",
+      "objective": "Obtain a plain-format base-backup candidate with no reported manifest/file/checksum/required-WAL verification failures."
+    },
+    {
+      "domain": "database_administration",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "Fresh pg_checksums --check -D CLUSTER_DIR completes with exit status zero over the whole cluster; no --filenode narrowing.",
+      "gestalts": [
+        "provenance",
+        "exit_predicate"
+      ],
+      "initial_test": "With the server shut down cleanly, use pg_checksums --check to check cluster checksums; verification exits zero only without checksum errors.",
+      "loop_id": "MB-B-PG-002",
+      "max_iterations": 1,
+      "name": "Enable checksums on an approved offline cluster and verify",
+      "objective": "For an approved, cleanly stopped offline cluster with disabled checksums, enable checksums and require a complete clean checksum scan."
+    },
+    {
+      "domain": "digital_imaging",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "Fresh full-read identify report shows actual WEBP format, expected source dimensions and no decode/corruption diagnostics.",
+      "gestalts": [
+        "provenance",
+        "exit_predicate"
+      ],
+      "initial_test": "Use magick identify to inspect actual image format and dimensions and report incomplete or corrupt image data; use +ping for accurate pixel characteristics.",
+      "loop_id": "MB-B-IM-001",
+      "max_iterations": 3,
+      "name": "Convert a derivative and verify actual image format",
+      "objective": "Produce a fully readable WebP derivative while preserving source and expected dimensions."
+    },
+    {
+      "domain": "digital_imaging",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "Fresh normalized all-channel RMSE is at or below the explicitly supplied project threshold, comparison finishes without errors, and human visual review accepts the derivative; absent threshold means unresolved.",
+      "gestalts": [
+        "provenance",
+        "exit_predicate"
+      ],
+      "initial_test": "Use magick compare -verbose -metric rmse to measure differences between the reference image and its reconstruction, including the all-channel result.",
+      "loop_id": "MB-B-IM-002",
+      "max_iterations": 3,
+      "name": "Re-encode and remeasure reconstruction error",
+      "objective": "Produce a WebP derivative satisfying a preapproved normalized RMSE threshold relative to a preserved reference."
+    },
+    {
+      "domain": "accessibility_web_qa",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "Fresh inspection shows a present, adequate brief description of current page content and a title distinct from every page in the declared comparison set, confirmed by reviewer.",
+      "gestalts": [
+        "provenance",
+        "exit_predicate"
+      ],
+      "initial_test": "Check that a page title adequately and briefly describes page content and differs from titles of other pages on the website.",
+      "loop_id": "MB-B-WAI-001",
+      "max_iterations": 3,
+      "name": "Review, revise and recheck page title",
+      "objective": "Give one scoped page a brief descriptive title distinguishable from other scoped site pages."
+    },
+    {
+      "domain": "accessibility_web_qa",
+      "epistemic_status": "DERIVED",
+      "exit_predicate": "Fresh heading check finds headings, a starting H1, no blank headings or skipped subsection levels, no unmarked visual headings, and a reviewer confirms descriptive text and nesting matching the content.",
+      "gestalts": [
+        "provenance",
+        "exit_predicate"
+      ],
+      "initial_test": "Check heading presence, starting H1, skipped or blank levels, missing visual headings, descriptive text and nesting against page content.",
+      "loop_id": "MB-B-WAI-002",
+      "max_iterations": 3,
+      "name": "Review, repair and recheck heading structure",
+      "objective": "Make scoped page headings describe content and represent a coherent nested structure."
+    }
+  ],
+  "manual_admission": {
+    "A-GEO-001": "c5ce2cd18ad002d7b880cb4db6c74a8bc271b3be6b6e1040bde018121cfe48b4",
+    "A-GEO-002": "ca6026239c83e91860ff2772df3ea458714412e5dab4039baf27ef5a8cd50bbf",
+    "A-PRES-001": "22ed70acd71cb55029de7deb8f153c734519af31739914ed4d76f620899a1020",
+    "A-PRES-002": "323a680b8831e233fabb51659d9f7eb024b57bf8dcda27d6a44e3abeabebe255",
+    "A-QUAL-001": "0d022254621aa832123962f89d95e98b9ef4ffce4a3871b30b1273e0d5b3ef3c",
+    "A-QUAL-002": "d906c947421cd8bb6c0de3571bd91f9763f3e49c669f43ada18f8a023bee6d5f",
+    "MB-B-IM-001": "6dbae98b453616392696433fe151548dba6ec2f5378fefa1452e7bab38c3a679",
+    "MB-B-IM-002": "1a3c259ad1743e44455111d8e483102bb0d562c887a41250a3fe396da532466f",
+    "MB-B-PG-001": "9744a203b55d1a26a74382ed0e78e61d8fd53beeb3b1c7e308023e054d3b28ed",
+    "MB-B-PG-002": "052e28a5a9a8d7f2d8e037521d869571e55797d28478fe90444c14fe7520d69d",
+    "MB-B-WAI-001": "1f62ff0385bf8ba95f4945df7e399c36a3cf72dabba5e7a5d48fd5c5292a2668",
+    "MB-B-WAI-002": "2cee522c3f4ea256cf80811a18a18df609d7fff97d1050ff1ff3c78b2e5aceff"
+  },
+  "operators": [
+    {
+      "canonical_name": "external observation",
+      "definition": "Inspect externally available evidence without inventing a result.",
+      "evidence_channel": "external",
+      "may_assert_action": 0,
+      "operator_id": "external_observe",
+      "symbol": "👀"
+    },
+    {
+      "canonical_name": "internal model",
+      "definition": "Model, imagine, remember, or compare a candidate state internally.",
+      "evidence_channel": "internal",
+      "may_assert_action": 0,
+      "operator_id": "internal_model",
+      "symbol": "👁️🧠"
+    },
+    {
+      "canonical_name": "operative intention",
+      "definition": "Represent a licensed intention, plan, or operative thought.",
+      "evidence_channel": "internal",
+      "may_assert_action": 0,
+      "operator_id": "operative_intent",
+      "symbol": "🗯️"
+    },
+    {
+      "canonical_name": "execution",
+      "definition": "Perform an externally consequential operation.",
+      "evidence_channel": "external-effect",
+      "may_assert_action": 1,
+      "operator_id": "execute",
+      "symbol": "💪"
+    }
+  ],
+  "schema_version": "0.1.0"
 }
