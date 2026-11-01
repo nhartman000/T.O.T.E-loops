@@ -115,7 +115,9 @@ def _fetch_public(url):
     sock = socket.create_connection((ip, port), timeout=10)
     try:
         if p.scheme == 'https':
-            sock = ssl.create_default_context().wrap_socket(sock, server_hostname=p.hostname)
+            context = ssl.create_default_context()
+            context.minimum_version = ssl.TLSVersion.TLSv1_2
+            sock = context.wrap_socket(sock, server_hostname=p.hostname)
         conn.sock = sock
         conn.request('GET', (p.path or '/') + ('?' + p.query if p.query else ''), headers={'User-Agent': 'TOTE-manual-source/1.0', 'Accept': 'text/html,text/plain', 'Accept-Encoding': 'identity'})
         response = conn.getresponse()

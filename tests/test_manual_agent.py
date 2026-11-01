@@ -155,6 +155,33 @@ class CLITests(unittest.TestCase):
 
 
 class NetworkTests(unittest.TestCase):
+    def test_https_sets_tls12_floor_before_handshake(self):
+        import ssl
+        from unittest.mock import MagicMock, patch
+        from urllib.parse import urlsplit
+        # Model a platform context whose protocol floor is not already secure.
+        context = MagicMock(minimum_version=-2, check_hostname=True,
+                            verify_mode=ssl.CERT_REQUIRED)
+        response = MagicMock(status=200)
+        response.getheader.side_effect = lambda key, default=None: {
+            'Content-Type': 'text/plain', 'Content-Encoding': 'identity'
+        }.get(key, default)
+        response.read1.return_value = b''
+        connection = MagicMock()
+        connection.getresponse.return_value = response
+        def handshake(sock, *, server_hostname):
+            self.assertEqual(server_hostname, 'example.org')
+            self.assertGreaterEqual(context.minimum_version, ssl.TLSVersion.TLSv1_2)
+            self.assertTrue(context.check_hostname)
+            self.assertEqual(context.verify_mode, ssl.CERT_REQUIRED)
+            return sock
+        with patch.object(m, 'public_target', return_value=(urlsplit('https://example.org/manual'), '93.184.215.14')), \
+                patch('socket.create_connection', return_value=MagicMock()), \
+                patch('http.client.HTTPConnection', return_value=connection), \
+                patch('ssl.create_default_context', return_value=context), \
+                patch.object(context, 'wrap_socket', side_effect=handshake):
+            self.assertEqual(m._fetch_public('https://example.org/manual'), b'')
+
     def test_rejects_nonpublic_and_non_http_targets(self):
         for url in ['file:///etc/passwd', 'http://127.0.0.1/manual', 'https://[::1]/', 'https://user:pass@example.org/', 'http://169.254.169.254/latest', 'https://example.org:444/manual', 'http://224.0.0.1/manual', 'http://[ff02::1]/']:
             with self.subTest(url=url), self.assertRaises(ValueError):
