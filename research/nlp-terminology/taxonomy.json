@@ -1,0 +1,333 @@
+{
+  "artifact_type": "research taxonomy, NOT seed/schema amendment or clinical protocol",
+  "status": "PARTIAL: no original Bandler/Grinder book body page accessible in this run",
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://nlpu.com/Patterns/patt22.htm",
+      "retrieved_at_utc": "2026-11-01T04:30:05.419679+00:00",
+      "snapshot": "private-snapshots/source-1.txt",
+      "sha256": "b449d54e24650cb3a79dc75b041cd925408436e597e36b557513dd62869fd71a",
+      "access_coverage": "Complete extracted public webpage; embedded book quotations only, not original book pages"
+    },
+    {
+      "id": 6,
+      "url": "https://www.nlpu.com/robbio.htm",
+      "retrieved_at_utc": "2026-11-01T04:30:05.419783+00:00",
+      "snapshot": "private-snapshots/source-6.txt",
+      "sha256": "977536c487f5b0dab4e4122b15996642f0ce6ce0133942ca1e28ca32256df9b3",
+      "access_coverage": "Complete extracted public author webpage; not the referenced books"
+    },
+    {
+      "id": 8,
+      "url": "https://books.google.com/books/about/The_Structure_of_Magic.html?id=WEtBAQAAIAAJ",
+      "retrieved_at_utc": "2026-11-01T04:30:05.419851+00:00",
+      "snapshot": "private-snapshots/source-8.txt",
+      "sha256": "886c5eb5a23bf89d1fa4ec2826a14ee712ad52ac0fcf5ff66191909645213602",
+      "access_coverage": "Catalog/landing page only; no original body pages read"
+    },
+    {
+      "id": 9,
+      "url": "https://archive.org/details/patternsofhypnot0001band",
+      "retrieved_at_utc": "2026-11-01T04:30:05.419889+00:00",
+      "snapshot": "private-snapshots/source-9.txt",
+      "sha256": "58f1c29b748386b5ead06d4fee8d9bccf21389bb8ed1b8125999c4045828845e",
+      "access_coverage": "Catalog/landing page only; no original body pages read"
+    },
+    {
+      "id": 10,
+      "url": "https://books.google.com/books?id=7vvaAAAAMAAJ",
+      "retrieved_at_utc": "2026-11-01T04:30:05.419928+00:00",
+      "snapshot": "private-snapshots/source-10.txt",
+      "sha256": "23096a652fead6c1711deaf0987ecbed6e7cc87b403cda031181c7eec7bb5fdd",
+      "access_coverage": "Catalog/landing page only; no original body pages read"
+    },
+    {
+      "id": 11,
+      "url": "https://books.google.com/books/about/Frogs_Into_Princes.html?id=LH52QgAACAAJ",
+      "retrieved_at_utc": "2026-11-01T04:30:05.419960+00:00",
+      "snapshot": "private-snapshots/source-11.txt",
+      "sha256": "036d11e546cf0f23dd1c82956b12f9fcd74ed3396fac60f22fd989b6313b06ff",
+      "access_coverage": "Catalog/landing page only; no original body pages read"
+    },
+    {
+      "id": 16,
+      "url": "https://www.nlpu.com/Articles/artic17.htm",
+      "retrieved_at_utc": "2026-11-01T04:30:05.419995+00:00",
+      "snapshot": "private-snapshots/source-16.txt",
+      "sha256": "b34024ae27e6d6648e018aa801f4df4ed12d9e12be3c2b96d865fe7010125979",
+      "access_coverage": "Complete extracted public author webpage; not the referenced books"
+    },
+    {
+      "id": 17,
+      "url": "https://www.nlpu.com/Articles/artic19.htm",
+      "retrieved_at_utc": "2026-11-01T04:30:05.420066+00:00",
+      "snapshot": "private-snapshots/source-17.txt",
+      "sha256": "295c839334485320f4f69a9fc20f01255fea59823715b8f4d9aa19ee0c1921fb",
+      "access_coverage": "Complete extracted public author webpage; not the referenced books"
+    }
+  ],
+  "terms": [
+    {
+      "id": "tote",
+      "exact_term": "T.O.T.E.",
+      "evidence_ids": [
+        "e01",
+        "e02",
+        "e15"
+      ],
+      "role_function_paraphrase": "Names the test/operate/test/exit feedback organization. Origin credited to Miller, Galanter and Pribram (1960), not Bandler/Grinder.",
+      "attribution": "Dilts, Epstein & Dilts, Tools for Dreamers, as quoted on Robert Dilts’s 1998 webpage; book edition unverified.",
+      "evidence_level": "later_author_webpage",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Origin attribution is mediated by Dilts; 1960 book not read."
+    },
+    {
+      "id": "test",
+      "exact_term": "TEST",
+      "evidence_ids": [
+        "e04",
+        "e06"
+      ],
+      "role_function_paraphrase": "Assesses whether the goal has been achieved; its satisfaction permits exit.",
+      "attribution": "Dilts, Epstein & Dilts, Tools for Dreamers, as quoted on Robert Dilts’s 1998 webpage; book edition unverified.",
+      "evidence_level": "later_author_webpage",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Not evidence of this wording in an early Bandler/Grinder book."
+    },
+    {
+      "id": "operate",
+      "exact_term": "OPERATE",
+      "evidence_ids": [
+        "e05"
+      ],
+      "role_function_paraphrase": "Changes something when the goal is not achieved.",
+      "attribution": "Dilts, Epstein & Dilts, Tools for Dreamers, as quoted on Robert Dilts’s 1998 webpage; book edition unverified.",
+      "evidence_level": "later_author_webpage",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Not evidence of this wording in an early Bandler/Grinder book."
+    },
+    {
+      "id": "exit",
+      "exact_term": "EXIT",
+      "evidence_ids": [
+        "e06"
+      ],
+      "role_function_paraphrase": "Passes to the next step once test criteria are satisfied.",
+      "attribution": "Dilts, Epstein & Dilts, Tools for Dreamers, as quoted on Robert Dilts’s 1998 webpage; book edition unverified.",
+      "evidence_level": "later_author_webpage",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Not evidence of this wording in an early Bandler/Grinder book."
+    },
+    {
+      "id": "feedback",
+      "exact_term": "feedback loop",
+      "evidence_ids": [
+        "e02",
+        "e10"
+      ],
+      "role_function_paraphrase": "Organizes continued operation relative to goal conditions.",
+      "attribution": "Dilts, Epstein & Dilts, Tools for Dreamers, as quoted on Robert Dilts’s 1998 webpage; book edition unverified.",
+      "evidence_level": "later_author_webpage",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Not evidence of this wording in an early Bandler/Grinder book."
+    },
+    {
+      "id": "strategy",
+      "exact_term": "mental strategy",
+      "evidence_ids": [
+        "e14",
+        "e02"
+      ],
+      "role_function_paraphrase": "The quoted formulation organizes a mental strategy into a feedback loop.",
+      "attribution": "Dilts, Epstein & Dilts, Tools for Dreamers, as quoted on Robert Dilts’s 1998 webpage; book edition unverified.",
+      "evidence_level": "later_author_webpage",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Not evidence of this wording in an early Bandler/Grinder book."
+    },
+    {
+      "id": "goal",
+      "exact_term": "fixed goal",
+      "evidence_ids": [
+        "e03"
+      ],
+      "role_function_paraphrase": "Provides the relatively fixed target in the quoted account.",
+      "attribution": "Dilts, Epstein & Dilts, Tools for Dreamers, as quoted on Robert Dilts’s 1998 webpage; book edition unverified.",
+      "evidence_level": "later_author_webpage",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Not evidence of this wording in an early Bandler/Grinder book."
+    },
+    {
+      "id": "means",
+      "exact_term": "variable means",
+      "evidence_ids": [
+        "e03"
+      ],
+      "role_function_paraphrase": "Provides variable ways of reaching the target.",
+      "attribution": "Dilts, Epstein & Dilts, Tools for Dreamers, as quoted on Robert Dilts’s 1998 webpage; book edition unverified.",
+      "evidence_level": "later_author_webpage",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Not evidence of this wording in an early Bandler/Grinder book."
+    },
+    {
+      "id": "criteria",
+      "exact_term": "TEST criteria",
+      "evidence_ids": [
+        "e06"
+      ],
+      "role_function_paraphrase": "Conditions whose satisfaction supports exit.",
+      "attribution": "Dilts, Epstein & Dilts, Tools for Dreamers, as quoted on Robert Dilts’s 1998 webpage; book edition unverified.",
+      "evidence_level": "later_author_webpage",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Not evidence of this wording in an early Bandler/Grinder book."
+    },
+    {
+      "id": "congruency",
+      "exact_term": "congruency",
+      "evidence_ids": [
+        "e07",
+        "e08",
+        "e09"
+      ],
+      "role_function_paraphrase": "Describes aligned communication output channels conveying compatible messages. Not an identified TOTE exit test in this excerpt.",
+      "attribution": "John Grinder and Richard Bandler, The Structure of Magic Vol. II, Science and Behavior Books, 1976, p. 45, as quoted by Robert Dilts; original page not accessed.",
+      "evidence_level": "secondary_reproduced_book_quotation",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Only a mediated quotation from p. 45; do not identify communicative congruency with TOTE test agreement."
+    },
+    {
+      "id": "output-channels",
+      "exact_term": "output channels",
+      "evidence_ids": [
+        "e08",
+        "e09"
+      ],
+      "role_function_paraphrase": "Communication channels whose alignment is part of the quoted congruency definition.",
+      "attribution": "John Grinder and Richard Bandler, The Structure of Magic Vol. II, Science and Behavior Books, 1976, p. 45, as quoted by Robert Dilts; original page not accessed.",
+      "evidence_level": "secondary_reproduced_book_quotation",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Not evidence of this wording in an early Bandler/Grinder book."
+    },
+    {
+      "id": "evidence-procedures",
+      "exact_term": "evidence procedures",
+      "evidence_ids": [
+        "e11"
+      ],
+      "role_function_paraphrase": "Used by a performer to determine progress toward a goal.",
+      "attribution": "Robert Dilts, Modeling, ©1998 webpage; section Modeling Capabilities.",
+      "evidence_level": "later_author_webpage",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Not evidence of this wording in an early Bandler/Grinder book."
+    },
+    {
+      "id": "nested-totes",
+      "exact_term": "nested T.O.T.E.s",
+      "evidence_ids": [
+        "e13"
+      ],
+      "role_function_paraphrase": "Names smaller skill components within more complex capabilities.",
+      "attribution": "Robert Dilts, Modeling, ©1998 webpage; Levels of Complexity of Skills and Capabilities.",
+      "evidence_level": "later_author_webpage",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Not evidence of this wording in an early Bandler/Grinder book."
+    },
+    {
+      "id": "sub-loops",
+      "exact_term": "sub-loops",
+      "evidence_ids": [
+        "e13"
+      ],
+      "role_function_paraphrase": "Alternative label for smaller skill components in that discussion.",
+      "attribution": "Robert Dilts, Modeling, ©1998 webpage; Levels of Complexity of Skills and Capabilities.",
+      "evidence_level": "later_author_webpage",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Not evidence of this wording in an early Bandler/Grinder book."
+    },
+    {
+      "id": "sub-skills",
+      "exact_term": "sub-skills",
+      "evidence_ids": [
+        "e13"
+      ],
+      "role_function_paraphrase": "Alternative label for constituent skills in that discussion.",
+      "attribution": "Robert Dilts, Modeling, ©1998 webpage; Levels of Complexity of Skills and Capabilities.",
+      "evidence_level": "later_author_webpage",
+      "book_page_directly_read": false,
+      "early_book_tote_mapping": null,
+      "boundary": "Not evidence of this wording in an early Bandler/Grinder book."
+    }
+  ],
+  "relations": [
+    {
+      "id": "test-to-operate",
+      "from": "test",
+      "to": "operate",
+      "condition_paraphrase": "Goal not achieved.",
+      "evidence_ids": [
+        "e05"
+      ],
+      "status": "explicit conditional in later quotation"
+    },
+    {
+      "id": "operate-to-test",
+      "from": "operate",
+      "to": "test",
+      "condition_paraphrase": "Assess again after operation.",
+      "evidence_ids": [
+        "e01",
+        "e10"
+      ],
+      "status": "analyst interpretation of ordered name and continuing-until-conditions statement; not a verbatim edge description"
+    },
+    {
+      "id": "retest-to-operate",
+      "from": "test",
+      "to": "operate",
+      "condition_paraphrase": "Conditions remain unmet.",
+      "evidence_ids": [
+        "e10"
+      ],
+      "status": "later Dilts account supports continuation; retest is an analyst label, not extracted source term"
+    },
+    {
+      "id": "test-to-exit",
+      "from": "test",
+      "to": "exit",
+      "condition_paraphrase": "Test criteria satisfied.",
+      "evidence_ids": [
+        "e06"
+      ],
+      "status": "explicit conditional in later quotation"
+    }
+  ],
+  "attribution_boundaries": {
+    "origin": "Miller, Galanter, Pribram, Plans and the Structure of Behavior (1960); attribution supported here by later Dilts text, no original-page claim. Preserve original source misspelling Gallanter inside quotes.",
+    "bandler_grinder": "Only congruency/output channels have a book-page locator, and it is a SECONDARY quotation of Vol. II p.45, not a page independently read. No exact early-book TOTE usage verified.",
+    "later_dilts": "Terms and functional statements are attributed to accessible Dilts webpages or their explicitly identified quotations; no transfer to 1975/1976 books.",
+    "nlp_volume_i_1980": "Dilts biography lists collaboration with Grinder, Bandler and DeLozier; book not accessed. This page is not a title-page check or a guaranteed exhaustive author list. No exact terms/locators taken from it.",
+    "date_conflicts": "Tools for Dreamers quoted as 1993 on source 1 but listed as 1991 on source 6. Vol.II quoted as 1976 on source 1 while Google catalog displays 1975. These are unresolved bibliographic/edition distinctions, not silently corrected."
+  },
+  "excluded_unverified": [
+    "retest as an exact early-book term",
+    "strategy elicitation terminology from unread books",
+    "calibration and other familiar NLP labels without read source passages",
+    "claim that congruency equals a TOTE success criterion",
+    "first NLP use/date claim",
+    "therapeutic instructions or clinical efficacy conclusions"
+  ]
+}

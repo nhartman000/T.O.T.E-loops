@@ -1,0 +1,82 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "chunk-0000",
+      "end": 760,
+      "line_start": 1,
+      "start": 0,
+      "text": "REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN\nImageMagick: Command-line Tools: Compare\nhttps://imagemagick.org/compare/\nPublisher: ImageMagick Studio LLC\nSections: Example Usage; Option Summary -quality; shared conversion example\nRights: ImageMagick License linked by manual; https://imagemagick.org/license/; review redistribution obligations\nChange notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.\n$ magick compare -verbose -metric rmse rose.jpg reconstruct.jpg difference.png\nall: 2604.73 (0.0397456)\n$ magick input.png -quality 85 output.webp\nIn addition to the visual interpretation of the difference in an image and its reconstruction, we report a mathematical measure of the difference:\n"
+    }
+  ],
+  "format_version": "1.0",
+  "raw_sha256": "b80dd72b2f40ce01d0a2229c94b09281b39b67ef4546b0a42d44d9b2b6520733",
+  "snapshot_sha256": "0eb5e04949f4c964e066b29b170bf4f9037b81f5022cd6bfe1909e3889ca4556",
+  "source": {
+    "access": "public",
+    "domain": [
+      "digital_imaging"
+    ],
+    "edition": "Unversioned live manual; page banner v7.1.2-35",
+    "excerpt_derivation": {
+      "excerpts": [
+        {
+          "private_line_start": 39,
+          "private_locator": "snapshots/im_compare.txt",
+          "private_text_end": 1787,
+          "private_text_sha256": "3cd4c7d2e143a8d66a4be8ae081b5903030741a8ab52cce27f2fd3a092148954",
+          "private_text_start": 1709,
+          "quote": "$ magick compare -verbose -metric rmse rose.jpg reconstruct.jpg difference.png"
+        },
+        {
+          "private_line_start": 45,
+          "private_locator": "snapshots/im_compare.txt",
+          "private_text_end": 1931,
+          "private_text_sha256": "3cd4c7d2e143a8d66a4be8ae081b5903030741a8ab52cce27f2fd3a092148954",
+          "private_text_start": 1907,
+          "quote": "all: 2604.73 (0.0397456)"
+        },
+        {
+          "private_line_start": 22,
+          "private_locator": "snapshots/im_compare.txt",
+          "private_text_end": 616,
+          "private_text_sha256": "3cd4c7d2e143a8d66a4be8ae081b5903030741a8ab52cce27f2fd3a092148954",
+          "private_text_start": 574,
+          "quote": "$ magick input.png -quality 85 output.webp"
+        },
+        {
+          "private_line_start": 38,
+          "private_locator": "snapshots/im_compare.txt",
+          "private_text_end": 1708,
+          "private_text_sha256": "3cd4c7d2e143a8d66a4be8ae081b5903030741a8ab52cce27f2fd3a092148954",
+          "private_text_start": 1562,
+          "quote": "In addition to the visual interpretation of the difference in an image and its reconstruction, we report a mathematical measure of the difference:"
+        }
+      ],
+      "method": "Minimal selected text, whitespace collapsed; no ellipses inside quotations. Authored header and blank-line separators added. No full manual was scanned by this admission run."
+    },
+    "format": "text",
+    "license": "ImageMagick License linked by manual; https://imagemagick.org/license/; review redistribution obligations",
+    "original_retrieval": {
+      "note": "Research retrieval hash, not independently authenticated publisher identity. Original response not bundled; A retained extracted text only. NPS PDF extraction/page labels were reviewed separately.",
+      "response_retained_privately": true,
+      "response_sha256": "ab4a761f31d52a7ca48453e02470cdb77318f3ff1836c2f480506a6baf22b5b2",
+      "retrieved_at": "2026-11-01T04:25:01.420874+00:00",
+      "text_sha256": "3cd4c7d2e143a8d66a4be8ae081b5903030741a8ab52cce27f2fd3a092148954"
+    },
+    "profession": [
+      "Image quality assurance analyst"
+    ],
+    "publisher": "ImageMagick Studio LLC",
+    "representation": "reviewed_evidence_excerpt",
+    "review_needs": [
+      "No execution authority; domain professional approval required before use"
+    ],
+    "rights_notice": "See data/THIRD_PARTY_NOTICES.txt and data/licenses/. This excerpt selection is changed/abridged from the linked original; no endorsement.",
+    "section": [
+      "Example Usage; Option Summary -quality; shared conversion example"
+    ],
+    "source_id": "manual-im-compare-excerpt-v1",
+    "title": "ImageMagick: Command-line Tools: Compare",
+    "url": "https://imagemagick.org/compare/"
+  }
+}

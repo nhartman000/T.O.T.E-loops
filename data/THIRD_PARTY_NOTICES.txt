@@ -1,0 +1,74 @@
+THIRD-PARTY NOTICES — REVIEWED EVIDENCE EXCERPTS
+
+The repository MIT license covers original code and independently authored
+specifications, NOT a relicense of third-party quotations. No publisher endorses
+this dataset. These are selected/abridged evidence excerpts with collapsed
+whitespace, not complete manuals or new network-scanned publisher documents.
+Original URLs, editions/sections, retrieval hashes and private-text slice
+locators are recorded in each data/sources/*/snapshot.json. Hashes establish
+retained-byte integrity, not authenticated publisher provenance. Authored
+headers, selection, control policies, iteration bounds and proposed operations
+must not be attributed verbatim to publishers.
+
+QGIS Project — QGIS 3.40 Documentation
+https://docs.qgis.org/3.40/en/docs/training_manual/forestry/map_georeferencing.html
+https://docs.qgis.org/3.40/en/docs/user_manual/plugins/core_plugins/plugins_topology_checker.html
+Georeferencing a Map (§14.2.2) and Topology Checker Plugin (§25.2.5).
+Attribution: QGIS Project and documentation contributors.
+Documentation licensing statement: GNU Free Documentation License version 1.3
+or later: https://docs.qgis.org/3.40/en/docs/about/license/index.html
+License copy: licenses/GFDL-1.3.txt. The source-document authors retain their
+copyright. This selection omits navigation and unrelated sections; source
+wording is unchanged except whitespace normalization. These small quotations
+are retained for source-grounded research/commentary, not represented as a
+complete modified QGIS manual. No invariant-section/cover-text claim is inferred
+from unavailable metadata. Further/full redistribution needs its own review.
+
+NIST / SEMATECH e-Handbook of Statistical Methods
+https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc31.htm
+https://www.itl.nist.gov/div898/handbook/pmc/section1/pmc15.htm
+§6.3.1 What are Control Charts? and §6.1.5 What to do if In Control but
+Unacceptable? Only short necessary attributed research/commentary quotations
+are retained. NIST employee works generally fall under 17 USC 105 in the US,
+but this co-produced handbook is NOT asserted to be wholly public domain.
+https://www.nist.gov/open/license
+
+US National Park Service — Museum Handbook Part I, Chapter 4 (2016)
+https://www.nps.gov/subjects/museums/upload/MHI_Ch4_Environment.pdf
+Text excerpts from §§G.4/H.1 (printed pp.4:30–4:32, PDF pp.33–35) and §J.1–3
+(printed pp.4:46–4:49, PDF pp.49–52); only government text, no third-party
+photographs, illustrations or PDF pages. NPS government text is generally
+public domain in the US under 17 USC 105 unless otherwise indicated.
+https://www.nps.gov/aboutus/disclaimer.htm
+
+PostgreSQL 18 documentation — The PostgreSQL Global Development Group
+https://www.postgresql.org/docs/18/app-pgverifybackup.html
+https://www.postgresql.org/docs/18/app-pgchecksums.html
+Portions Copyright © 1996-2026, The PostgreSQL Global Development Group
+Portions Copyright © 1994, The Regents of the University of California
+Complete retained license notice/disclaimers: licenses/pg_license.txt
+https://www.postgresql.org/about/licence/
+
+ImageMagick Studio LLC — Identify and Compare documentation
+https://imagemagick.org/identify/
+https://imagemagick.org/compare/
+Copyright © 1999 ImageMagick Studio LLC, a non-profit organization dedicated to
+making software imaging solutions freely available.
+License and attribution notice: licenses/im_license.txt
+https://imagemagick.org/license/
+Changed: abridged selected text and normalized whitespace; independently
+authored procedures are not original publisher instructions or guarantees.
+
+W3C WAI Education and Outreach Working Group — Kevin White, editor
+[Draft] Page Title - Easy Checks (Updated 19 March 2024)
+https://www.w3.org/WAI/test-evaluate/easy-checks/title/
+[Draft] Headings - Easy Checks (Updated 19 March 2024)
+https://www.w3.org/WAI/test-evaluate/easy-checks/headings/
+This document includes material copied from or derived from the two documents
+above. Copyright © 2026 World Wide Web Consortium.
+https://www.w3.org/copyright/software-license-2023/
+Full NOTICE and disclaimers: licenses/w3c_software_license.txt
+Changed: selected/abridged excerpts, normalized whitespace, authored headers
+and independently authored procedures/control policy. DRAFT screening guidance
+is NOT a normative conformance test. W3C liability, trademark and permissive
+license rules apply. No bookmark scripts are included or executed.

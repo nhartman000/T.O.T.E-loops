@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "candidate_count": 6,
+  "domain_counts": {
+    "GEOSPATIAL_CARTOGRAPHY": 2,
+    "MANUFACTURING_QUALITY": 2,
+    "COLLECTIONS_PRESERVATION": 2
+  },
+  "manifest_snapshot_count": 8,
+  "candidate_source_references": 7,
+  "exact_quote_occurrences_checked": 25,
+  "all_candidate_and_manifest_sha256_match": true,
+  "all_four_tote_phases_have_quote_support_labels": true,
+  "max_quote_words": 29,
+  "scope": "Isolated derived specifications only; no professional execution, semantic-entailment certification, schema/build/database integration or runtime test."
+}

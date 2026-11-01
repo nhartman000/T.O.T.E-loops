@@ -1,0 +1,13 @@
+REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN
+6.1.5. What to do if "In Control" but Unacceptable?
+https://www.itl.nist.gov/div898/handbook/pmc/section1/pmc15.htm
+Publisher: NIST / SEMATECH
+Sections: e-Handbook §6.1.5, Process improvement techniques / Process must be stable
+Rights: NIST employee non-SRD text generally not copyright-protected in US under 17 USC 105; handbook co-produced with SEMATECH, so no blanket public-domain assertion; limited attributed research quotations only.
+Change notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.
+
+the average level is too high or too low or the variability is unacceptable?
+
+experiments calibration re-analysis of historical database can be initiated to put the process on target or reduce the variability.
+
+the process must be stable before it can be centered at a target value or its overall variation can be reduced.

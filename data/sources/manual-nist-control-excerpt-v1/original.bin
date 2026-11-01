@@ -1,0 +1,16 @@
+REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN
+6.3.1. What are Control
+Charts?
+https://www.itl.nist.gov/div898/handbook/pmc/section3/pmc31.htm
+Publisher: NIST / SEMATECH
+Sections: e-Handbook §6.3.1, Strategies for dealing with out-of-control findings; e-Handbook §6.3.1, monitoring and in-control interpretation
+Rights: NIST employee non-SRD text generally not copyright-protected in US under 17 USC 105; handbook co-produced with SEMATECH, so no blanket public-domain assertion; limited attributed research quotations only.
+Change notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.
+
+If a data point falls outside the control limits, we assume that the process is probably out of control
+
+an investigation is warranted to find and eliminate the cause or causes.
+
+Control charts are used to routinely monitor quality.
+
+"in control" implies that all points are between the control limits and they form a random pattern.

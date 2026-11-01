@@ -1,0 +1,82 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "chunk-0000",
+      "end": 859,
+      "line_start": 1,
+      "start": 0,
+      "text": "REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN\n[Draft] Page Title - Easy Checks\nhttps://www.w3.org/WAI/test-evaluate/easy-checks/title/\nPublisher: W3C WAI / Education and Outreach Working Group\nSections: Checking Page Titles / Checking other pages; What to look for; Tips\nRights: W3C Software and Document License linked in footer: https://www.w3.org/copyright/software-license/; Copyright © 2026 World Wide Web Consortium.\nChange notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.\nClick on the ‘Check page title’ link in your bookmarks\nCheck that there is a title that adequately and briefly describes the content of the page\nCheck that the title on the page your are checking is different from other pages on the website\nbest practice is for the important and unique information to come first.\n"
+    }
+  ],
+  "format_version": "1.0",
+  "raw_sha256": "b198e17e1fb61a784f65cb016139433acc1025e728afdd32eb1cb640d348eaf9",
+  "snapshot_sha256": "c95b6623dcdfced82ff1cd308130d1c0b3a36e11625ea262678f426f23ddcf3c",
+  "source": {
+    "access": "public",
+    "domain": [
+      "accessibility_web_qa"
+    ],
+    "edition": "Draft; Updated 19 March 2024; Kevin White",
+    "excerpt_derivation": {
+      "excerpts": [
+        {
+          "private_line_start": 68,
+          "private_locator": "snapshots/w3c_title.txt",
+          "private_text_end": 2048,
+          "private_text_sha256": "4c19a34d9a888e8c7ece515c318f4ebb86ce1b5b47fbfb183c3a1e420d228406",
+          "private_text_start": 1994,
+          "quote": "Click on the ‘Check page title’ link in your bookmarks"
+        },
+        {
+          "private_line_start": 77,
+          "private_locator": "snapshots/w3c_title.txt",
+          "private_text_end": 2585,
+          "private_text_sha256": "4c19a34d9a888e8c7ece515c318f4ebb86ce1b5b47fbfb183c3a1e420d228406",
+          "private_text_start": 2496,
+          "quote": "Check that there is a title that adequately and briefly describes the content of the page"
+        },
+        {
+          "private_line_start": 78,
+          "private_locator": "snapshots/w3c_title.txt",
+          "private_text_end": 2681,
+          "private_text_sha256": "4c19a34d9a888e8c7ece515c318f4ebb86ce1b5b47fbfb183c3a1e420d228406",
+          "private_text_start": 2586,
+          "quote": "Check that the title on the page your are checking is different from other pages on the website"
+        },
+        {
+          "private_line_start": 80,
+          "private_locator": "snapshots/w3c_title.txt",
+          "private_text_end": 2822,
+          "private_text_sha256": "4c19a34d9a888e8c7ece515c318f4ebb86ce1b5b47fbfb183c3a1e420d228406",
+          "private_text_start": 2750,
+          "quote": "best practice is for the important and unique information to come first."
+        }
+      ],
+      "method": "Minimal selected text, whitespace collapsed; no ellipses inside quotations. Authored header and blank-line separators added. No full manual was scanned by this admission run."
+    },
+    "format": "text",
+    "license": "W3C Software and Document License linked in footer: https://www.w3.org/copyright/software-license/; Copyright © 2026 World Wide Web Consortium.",
+    "original_retrieval": {
+      "note": "Research retrieval hash, not independently authenticated publisher identity. Original response not bundled; A retained extracted text only. NPS PDF extraction/page labels were reviewed separately.",
+      "response_retained_privately": true,
+      "response_sha256": "6f5ee6deec737c04226ff52600358d76d896c317cd10f44d4d9638d263bb6f90",
+      "retrieved_at": "2026-11-01T04:25:01.814429+00:00",
+      "text_sha256": "4c19a34d9a888e8c7ece515c318f4ebb86ce1b5b47fbfb183c3a1e420d228406"
+    },
+    "profession": [
+      "Web accessibility evaluator"
+    ],
+    "publisher": "W3C WAI / Education and Outreach Working Group",
+    "representation": "reviewed_evidence_excerpt",
+    "review_needs": [
+      "No execution authority; domain professional approval required before use"
+    ],
+    "rights_notice": "See data/THIRD_PARTY_NOTICES.txt and data/licenses/. This excerpt selection is changed/abridged from the linked original; no endorsement.",
+    "section": [
+      "Checking Page Titles / Checking other pages; What to look for; Tips"
+    ],
+    "source_id": "manual-w3c-title-excerpt-v1",
+    "title": "[Draft] Page Title - Easy Checks",
+    "url": "https://www.w3.org/WAI/test-evaluate/easy-checks/title/"
+  }
+}

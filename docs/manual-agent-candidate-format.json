@@ -1,0 +1,275 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Manual population batch v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format_version",
+    "batch_id",
+    "candidates"
+  ],
+  "properties": {
+    "format_version": {
+      "const": "1.0"
+    },
+    "batch_id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "candidates": {
+      "type": "array",
+      "maxItems": 25,
+      "items": {
+        "$ref": "#/$defs/candidate"
+      }
+    }
+  },
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "basis",
+        "evidence"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "basis": {
+          "enum": [
+            "source_fact",
+            "authored_policy"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "loop",
+        "procedure",
+        "evidence",
+        "review"
+      ],
+      "properties": {
+        "loop": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "loop_id",
+            "name",
+            "domain",
+            "objective",
+            "initial_test",
+            "exit_predicate",
+            "max_iterations",
+            "epistemic_status",
+            "gestalts"
+          ],
+          "properties": {
+            "loop_id": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]+(?:\\.[a-zA-Z0-9_-]+)*$"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "domain": {
+              "type": "string",
+              "minLength": 1
+            },
+            "objective": {
+              "type": "string",
+              "minLength": 1
+            },
+            "initial_test": {
+              "type": "string",
+              "minLength": 1
+            },
+            "exit_predicate": {
+              "type": "string",
+              "minLength": 1
+            },
+            "max_iterations": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 20
+            },
+            "epistemic_status": {
+              "const": "DERIVED"
+            },
+            "gestalts": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "procedure": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "initial_test",
+            "operation",
+            "fresh_retest",
+            "exit",
+            "iteration_policy"
+          ],
+          "properties": {
+            "initial_test": {
+              "$ref": "#/$defs/claim"
+            },
+            "operation": {
+              "$ref": "#/$defs/claim"
+            },
+            "fresh_retest": {
+              "$ref": "#/$defs/claim"
+            },
+            "exit": {
+              "$ref": "#/$defs/claim"
+            },
+            "iteration_policy": {
+              "$ref": "#/$defs/claim"
+            }
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source_id",
+              "snapshot_sha256",
+              "chunk_id",
+              "start",
+              "end",
+              "quote"
+            ],
+            "properties": {
+              "source_id": {
+                "type": "string"
+              },
+              "snapshot_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "chunk_id": {
+                "type": "string"
+              },
+              "start": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "review": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "reviewer",
+            "status",
+            "notes",
+            "safety",
+            "license"
+          ],
+          "properties": {
+            "reviewer": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "enum": [
+                "pending",
+                "approved",
+                "rejected"
+              ]
+            },
+            "notes": {
+              "type": "string",
+              "minLength": 1
+            },
+            "safety": {
+              "type": "string",
+              "minLength": 1
+            },
+            "license": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "terminology": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "exact_term",
+              "paraphrased_function",
+              "attribution",
+              "edition",
+              "locator",
+              "evidence"
+            ],
+            "properties": {
+              "exact_term": {
+                "type": "string",
+                "minLength": 1
+              },
+              "paraphrased_function": {
+                "type": "string",
+                "minLength": 1
+              },
+              "attribution": {
+                "type": "string",
+                "minLength": 1
+              },
+              "edition": {
+                "type": "string",
+                "minLength": 1
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

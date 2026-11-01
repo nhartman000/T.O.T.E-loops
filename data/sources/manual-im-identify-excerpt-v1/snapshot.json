@@ -1,0 +1,82 @@
+{
+  "chunks": [
+    {
+      "chunk_id": "chunk-0000",
+      "end": 787,
+      "line_start": 1,
+      "start": 0,
+      "text": "REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN\nImageMagick: Command-line Tools: Identify\nhttps://imagemagick.org/identify/\nPublisher: ImageMagick Studio LLC\nSections: Introduction; Example Usage; Option Summary --ping; shared conversion example\nRights: ImageMagick License linked by manual; https://imagemagick.org/license/; review redistribution obligations\nChange notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.\nThe magick identify program describes the format and characteristics of one or more image files. It also reports if an image is incomplete or corrupt.\n$ magick input.png -quality 85 output.webp\nTo accurately identify all image metadata and pixel characteristics, use +ping\nthe width and height of the image\n"
+    }
+  ],
+  "format_version": "1.0",
+  "raw_sha256": "f169f253e9d25ca34b2fead6d349bba42e43344e1372d03750e6a9a3bcb9e728",
+  "snapshot_sha256": "e673f4fde05735505f2162ed3ffff7d2bb0d0c2a74af848c76991d87315eb75e",
+  "source": {
+    "access": "public",
+    "domain": [
+      "digital_imaging"
+    ],
+    "edition": "Unversioned live manual; page banner v7.1.2-35; embedded example reports 7.0.4-8, not a manual pin",
+    "excerpt_derivation": {
+      "excerpts": [
+        {
+          "private_line_start": 28,
+          "private_locator": "snapshots/im_identify.txt",
+          "private_text_end": 859,
+          "private_text_sha256": "16f8473a0ba744e78d4f39b83a1db6496d8fc72c166cd8e5919bae3cb90d6c3e",
+          "private_text_start": 709,
+          "quote": "The magick identify program describes the format and characteristics of one or more image files. It also reports if an image is incomplete or corrupt."
+        },
+        {
+          "private_line_start": 22,
+          "private_locator": "snapshots/im_identify.txt",
+          "private_text_end": 575,
+          "private_text_sha256": "16f8473a0ba744e78d4f39b83a1db6496d8fc72c166cd8e5919bae3cb90d6c3e",
+          "private_text_start": 533,
+          "quote": "$ magick input.png -quality 85 output.webp"
+        },
+        {
+          "private_line_start": 200,
+          "private_locator": "snapshots/im_identify.txt",
+          "private_text_end": 6579,
+          "private_text_sha256": "16f8473a0ba744e78d4f39b83a1db6496d8fc72c166cd8e5919bae3cb90d6c3e",
+          "private_text_start": 6501,
+          "quote": "To accurately identify all image metadata and pixel characteristics, use +ping"
+        },
+        {
+          "private_line_start": 29,
+          "private_locator": "snapshots/im_identify.txt",
+          "private_text_end": 960,
+          "private_text_sha256": "16f8473a0ba744e78d4f39b83a1db6496d8fc72c166cd8e5919bae3cb90d6c3e",
+          "private_text_start": 927,
+          "quote": "the width and height of the image"
+        }
+      ],
+      "method": "Minimal selected text, whitespace collapsed; no ellipses inside quotations. Authored header and blank-line separators added. No full manual was scanned by this admission run."
+    },
+    "format": "text",
+    "license": "ImageMagick License linked by manual; https://imagemagick.org/license/; review redistribution obligations",
+    "original_retrieval": {
+      "note": "Research retrieval hash, not independently authenticated publisher identity. Original response not bundled; A retained extracted text only. NPS PDF extraction/page labels were reviewed separately.",
+      "response_retained_privately": true,
+      "response_sha256": "d355d30b877e8397a8c848ca4c363489a875861ac32333ff7f03a0ec1b4e7e35",
+      "retrieved_at": "2026-11-01T04:25:01.216964+00:00",
+      "text_sha256": "16f8473a0ba744e78d4f39b83a1db6496d8fc72c166cd8e5919bae3cb90d6c3e"
+    },
+    "profession": [
+      "Digital imaging technician"
+    ],
+    "publisher": "ImageMagick Studio LLC",
+    "representation": "reviewed_evidence_excerpt",
+    "review_needs": [
+      "No execution authority; domain professional approval required before use"
+    ],
+    "rights_notice": "See data/THIRD_PARTY_NOTICES.txt and data/licenses/. This excerpt selection is changed/abridged from the linked original; no endorsement.",
+    "section": [
+      "Introduction; Example Usage; Option Summary --ping; shared conversion example"
+    ],
+    "source_id": "manual-im-identify-excerpt-v1",
+    "title": "ImageMagick: Command-line Tools: Identify",
+    "url": "https://imagemagick.org/identify/"
+  }
+}

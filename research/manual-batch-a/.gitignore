@@ -1,0 +1,4 @@
+# Private research evidence, not a publication license.
+snapshots/
+.venv/
+__pycache__/

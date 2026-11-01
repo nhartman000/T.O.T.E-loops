@@ -1,0 +1,15 @@
+REVIEWED EVIDENCE EXCERPT — NOT A COMPLETE MANUAL OR A NETWORK SCAN
+ImageMagick: Command-line Tools: Identify
+https://imagemagick.org/identify/
+Publisher: ImageMagick Studio LLC
+Sections: Introduction; Example Usage; Option Summary --ping; shared conversion example
+Rights: ImageMagick License linked by manual; https://imagemagick.org/license/; review redistribution obligations
+Change notice: selected excerpts; whitespace normalized. See THIRD_PARTY_NOTICES.txt and licenses/.
+
+The magick identify program describes the format and characteristics of one or more image files. It also reports if an image is incomplete or corrupt.
+
+$ magick input.png -quality 85 output.webp
+
+To accurately identify all image metadata and pixel characteristics, use +ping
+
+the width and height of the image

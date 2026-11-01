@@ -27,7 +27,19 @@ python -m unittest discover -s tests
 ```
 
 This produces `data/tote_loops.sqlite3` and the deterministic export
-`data/tote_loops.json` from `data/seed_loops.json`.
+`data/tote_loops.json` from `data/seed_loops.json`. If sibling
+`data/provenance.json` exists, the builder validates its approved candidates
+against `data/sources/` before replacing the database, and preserves their exact
+operation/fresh-retest descriptions. Enriched seeds declare required admitted
+candidate hashes in `manual_admission` and reject missing provenance. Only
+original unmarked seeds without admitted procedures retain legacy behavior.
+Keep the sidecar and excerpt sources with this enriched dataset.
+
+The reviewed manual population adds 12 **DERIVED specifications** in six domains,
+not professional approval or evidence of execution. See
+[population review](docs/manual-population-review.md),
+`data/manual-batch-v1.json`, and `data/manual-review.json`. Audit the main dataset
+with `python -m src.manual_agent audit --output data` after building.
 
 ## Initial scope
 
@@ -44,5 +56,7 @@ system executed those loops successfully.
 
 ## License
 
-MIT — see [LICENSE](LICENSE). No restriction on commercial use; the intent is
-wide adoption.
+MIT for original code and independently authored specifications — see [LICENSE](LICENSE).
+Third-party evidence quotations retain their own rights and notices; see
+[data/THIRD_PARTY_NOTICES.txt](data/THIRD_PARTY_NOTICES.txt) and `data/licenses/`.
+The repository license does not relicense those excerpts.

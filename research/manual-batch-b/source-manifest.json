@@ -1,0 +1,123 @@
+{
+  "pg_verifybackup": {
+    "url": "https://www.postgresql.org/docs/18/app-pgverifybackup.html",
+    "resolved_url": "https://www.postgresql.org/docs/18/app-pgverifybackup.html",
+    "retrieved_at": "2026-11-01T04:25:00.364958+00:00",
+    "http_last_modified": null,
+    "local_snapshot": "snapshots/pg_verifybackup.txt",
+    "sha256": "10ae958fb173f3cd3d9f8da21c8c372deed0b373ff5d2a7a38984680afbd5ce9",
+    "raw_snapshot": "snapshots/pg_verifybackup.html",
+    "raw_sha256": "7ca2657e692c134b9c44b5e47e8741a3062ac4a9ffaa97baacaba8dd69bf2347",
+    "text_characters": 8374
+  },
+  "pg_checksums": {
+    "url": "https://www.postgresql.org/docs/18/app-pgchecksums.html",
+    "resolved_url": "https://www.postgresql.org/docs/18/app-pgchecksums.html",
+    "retrieved_at": "2026-11-01T04:25:00.679986+00:00",
+    "http_last_modified": null,
+    "local_snapshot": "snapshots/pg_checksums.txt",
+    "sha256": "2fa0d8303eb540aa3ebdcc318b299b6a4b2a5418f4903df85b8eb693e5107cbd",
+    "raw_snapshot": "snapshots/pg_checksums.html",
+    "raw_sha256": "71f93f4b0837e5d04a913bad4cf56e6f603071008016e8e94adf70dbc12a7d2a",
+    "text_characters": 4426
+  },
+  "pg_license": {
+    "url": "https://www.postgresql.org/about/licence/",
+    "resolved_url": "https://www.postgresql.org/about/licence/",
+    "retrieved_at": "2026-11-01T04:25:00.962659+00:00",
+    "http_last_modified": null,
+    "local_snapshot": "snapshots/pg_license.txt",
+    "sha256": "4277b77f5b1936627c81dcfa59e18374f35d40ba7f4d7c3f249f378cc49f8464",
+    "raw_snapshot": "snapshots/pg_license.html",
+    "raw_sha256": "ae13310d123a7c5d1966c2030435512439510d9e3e35815853a3887188519d8d",
+    "text_characters": 2192
+  },
+  "im_identify": {
+    "url": "https://imagemagick.org/identify/",
+    "resolved_url": "https://imagemagick.org/identify/",
+    "retrieved_at": "2026-11-01T04:25:01.216964+00:00",
+    "http_last_modified": "Sat, 31 Oct 2026 23:29:06 GMT",
+    "local_snapshot": "snapshots/im_identify.txt",
+    "sha256": "16f8473a0ba744e78d4f39b83a1db6496d8fc72c166cd8e5919bae3cb90d6c3e",
+    "raw_snapshot": "snapshots/im_identify.html",
+    "raw_sha256": "d355d30b877e8397a8c848ca4c363489a875861ac32333ff7f03a0ec1b4e7e35",
+    "text_characters": 7726
+  },
+  "im_compare": {
+    "url": "https://imagemagick.org/compare/",
+    "resolved_url": "https://imagemagick.org/compare/",
+    "retrieved_at": "2026-11-01T04:25:01.420874+00:00",
+    "http_last_modified": "Sat, 31 Oct 2026 23:29:06 GMT",
+    "local_snapshot": "snapshots/im_compare.txt",
+    "sha256": "3cd4c7d2e143a8d66a4be8ae081b5903030741a8ab52cce27f2fd3a092148954",
+    "raw_snapshot": "snapshots/im_compare.html",
+    "raw_sha256": "ab4a761f31d52a7ca48453e02470cdb77318f3ff1836c2f480506a6baf22b5b2",
+    "text_characters": 8237
+  },
+  "im_license": {
+    "url": "https://imagemagick.org/license/",
+    "resolved_url": "https://imagemagick.org/license/",
+    "retrieved_at": "2026-11-01T04:25:01.628169+00:00",
+    "http_last_modified": "Sat, 31 Oct 2026 23:29:06 GMT",
+    "local_snapshot": "snapshots/im_license.txt",
+    "sha256": "77394e1d297e8f1ff7fcf909efc6adef7964efc03b01bccb802f76673926f1e3",
+    "raw_snapshot": "snapshots/im_license.html",
+    "raw_sha256": "1cbb0217624ca7d25d560ba7e438fdf1b7398353cdd3b6064d194ec212676363",
+    "text_characters": 6521
+  },
+  "w3c_title": {
+    "url": "https://www.w3.org/WAI/test-evaluate/easy-checks/title/",
+    "resolved_url": "https://www.w3.org/WAI/test-evaluate/easy-checks/title/",
+    "retrieved_at": "2026-11-01T04:25:01.814429+00:00",
+    "http_last_modified": null,
+    "local_snapshot": "snapshots/w3c_title.txt",
+    "sha256": "4c19a34d9a888e8c7ece515c318f4ebb86ce1b5b47fbfb183c3a1e420d228406",
+    "raw_snapshot": "snapshots/w3c_title.html",
+    "raw_sha256": "6f5ee6deec737c04226ff52600358d76d896c317cd10f44d4d9638d263bb6f90",
+    "text_characters": 4267
+  },
+  "w3c_headings": {
+    "url": "https://www.w3.org/WAI/test-evaluate/easy-checks/headings/",
+    "resolved_url": "https://www.w3.org/WAI/test-evaluate/easy-checks/headings/",
+    "retrieved_at": "2026-11-01T04:25:02.035974+00:00",
+    "http_last_modified": null,
+    "local_snapshot": "snapshots/w3c_headings.txt",
+    "sha256": "44d34efb89d32cae95d7730ec5390439b67f743f297d65b68dbabe12d418d2b7",
+    "raw_snapshot": "snapshots/w3c_headings.html",
+    "raw_sha256": "f3da4a4672d36d44209f496f937e5c209eb20660e83d7a596d6a44f608ea449c",
+    "text_characters": 4858
+  },
+  "w3c_easy": {
+    "url": "https://www.w3.org/WAI/test-evaluate/easy-checks/",
+    "resolved_url": "https://www.w3.org/WAI/test-evaluate/easy-checks/",
+    "retrieved_at": "2026-11-01T04:25:02.254329+00:00",
+    "http_last_modified": null,
+    "local_snapshot": "snapshots/w3c_easy.txt",
+    "sha256": "c784c46f7e8cfc2b9813387ce6a9d0f3c9886e3879031512a0924ea53aa1c5b6",
+    "raw_snapshot": "snapshots/w3c_easy.html",
+    "raw_sha256": "280acd6305c401e53bf9c0ca267d59ed9f830d1cb99acd714a4896ef860a86e6",
+    "text_characters": 5592
+  },
+  "w3c_license": {
+    "url": "https://www.w3.org/copyright/document-license/",
+    "resolved_url": "https://www.w3.org/copyright/document-license-2023/",
+    "retrieved_at": "2026-11-01T04:25:02.697150+00:00",
+    "http_last_modified": null,
+    "local_snapshot": "snapshots/w3c_license.txt",
+    "sha256": "ee5850fd5d18b179f834154ef19c17e419fdd242e9e8239e4893be69eba7ff4a",
+    "raw_snapshot": "snapshots/w3c_license.html",
+    "raw_sha256": "8f0bf5069b42a555680ae69bd89f7aaa3c998adcaf336d7a01c0d9fe2994f3c1",
+    "text_characters": 6038
+  },
+  "w3c_software_license": {
+    "url": "https://www.w3.org/copyright/software-license/",
+    "resolved_url": "https://www.w3.org/copyright/software-license-2023/",
+    "retrieved_at": "2026-11-01T04:25:03.283736+00:00",
+    "http_last_modified": null,
+    "local_snapshot": "snapshots/w3c_software_license.txt",
+    "sha256": "fcda2ebd527741c63d4e1024b087869ee88f7b3916fc93545dab1a13f9708cce",
+    "raw_snapshot": "snapshots/w3c_software_license.html",
+    "raw_sha256": "9234807e23edbf8f1058fd85e4d9bd19f2beebebcd8f74433cc59e8a54059771",
+    "text_characters": 4758
+  }
+}

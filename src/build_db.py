@@ -43,6 +43,18 @@ def export_database(conn: sqlite3.Connection, seed_hash: str) -> dict:
 def build() -> None:
     seed_bytes = SEED.read_bytes()
     seed = json.loads(seed_bytes)
+    # Optional reviewed sidecar: old seeds without one retain legacy behavior.
+    # Validate before touching the existing database, and never drop procedures.
+    procedures = {}
+    provenance_path = SEED.parent / 'provenance.json'
+    if seed.get('manual_admission') and not provenance_path.exists():
+        raise ValueError('Enriched seed requires sibling provenance.json')
+    if provenance_path.exists():
+        from src.manual_admission import validate_provenance
+        provenance = json.loads(provenance_path.read_text(encoding='utf-8'))
+        validate_provenance(seed, provenance, SEED.parent/'sources')
+        for candidate in provenance['candidates']:
+            procedures[candidate['loop']['loop_id']] = candidate['procedure']
     DATABASE.unlink(missing_ok=True)
     conn = sqlite3.connect(DATABASE)
     try:
@@ -53,11 +65,17 @@ def build() -> None:
             conn.execute("INSERT INTO tote_loops VALUES (?,?,?,?,?,?,?,?)", tuple(loop[k] for k in ("loop_id","name","domain","objective","initial_test","exit_predicate","max_iterations","epistemic_status")))
             for gestalt_id in loop["gestalts"]:
                 conn.execute("INSERT INTO loop_gestalts VALUES (?,?,?)", (loop["loop_id"], gestalt_id, "process-context"))
-            for step in steps_for(loop):
+            steps = steps_for(loop)
+            procedure = procedures.get(loop['loop_id'])
+            if procedure is not None:
+                for index, key, prefix in ((3, 'operation', '💪'), (4, 'fresh_retest', '👀')):
+                    steps[index]['plain_text'] = procedure[key]['text']
+                    steps[index]['nych_text'] = prefix + ' ' + procedure[key]['text']
+            for step in steps:
                 conn.execute("INSERT INTO tote_steps VALUES (?,?,?,?,?,?,?,?,?,?)", (loop["loop_id"], step["step_index"], step["phase"], step["operator_id"], step["plain_text"], step["nych_text"], step["proposition_kind"], step["provenance"], step["next_on_match"], step["next_on_mismatch"]))
         conn.commit()
         exported = export_database(conn, hashlib.sha256(seed_bytes).hexdigest())
-        EXPORT.write_text(json.dumps(exported, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        EXPORT.write_text(json.dumps(exported, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     finally:
         conn.close()
 
