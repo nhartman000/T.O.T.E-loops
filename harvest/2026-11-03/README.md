@@ -6,6 +6,14 @@ Do not treat any row as canonical. 2 rows are hand-written canonical seeds from 
 
 Total loops exported: **92,719** (after ingest batches 1 and 2).
 
+## End-of-day update (2026-11-03, ~17:40 EST) — harvest stopped
+The data files in this folder are still the **mid-day** export (92,719 loops). Final numbers after the harvest ended:
+- **Store total: 105,130 TOTELoops** (105,128 candidate, 2 canonical seeds). New loops per ingest batch: Job B batch 1 +23,464 (store 63,535); Job B batch 2 → store 92,719 (incl. Job A batch 1); Job B final 0 new; Job A final tech.ui ingest → 105,130; final howto rebuild 0 new.
+- **Job A (vendor help centers), cached pages:** microsoft 1,500 · google_youtube 1,353 · samsung 1,178 · google_accounts 381 · claude 367 · google_android 252 · google_mail 233 · ms_copilot 221 · google_chrome 205 · google_maps 170 · google_gemini 154 · google_drive 137 · google_calendar 117 · google_docs 78 · apple 39 (timeouts) · tiktok 35 · twitch 25. tech.ui export: 150,052 extracted actions (144,655 mapped to 81 classes, 5,397 unmapped), 68,975 instance loops.
+- **Job B (how-to sites), pages:** apartmentlist 700 · tomsguide 1,000 · snapchat 500 · ftc 492 · cashapp 459 · zapier 433 · bbb 419 · cfpb 364 · later 349 · bitwarden 346 · onepassword 300 · swappa 300 · aarp 270 · hootsuite 237 · staysafeonline 200 · dropbox 131 · grammarly 107 · shopapp 77 · mercari 61 · learnfree 60 · usagov 57 · zelle 47 · cisa 46 · digitaltrends 21 · discord 6 · offerup 4 · hud 2 · buffer 1 · signal 1 — **6,990 pages**; 41,062 how-to actions after filtering (44,945 site-repeated chrome lines dropped).
+- **Blocked or failed sources:** reddit (403, 0 pages), discord (403 ×517), signal (403 ×161), offerup (403 ×96), motorola and costco support (robots.txt), Google Play / Photos / Pixel Phone / Assistant help (timeouts, 0 articles), apple (read timeouts, 39 pages only).
+- Everything is still **PROVISIONAL and not human-verified**. The current review entry point is `REVIEW/START_HERE_r3.md` on knowledge-graph branch `nych3-integration` (commit d27056f).
+
 ## Accuracy caveat
 An earlier 40-item spot check of harvested loops found **21 correct, 6 partial, 13 wrong** (≈52% fully correct).
 Expect a substantial error rate; human review is required before promotion.
