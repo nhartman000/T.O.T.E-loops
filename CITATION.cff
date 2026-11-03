@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "T.O.T.E-loops (MG8 family): Test operate test exit behavior loop dynamically updated database described in Gestalt matches by llms"
+authors:
+  - given-names: Nicholas C.
+    family-names: Hartman
+    affiliation: American Milestone Inc
+repository-code: "https://github.com/nhartman000/T.O.T.E-loops"
+license: MIT
+keywords:
+  - deterministic AI
+  - MG8
+  - NYCH
+  - high-assurance AI
