@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import sqlite3
 from pathlib import Path
 
@@ -55,8 +56,13 @@ def build() -> None:
         validate_provenance(seed, provenance, SEED.parent/'sources')
         for candidate in provenance['candidates']:
             procedures[candidate['loop']['loop_id']] = candidate['procedure']
-    DATABASE.unlink(missing_ok=True)
-    conn = sqlite3.connect(DATABASE)
+    # Failure-preserving rebuild: build into a staged file next to DATABASE, verify it, then atomically
+    # replace. On any error the previous DATABASE and EXPORT are left untouched and the staged file is removed.
+    staged_db = DATABASE.with_name(DATABASE.name + ".staged")
+    staged_export = EXPORT.with_name(EXPORT.name + ".staged")
+    for path in (staged_db, staged_export):
+        path.unlink(missing_ok=True)
+    conn = sqlite3.connect(staged_db)
     try:
         conn.executescript(SCHEMA.read_text(encoding="utf-8"))
         conn.executemany("INSERT INTO modality_operators VALUES (:operator_id,:symbol,:canonical_name,:definition,:evidence_channel,:may_assert_action)", seed["operators"])
@@ -74,10 +80,20 @@ def build() -> None:
             for step in steps:
                 conn.execute("INSERT INTO tote_steps VALUES (?,?,?,?,?,?,?,?,?,?)", (loop["loop_id"], step["step_index"], step["phase"], step["operator_id"], step["plain_text"], step["nych_text"], step["proposition_kind"], step["provenance"], step["next_on_match"], step["next_on_mismatch"]))
         conn.commit()
+        if conn.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
+            raise RuntimeError("staged database failed integrity_check")
+        if conn.execute("PRAGMA foreign_key_check").fetchall():
+            raise RuntimeError("staged database failed foreign_key_check")
         exported = export_database(conn, hashlib.sha256(seed_bytes).hexdigest())
-        EXPORT.write_text(json.dumps(exported, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    finally:
+        staged_export.write_text(json.dumps(exported, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    except BaseException:
         conn.close()
+        for path in (staged_db, staged_export):
+            path.unlink(missing_ok=True)
+        raise
+    conn.close()
+    os.replace(staged_db, DATABASE)
+    os.replace(staged_export, EXPORT)
 
 
 if __name__ == "__main__":
