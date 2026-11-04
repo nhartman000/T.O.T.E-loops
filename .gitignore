@@ -21,3 +21,4 @@ service-account*.json
 work/
 *.log
 .DS_Store
+data/*.staged
