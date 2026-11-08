@@ -1,5 +1,5 @@
 -- Additive GST taxonomy and contribution migration; preserves existing TOTE tables.
--- Apply to the TOTE schema at user_version 1. Never use this to downgrade a newer database.
+-- The guarded runner accepts source user_version 0 or 1 and refuses versions above 2.
 PRAGMA foreign_keys = ON;
 CREATE TABLE IF NOT EXISTS taxonomy_nodes (
     node_id TEXT PRIMARY KEY,
