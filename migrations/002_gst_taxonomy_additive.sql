@@ -426,5 +426,3 @@ SELECT
     EXISTS (SELECT 1 FROM tote_steps s WHERE s.loop_id = l.loop_id AND s.phase = 'EXIT') AS has_exit_step,
     l.max_iterations
 FROM tote_loops l;
-
-PRAGMA user_version = 2;
