@@ -7,7 +7,7 @@ authors:
     family-names: Hartman
     affiliation: American Milestone Inc
 repository-code: "https://github.com/nhartman000/T.O.T.E-loops"
-license: MIT
+license: LicenseRef-Proprietary
 keywords:
   - deterministic AI
   - MG8
