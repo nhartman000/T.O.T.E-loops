@@ -7,7 +7,7 @@ name = "nych-tote-loops"
 version = "0.1.0"
 description = "NYCH modality-operator database for deterministic TOTE loops"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = { text = "Proprietary. Copyright (c) 2026 American Milestone Inc. All rights reserved." }
 
 [tool.setuptools]
 packages = ["src"]

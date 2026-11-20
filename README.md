@@ -56,7 +56,7 @@ system executed those loops successfully.
 
 ## License
 
-MIT for original code and independently authored specifications — see [LICENSE](LICENSE).
+Copyright (c) 2026 American Milestone Inc. All rights reserved. Original code and independently authored specifications are publicly viewable for evaluation only — see [LICENSE](LICENSE). Copies obtained earlier under the previous MIT license keep the rights that license granted.
 Third-party evidence quotations retain their own rights and notices; see
 [data/THIRD_PARTY_NOTICES.txt](data/THIRD_PARTY_NOTICES.txt) and `data/licenses/`.
 The repository license does not relicense those excerpts.
